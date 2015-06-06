@@ -1,0 +1,413 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-05-31Æ½ÃæÒÆÈë½»µã·¨\BinSetup.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      BinSetup.c     1    #include "headfile.h"
+
+
+
+
+
+
+
+
+
+
+
+
+      BinSetup.c     2    #include "Binrunmain.h"
+      BinSetup.c     3    
+      BinSetup.c     4    const unsigned char L_GRAPH_SETUP[]={
+      BinSetup.c     5    0,0,0,0,0,0,
+      BinSetup.c     6    0,0,0,0,0,0,
+      BinSetup.c     7    0x23,0xC3,0xFE,0,0,0,
+      BinSetup.c     8    0x12,0x42,0x52,0,0,0,
+      BinSetup.c     9    0x02,0x43,0xFE,0,0,0,
+      BinSetup.c    10    0x02,0x70,0x20,0,0,0,
+      BinSetup.c    11    0x74,0x07,0xFF,0,0,0,
+      BinSetup.c    12    0x1B,0xE1,0x04,0,0,0,
+      BinSetup.c    13    0x12,0x21,0xFC,0,0,0,
+      BinSetup.c    14    0x11,0x41,0x04,0,0,0,
+      BinSetup.c    15    0x18,0x81,0xFC,0,0,0,
+      BinSetup.c    16    0x11,0x41,0x04,0,0,0,
+      BinSetup.c    17    0x0E,0x37,0xFF,0,0,0,
+      BinSetup.c    18    0,0,0,0,0,0,
+      BinSetup.c    19    0,0,0,0,0,0,
+      BinSetup.c    20    0,0,0,0,0,0,
+      BinSetup.c    21    0x02,0x04,0xA8,0x02,0,0,
+      BinSetup.c    22    0x02,0x02,0xC8,0x03,0xE0,0,
+      BinSetup.c    23    0x02,0x07,0xEF,0x02,0,0,
+      BinSetup.c    24    0x0A,0x81,0x92,0x02,0,0,
+      BinSetup.c    25    0x0A,0x42,0xD2,0x1F,0xC0,0,
+      BinSetup.c    26    0x12,0x24,0xAA,0x10,0x40,0,
+      BinSetup.c    27    0x22,0x11,0x0A,0x10,0x40,0,
+      BinSetup.c    28    0x42,0x17,0xE4,0x1F,0xC0,0,
+      BinSetup.c    29    0x02,0x02,0x44,0,0,0,
+      BinSetup.c    30    0x02,0x01,0xCA,0x24,0xA0,0,
+      BinSetup.c    31    0x0E,0x06,0x31,0x64,0x90,0,
+      BinSetup.c    32    0,0,0,0,0,0,
+      BinSetup.c    33    0,0,0,0,0,0,
+      BinSetup.c    34    0,0,0,0,0,0,
+      BinSetup.c    35    0,0,0,0,0,0,
+      BinSetup.c    36    0,0,0,0,0,0};
+      BinSetup.c    37    SETUPDATA setup_data = {4,""};
+      BinSetup.c    38    
+      BinSetup.c    39    
+      BinSetup.c    40    void ChangeSetup ()
+P   00000000              _ChangeSetup:                    ; function: ChangeSetup
+                                                           ; frame size=80
+                                                           ; used runtime library name:
+                                                           ; __dtoi, __itod, __gtd, __ltd
+    00000000 2FE6                   MOV.L       R14,@-R15
+    00000002 2FD6                   MOV.L       R13,@-R15
+    00000004 2FC6                   MOV.L       R12,@-R15
+    00000006 2FB6                   MOV.L       R11,@-R15
+    00000008 2FA6                   MOV.L       R10,@-R15
+    0000000A 2F96                   MOV.L       R9,@-R15
+    0000000C 2F86                   MOV.L       R8,@-R15
+    0000000E 4F22                   STS.L       PR,@-R15
+      BinSetup.c    41    {
+      BinSetup.c    42            double data[4];
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      BinSetup.c    43            data[0] = setup_data.point;
+    00000010 D235                   MOV.L       L517+4,R2  ; _setup_data
+    00000012 7FE0                   ADD         #-32,R15
+    00000014 D335                   MOV.L       L517+8,R3  ; __itod
+    00000016 6EF3                   MOV         R15,R14
+    00000018 2FE6                   MOV.L       R14,@-R15
+    0000001A 430B                   JSR         @R3
+    0000001C 6022                   MOV.L       @R2,R0
+      BinSetup.c    44            index = 0;
+    0000001E E300                   MOV         #0,R3
+      BinSetup.c    45            need_redraw = REDRAW_PART;
+    00000020 DB34                   MOV.L       L517+16,R11; _need_redraw
+    00000022 E101                   MOV         #1,R1
+    00000024 DC32                   MOV.L       L517+12,R12; _index
+    00000026 2C32                   MOV.L       R3,@R12
+      BinSetup.c    46    
+      BinSetup.c    47            Bdisp_AllClr_DDVRAM();
+    00000028 D333                   MOV.L       L517+20,R3 ; _Bdisp_AllClr_DDVRAM
+    0000002A 430B                   JSR         @R3
+    0000002C 2B12                   MOV.L       R1,@R11
+      BinSetup.c    48            //DrawPic (0,0,48,32,L_GRAPH_SETUP);
+      BinSetup.c    49            Bdisp_AreaReverseVRAM(0,0,127,14);
+    0000002E E70E                   MOV         #14,R7
+    00000030 D232                   MOV.L       L517+24,R2 ; _Bdisp_AreaReverseVRAM
+    00000032 E67F                   MOV         #127,R6
+    00000034 E500                   MOV         #0,R5
+    00000036 420B                   JSR         @R2
+    00000038 6453                   MOV         R5,R4
+    0000003A D831                   MOV.L       L517+28,R8 ; _key
+    0000003C D931                   MOV.L       L517+32,R9 ; _GetKey
+    0000003E DA32                   MOV.L       L517+36,R10; _PrintFloat
+    00000040 9D50                   MOV.W       L517,R13   ; H'7532
+      BinSetup.c    50    
+      BinSetup.c    51            do
+    00000042              L508:                             
+      BinSetup.c    52            {
+      BinSetup.c    53                    if (need_redraw == REDRAW_PART)
+    00000042 60B2                   MOV.L       @R11,R0
+    00000044 8801                   CMP/EQ      #1,R0
+    00000046 8B35                   BF          L509
+      BinSetup.c    54                    {
+      BinSetup.c    55                            int i;
+      BinSetup.c    56                            data[0] > 12 ? data[0] = 12.0:data[0] < 0?data[0]=0:0;
+    00000048 52E1                   MOV.L       @(4,R14),R2
+    0000004A E300                   MOV         #0,R3
+    0000004C 2F26                   MOV.L       R2,@-R15
+    0000004E 62E2                   MOV.L       @R14,R2
+    00000050 2F26                   MOV.L       R2,@-R15
+    00000052 2F36                   MOV.L       R3,@-R15
+    00000054 D32D                   MOV.L       L517+40,R3 ; H'40280000
+    00000056 D22E                   MOV.L       L517+44,R2 ; __gtd
+    00000058 420B                   JSR         @R2
+    0000005A 2F36                   MOV.L       R3,@-R15
+    0000005C 8800                   CMP/EQ      #0,R0
+    0000005E 8905                   BT          L510
+    00000060 D12A                   MOV.L       L517+40,R1 ; H'40280000
+    00000062 63E3                   MOV         R14,R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000064 2312                   MOV.L       R1,@R3
+    00000066 E100                   MOV         #0,R1
+    00000068 A00F                   BRA         L512
+    0000006A 1311                   MOV.L       R1,@(4,R3)
+    0000006C              L510:                             
+    0000006C 52E1                   MOV.L       @(4,R14),R2
+    0000006E E300                   MOV         #0,R3
+    00000070 2F26                   MOV.L       R2,@-R15
+    00000072 62E2                   MOV.L       @R14,R2
+    00000074 2F26                   MOV.L       R2,@-R15
+    00000076 2F36                   MOV.L       R3,@-R15
+    00000078 D226                   MOV.L       L517+48,R2 ; __ltd
+    0000007A 420B                   JSR         @R2
+    0000007C 2F36                   MOV.L       R3,@-R15
+    0000007E 8800                   CMP/EQ      #0,R0
+    00000080 8903                   BT          L512
+    00000082 63E3                   MOV         R14,R3
+    00000084 E100                   MOV         #0,R1
+    00000086 2312                   MOV.L       R1,@R3
+    00000088 1311                   MOV.L       R1,@(4,R3)
+    0000008A              L512:                             
+      BinSetup.c    57                            data[0] = (int)data[0];
+    0000008A 52E1                   MOV.L       @(4,R14),R2
+    0000008C D322                   MOV.L       L517+52,R3 ; __dtoi
+    0000008E 2F26                   MOV.L       R2,@-R15
+    00000090 62E2                   MOV.L       @R14,R2
+    00000092 430B                   JSR         @R3
+    00000094 2F26                   MOV.L       R2,@-R15
+    00000096 D215                   MOV.L       L517+8,R2  ; __itod
+    00000098 420B                   JSR         @R2
+    0000009A 2FE6                   MOV.L       R14,@-R15
+      BinSetup.c    58                            for (i=0;i<1;++i)
+      BinSetup.c    59                                    PrintFloat (data[i],42,16,index == i,0);
+    0000009C 53E1                   MOV.L       @(4,R14),R3
+    0000009E E700                   MOV         #0,R7
+    000000A0 2F36                   MOV.L       R3,@-R15
+    000000A2 E510                   MOV         #16,R5
+    000000A4 63E2                   MOV.L       @R14,R3
+    000000A6 2F36                   MOV.L       R3,@-R15
+    000000A8 66C2                   MOV.L       @R12,R6
+    000000AA 2668                   TST         R6,R6
+    000000AC 0629                   MOVT        R6
+    000000AE 4A0B                   JSR         @R10
+    000000B0 E42A                   MOV         #42,R4
+    000000B2 7F08                   ADD         #8,R15
+    000000B4              L509:                             
+      BinSetup.c    60                    }
+      BinSetup.c    61                    GetKey (&key);
+    000000B4 D412                   MOV.L       L517+28,R4 ; _key
+    000000B6 490B                   JSR         @R9
+    000000B8 0009                   NOP
+      BinSetup.c    62                    if (key==KEY_CTRL_EXIT)break;
+    000000BA 6282                   MOV.L       @R8,R2
+    000000BC 32D0                   CMP/EQ      R13,R2
+    000000BE 8BC0                   BF          L508
+      BinSetup.c    63                    //InputDefProc (data,1,42,16,0,0);
+      BinSetup.c    64            }
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      BinSetup.c    65            while (1);
+      BinSetup.c    66            
+      BinSetup.c    67            setup_data.point = data[0];
+    000000C0 53E1                   MOV.L       @(4,R14),R3
+    000000C2 2F36                   MOV.L       R3,@-R15
+    000000C4 63E2                   MOV.L       @R14,R3
+    000000C6 D214                   MOV.L       L517+52,R2 ; __dtoi
+    000000C8 420B                   JSR         @R2
+    000000CA 2F36                   MOV.L       R3,@-R15
+    000000CC D306                   MOV.L       L517+4,R3  ; _setup_data
+    000000CE 2302                   MOV.L       R0,@R3
+      BinSetup.c    68    }
+    000000D0 7F20                   ADD         #32,R15
+    000000D2 4F26                   LDS.L       @R15+,PR
+    000000D4 68F6                   MOV.L       @R15+,R8
+    000000D6 69F6                   MOV.L       @R15+,R9
+    000000D8 6AF6                   MOV.L       @R15+,R10
+    000000DA 6BF6                   MOV.L       @R15+,R11
+    000000DC 6CF6                   MOV.L       @R15+,R12
+    000000DE 6DF6                   MOV.L       @R15+,R13
+    000000E0 000B                   RTS
+    000000E2 6EF6                   MOV.L       @R15+,R14
+    000000E4              L517:                             
+    000000E4 7532                   .DATA.W     H'7532
+    000000E6 0000                   .DATA.W     0
+    000000E8 <00000000>             .DATA.L     _setup_data
+    000000EC <00000000>             .DATA.L     __itod
+    000000F0 <00000000>             .DATA.L     _index
+    000000F4 <00000000>             .DATA.L     _need_redraw
+    000000F8 <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+    000000FC <00000000>             .DATA.L     _Bdisp_AreaReverseVRAM
+    00000100 <00000000>             .DATA.L     _key
+    00000104 <00000000>             .DATA.L     _GetKey
+    00000108 <00000000>             .DATA.L     _PrintFloat
+    0000010C 40280000               .DATA.L     H'40280000
+    00000110 <00000000>             .DATA.L     __gtd
+    00000114 <00000000>             .DATA.L     __ltd
+    00000118 <00000000>             .DATA.L     __dtoi
+C   00000000              _L_GRAPH_SETUP:                  ; static: L_GRAPH_SETUP
+    00000000 0000000000             .DATA.B     H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'23,H'C3,H'FE,H'00,
+             0000000000 +                       H'00,H'00,H'12,H'42,H'52,H'00,H'00,H'00,H'02,H'43,H'FE,H'00,H'00,H'00,H'02,H'70,
+             000023C3FE +                       H'20,H'00,H'00,H'00,H'74,H'07,H'FF,H'00,H'00,H'00,H'1B,H'E1,H'04,H'00,H'00,H'00,
+             0000001242 +                       H'12,H'21,H'FC,H'00,H'00,H'00,H'11,H'41,H'04,H'00,H'00,H'00,H'18,H'81,H'FC,H'00,
+             5200000002 +                       H'00,H'00,H'11,H'41,H'04,H'00,H'00,H'00,H'0E,H'37,H'FF,H'00,H'00,H'00,H'00,H'00,
+             43FE000000 +                       H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,
+             0270200000 +                       H'02,H'04,H'A8,H'02,H'00,H'00,H'02,H'02,H'C8,H'03,H'E0,H'00,H'02,H'07,H'EF,H'02,
+             007407FF00 +                       H'00,H'00,H'0A,H'81,H'92,H'02,H'00,H'00,H'0A,H'42,H'D2,H'1F,H'C0,H'00,H'12,H'24,
+             00001BE104 +                       H'AA,H'10,H'40,H'00,H'22,H'11,H'0A,H'10,H'40,H'00,H'42,H'17,H'E4,H'1F,H'C0,H'00,
+             0000001221 +                       H'02,H'02,H'44,H'00,H'00,H'00,H'02,H'01,H'CA,H'24,H'A0,H'00,H'0E,H'06,H'31,H'64,
+             FC00000011 +                       H'90,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,
+             4104000000 +                       H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00
+             1881FC0000   
+             0011410400   
+             00000E37FF   
+             0000000000   
+             0000000000   
+             0000000000   
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+             0000000000   
+             000204A802   
+             00000202C8   
+             03E0000207   
+             EF0200000A   
+             8192020000   
+             0A42D21FC0   
+             001224AA10   
+             400022110A   
+             1040004217   
+             E41FC00002   
+             0244000000   
+             0201CA24A0   
+             000E063164   
+             9000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000         
+D   00000000              _setup_data:                     ; static: setup_data
+    00000000 00000004               .DATA.L     H'00000004
+    00000004 00                     .DATA.B     H'00
+    00000005 0000000C01             .DATAB.B    12,0
+             00           
+    00000011 0000002701             .DATAB.B    39,0
+             00           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 12:43:47  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       68
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               0000011C Byte(s)
+CONSTANT SECTION (C):                               000000C0 Byte(s)
+DATA     SECTION (D):                               00000038 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000214 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:           11
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           3
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmkA3C7.tmp 
+

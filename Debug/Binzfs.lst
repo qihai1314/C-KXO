@@ -1,0 +1,208 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 04-Jan-2015 15:03:22  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: F:\0.开发\0.两个重要编程和字库\2014-11-11\2014-09-25\Binzfs.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+        Binzfs.c     1    #include "headfile.h"
+P   00000000              _Menu_F1_Draw:                   ; function: Menu_F1_Draw
+                                                           ; frame size=16
+    00000000 2FE6                   MOV.L       R14,@-R15
+    00000002 E304                   MOV         #4,R3
+    00000004 D519                   MOV.L       L462+8,R5  ; L450
+    00000006 EE00                   MOV         #0,R14
+    00000008 2FD6                   MOV.L       R13,@-R15
+    0000000A 64E3                   MOV         R14,R4
+    0000000C 2FC6                   MOV.L       R12,@-R15
+    0000000E 4F22                   STS.L       PR,@-R15
+    00000010 DC14                   MOV.L       L462,R12   ; _mode
+    00000012 DD15                   MOV.L       L462+4,R13 ; _PrintIcon
+    00000014 62C2                   MOV.L       @R12,R2
+    00000016 3237                   CMP/GT      R3,R2
+    00000018 0629                   MOVT        R6
+    0000001A 76FF                   ADD         #-1,R6
+    0000001C 666B                   NEG         R6,R6
+    0000001E 4D0B                   JSR         @R13
+    00000020 7E01                   ADD         #1,R14
+    00000022 E304                   MOV         #4,R3
+    00000024 62C2                   MOV.L       @R12,R2
+    00000026 3237                   CMP/GT      R3,R2
+    00000028 8B05                   BF          L460
+    0000002A E106                   MOV         #6,R1
+    0000002C 60C2                   MOV.L       @R12,R0
+    0000002E 3017                   CMP/GT      R1,R0
+    00000030 8901                   BT          L460
+    00000032 A001                   BRA         L461
+    00000034 E601                   MOV         #1,R6
+    00000036              L460:                             
+    00000036 E600                   MOV         #0,R6
+    00000038              L461:                             
+    00000038 D50D                   MOV.L       L462+12,R5 ; L451
+    0000003A 64E3                   MOV         R14,R4
+    0000003C 4D0B                   JSR         @R13
+    0000003E 7E01                   ADD         #1,R14
+    00000040 D50C                   MOV.L       L462+16,R5 ; L452
+    00000042 64E3                   MOV         R14,R4
+    00000044 E600                   MOV         #0,R6
+    00000046 4D0B                   JSR         @R13
+    00000048 7E01                   ADD         #1,R14
+    0000004A E600                   MOV         #0,R6
+    0000004C D50A                   MOV.L       L462+20,R5 ; L453
+    0000004E 4D0B                   JSR         @R13
+    00000050 64E3                   MOV         R14,R4
+    00000052 E600                   MOV         #0,R6
+    00000054 D509                   MOV.L       L462+24,R5 ; L454
+    00000056 4D0B                   JSR         @R13
+    00000058 E405                   MOV         #5,R4
+    0000005A 4F26                   LDS.L       @R15+,PR
+    0000005C 6CF6                   MOV.L       @R15+,R12
+    0000005E 6DF6                   MOV.L       @R15+,R13
+    00000060 000B                   RTS
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 04-Jan-2015 15:03:22  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000062 6EF6                   MOV.L       @R15+,R14
+    00000064              L462:                             
+    00000064 <00000000>             .DATA.L     _mode
+    00000068 <00000000>             .DATA.L     _PrintIcon
+    0000006C <00000000>             .DATA.L     L450
+    00000070 <00000000>             .DATA.L     L451
+    00000074 <00000000>             .DATA.L     L452
+    00000078 <00000000>             .DATA.L     L453
+    0000007C <00000000>             .DATA.L     L454
+
+
+
+
+
+        Binzfs.c     2    
+        Binzfs.c     3    #define MODE_INPUT_2_POINT 1
+        Binzfs.c     4    #define MODE_INPUT_JJQZ 2
+        Binzfs.c     5    #define MODE_INPUT_ZH 3
+        Binzfs.c     6    #define MODE_INPUT_REAL 4
+        Binzfs.c     7    #define MODE_INPUT_P_AND_D 5
+        Binzfs.c     8    #define MODE_DISP_P 6
+        Binzfs.c     9    
+        Binzfs.c    10    int Menu_F1_Draw()
+        Binzfs.c    11    {
+        Binzfs.c    12            int i=0;
+        Binzfs.c    13            PrintIcon(i++,"FS",mode<=MODE_INPUT_REAL);
+        Binzfs.c    14            PrintIcon(i++,"ZS",mode>MODE_INPUT_REAL && mode<=MODE_DISP_P);
+        Binzfs.c    15            PrintIcon(i++,"QL",0);
+        Binzfs.c    16            PrintIcon(i++,"YQX",0);
+        Binzfs.c    17            PrintIcon(5,"?",0);
+        Binzfs.c    18    }
+        Binzfs.c    19    
+C   00000000              L450:
+    00000000 4653                   .SDATA      "FS"
+    00000002 00                     .DATA.B     H'00
+    00000003 00000001               .RES.B      1
+    00000004              L451:
+    00000004 5A53                   .SDATA      "ZS"
+    00000006 00                     .DATA.B     H'00
+    00000007 00000001               .RES.B      1
+    00000008              L452:
+    00000008 514C                   .SDATA      "QL"
+    0000000A 00                     .DATA.B     H'00
+    0000000B 00000001               .RES.B      1
+    0000000C              L453:
+    0000000C 595158                 .SDATA      "YQX"
+    0000000F 00                     .DATA.B     H'00
+    00000010              L454:
+    00000010 3F                     .SDATA      "?"
+    00000011 00                     .DATA.B     H'00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 04-Jan-2015 15:03:22  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       19
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000080 Byte(s)
+CONSTANT SECTION (C):                               00000012 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000092 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            2
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           1
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmkC27B.tmp 
+

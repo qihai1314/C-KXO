@@ -1,0 +1,137 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 15-Jun-2014 19:21:49  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: D:\工作事务\威客\边桩坐标计算\绘星\00_1\data3.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+         data3.c     1    
+         data3.c     2    #include "headfile.h"
+         data3.c     3    
+         data3.c     4    #define MAX_PATH        250
+         data3.c     5    #define CHR_ZERO        0 
+         data3.c     6    
+         data3.c     7    #define COL_PQX_NUM     7
+         data3.c     8    #define COL_SQX_NUM     7
+         data3.c     9    #define COL_HP_NUM      4
+         data3.c    10    #define COL_TOTAL_NUM   (COL_PQX_NUM+COL_SQX_NUM+COL_HP_NUM)    //18
+         data3.c    11    #define MAX_LINECOL_NUM         20
+         data3.c    12    
+         data3.c    13    int ReadDataFile (char *fname,char ** text);
+         data3.c    14    
+         data3.c    15    int GetNextLineLen(TCHAR *p,BOOL bSetZero);
+         data3.c    16    int GetStrLenFromStr(char * szStr,int nStrPos[],int nStrLen[],int nMaxN,BOOL bSetZero);
+         data3.c    17    BOOL IsWhiteStr(char * p);
+         data3.c    18    
+         data3.c    19    int domy()
+P   00000000              _domy:                           ; function: domy
+                                                           ; frame size=0
+         data3.c    20    {
+         data3.c    21            return 1;
+         data3.c    22    }
+    00000000 000B                   RTS
+    00000002 E001                   MOV         #1,R0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 15-Jun-2014 19:21:49  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        18
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       22
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000004 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000004 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            0
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           1
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:             1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\DELL\AppData\Local\Temp\hmkAB40.tmp 
+

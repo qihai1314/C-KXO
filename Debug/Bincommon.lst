@@ -1,0 +1,875 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-1Æ½ÃæÒÆÈë½»µã·¨\Bincommon.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Bincommon.     1    #include "headfile.h"
+
+
+
+
+
+
+
+
+
+
+
+
+      Bincommon.     2    
+      Bincommon.     3    extern COMMONDATA common_data;
+      Bincommon.     4    void Pol(double a,double b,double x,double y,double *r,double *t)
+P   00000000              _Pol:                            ; function: Pol
+                                                           ; frame size=96
+                                                           ; used runtime library name:
+                                                           ; __addd, __subdr, __muld, __divdr, __ned, __gtd, __ltd
+    00000000 4F22                   STS.L       PR,@-R15
+      Bincommon.     5    {
+      Bincommon.     6            double c,d;
+      Bincommon.     7            double hd,ha,aa;
+      Bincommon.     8            c = x - a;
+    00000002 E048                   MOV         #72,R0
+    00000004 7FD0                   ADD         #-48,R15
+    00000006 1F41                   MOV.L       R4,@(4,R15)
+    00000008 2F52                   MOV.L       R5,@R15
+    0000000A 03FE                   MOV.L       @(R0,R15),R3
+    0000000C 2F36                   MOV.L       R3,@-R15
+    0000000E E048                   MOV         #72,R0
+    00000010 03FE                   MOV.L       @(R0,R15),R3
+    00000012 E040                   MOV         #64,R0
+    00000014 2F36                   MOV.L       R3,@-R15
+    00000016 02FE                   MOV.L       @(R0,R15),R2
+    00000018 D372                   MOV.L       L537+2,R3  ; __subdr
+    0000001A E040                   MOV         #64,R0
+    0000001C 2F26                   MOV.L       R2,@-R15
+    0000001E 02FE                   MOV.L       @(R0,R15),R2
+    00000020 2F26                   MOV.L       R2,@-R15
+    00000022 61F3                   MOV         R15,R1
+    00000024 7138                   ADD         #56,R1
+    00000026 430B                   JSR         @R3
+    00000028 2F16                   MOV.L       R1,@-R15
+      Bincommon.     9            d = y - b;
+    0000002A E050                   MOV         #80,R0
+    0000002C 02FE                   MOV.L       @(R0,R15),R2
+    0000002E E050                   MOV         #80,R0
+    00000030 2F26                   MOV.L       R2,@-R15
+    00000032 02FE                   MOV.L       @(R0,R15),R2
+    00000034 2F26                   MOV.L       R2,@-R15
+    00000036 E048                   MOV         #72,R0
+    00000038 D26A                   MOV.L       L537+2,R2  ; __subdr
+    0000003A 03FE                   MOV.L       @(R0,R15),R3
+    0000003C 2F36                   MOV.L       R3,@-R15
+    0000003E E048                   MOV         #72,R0
+    00000040 03FE                   MOV.L       @(R0,R15),R3
+    00000042 2F36                   MOV.L       R3,@-R15
+    00000044 61F3                   MOV         R15,R1
+    00000046 7130                   ADD         #48,R1
+    00000048 420B                   JSR         @R2
+    0000004A 2F16                   MOV.L       R1,@-R15
+      Bincommon.    10            if (c==0 && d>0) ha = PI/2;
+    0000004C 53FB                   MOV.L       @(44,R15),R3
+    0000004E E200                   MOV         #0,R2
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000050 2F36                   MOV.L       R3,@-R15
+    00000052 53FB                   MOV.L       @(44,R15),R3
+    00000054 2F36                   MOV.L       R3,@-R15
+    00000056 2F26                   MOV.L       R2,@-R15
+    00000058 D363                   MOV.L       L537+6,R3  ; __ned
+    0000005A 430B                   JSR         @R3
+    0000005C 2F26                   MOV.L       R2,@-R15
+    0000005E 8800                   CMP/EQ      #0,R0
+    00000060 8B11                   BF          L519
+    00000062 E300                   MOV         #0,R3
+    00000064 52F9                   MOV.L       @(36,R15),R2
+    00000066 2F26                   MOV.L       R2,@-R15
+    00000068 52F9                   MOV.L       @(36,R15),R2
+    0000006A 2F26                   MOV.L       R2,@-R15
+    0000006C 2F36                   MOV.L       R3,@-R15
+    0000006E D25F                   MOV.L       L537+10,R2 ; __gtd
+    00000070 420B                   JSR         @R2
+    00000072 2F36                   MOV.L       R3,@-R15
+    00000074 8800                   CMP/EQ      #0,R0
+    00000076 8906                   BT          L519
+    00000078 D15D                   MOV.L       L537+14,R1 ; H'3FF921FB
+    0000007A 63F3                   MOV         R15,R3
+    0000007C 7310                   ADD         #16,R3
+    0000007E 2312                   MOV.L       R1,@R3
+    00000080 D15C                   MOV.L       L537+18,R1 ; H'53C8D4F1
+    00000082 A056                   BRA         L520
+    00000084 1311                   MOV.L       R1,@(4,R3)
+    00000086              L519:                             
+      Bincommon.    11            else if (c==0 && d<0) 
+    00000086 E300                   MOV         #0,R3
+    00000088 D257                   MOV.L       L537+6,R2  ; __ned
+    0000008A 50FB                   MOV.L       @(44,R15),R0
+    0000008C 2F06                   MOV.L       R0,@-R15
+    0000008E 50FB                   MOV.L       @(44,R15),R0
+    00000090 2F06                   MOV.L       R0,@-R15
+    00000092 2F36                   MOV.L       R3,@-R15
+    00000094 420B                   JSR         @R2
+    00000096 2F36                   MOV.L       R3,@-R15
+    00000098 8800                   CMP/EQ      #0,R0
+    0000009A 8B11                   BF          L521
+    0000009C 53F9                   MOV.L       @(36,R15),R3
+    0000009E E200                   MOV         #0,R2
+    000000A0 2F36                   MOV.L       R3,@-R15
+    000000A2 53F9                   MOV.L       @(36,R15),R3
+    000000A4 2F36                   MOV.L       R3,@-R15
+    000000A6 2F26                   MOV.L       R2,@-R15
+    000000A8 D353                   MOV.L       L537+22,R3 ; __ltd
+    000000AA 430B                   JSR         @R3
+    000000AC 2F26                   MOV.L       R2,@-R15
+    000000AE 8800                   CMP/EQ      #0,R0
+    000000B0 8906                   BT          L521
+      Bincommon.    12                            ha = PI*1.5;
+    000000B2 62F3                   MOV         R15,R2
+    000000B4 D151                   MOV.L       L537+26,R1 ; H'4012D97C
+    000000B6 7210                   ADD         #16,R2
+    000000B8 2212                   MOV.L       R1,@R2
+    000000BA D151                   MOV.L       L537+30,R1 ; H'7ED69FB5
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000BC A01B                   BRA         L536
+    000000BE 0009                   NOP
+    000000C0              L521:                             
+      Bincommon.    13            else if (d==0 && c<0) 
+    000000C0 50F9                   MOV.L       @(36,R15),R0
+    000000C2 E300                   MOV         #0,R3
+    000000C4 D248                   MOV.L       L537+6,R2  ; __ned
+    000000C6 2F06                   MOV.L       R0,@-R15
+    000000C8 50F9                   MOV.L       @(36,R15),R0
+    000000CA 2F06                   MOV.L       R0,@-R15
+    000000CC 2F36                   MOV.L       R3,@-R15
+    000000CE 420B                   JSR         @R2
+    000000D0 2F36                   MOV.L       R3,@-R15
+    000000D2 8800                   CMP/EQ      #0,R0
+    000000D4 8B11                   BF          L523
+    000000D6 E200                   MOV         #0,R2
+    000000D8 53FB                   MOV.L       @(44,R15),R3
+    000000DA 2F36                   MOV.L       R3,@-R15
+    000000DC 53FB                   MOV.L       @(44,R15),R3
+    000000DE 2F36                   MOV.L       R3,@-R15
+    000000E0 2F26                   MOV.L       R2,@-R15
+    000000E2 D345                   MOV.L       L537+22,R3 ; __ltd
+    000000E4 430B                   JSR         @R3
+    000000E6 2F26                   MOV.L       R2,@-R15
+    000000E8 8800                   CMP/EQ      #0,R0
+    000000EA 8906                   BT          L523
+      Bincommon.    14                            ha = PI;
+    000000EC D145                   MOV.L       L537+34,R1 ; H'400921FB
+    000000EE 62F3                   MOV         R15,R2
+    000000F0 7210                   ADD         #16,R2
+    000000F2 2212                   MOV.L       R1,@R2
+    000000F4 D13F                   MOV.L       L537+18,R1 ; H'53C8D4F1
+    000000F6              L536:                             
+    000000F6 A01C                   BRA         L520
+    000000F8 1211                   MOV.L       R1,@(4,R2)
+    000000FA              L523:                             
+      Bincommon.    15            else if(d==0 && c>0)
+    000000FA E300                   MOV         #0,R3
+    000000FC D23A                   MOV.L       L537+6,R2  ; __ned
+    000000FE 50F9                   MOV.L       @(36,R15),R0
+    00000100 2F06                   MOV.L       R0,@-R15
+    00000102 50F9                   MOV.L       @(36,R15),R0
+    00000104 2F06                   MOV.L       R0,@-R15
+    00000106 2F36                   MOV.L       R3,@-R15
+    00000108 420B                   JSR         @R2
+    0000010A 2F36                   MOV.L       R3,@-R15
+    0000010C 8800                   CMP/EQ      #0,R0
+    0000010E 8B10                   BF          L520
+    00000110 53FB                   MOV.L       @(44,R15),R3
+    00000112 E200                   MOV         #0,R2
+    00000114 2F36                   MOV.L       R3,@-R15
+    00000116 53FB                   MOV.L       @(44,R15),R3
+    00000118 2F36                   MOV.L       R3,@-R15
+    0000011A 2F26                   MOV.L       R2,@-R15
+    0000011C D333                   MOV.L       L537+10,R3 ; __gtd
+    0000011E 430B                   JSR         @R3
+    00000120 2F26                   MOV.L       R2,@-R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000122 8800                   CMP/EQ      #0,R0
+    00000124 8905                   BT          L520
+      Bincommon.    16                             ha = PI*2;
+    00000126 62F3                   MOV         R15,R2
+    00000128 D137                   MOV.L       L537+38,R1 ; H'401921FB
+    0000012A 7210                   ADD         #16,R2
+    0000012C 2212                   MOV.L       R1,@R2
+    0000012E D131                   MOV.L       L537+18,R1 ; H'53C8D4F1
+    00000130 1211                   MOV.L       R1,@(4,R2)
+    00000132              L520:                             
+      Bincommon.    17             
+      Bincommon.    18            
+      Bincommon.    19            aa = atan(d/c);
+    00000132 7FF8                   ADD         #-8,R15
+    00000134 D135                   MOV.L       L537+42,R1 ; __divdr
+    00000136 53FB                   MOV.L       @(44,R15),R3
+    00000138 2F36                   MOV.L       R3,@-R15
+    0000013A 53FB                   MOV.L       @(44,R15),R3
+    0000013C 2F36                   MOV.L       R3,@-R15
+    0000013E 52FF                   MOV.L       @(60,R15),R2
+    00000140 2F26                   MOV.L       R2,@-R15
+    00000142 52FF                   MOV.L       @(60,R15),R2
+    00000144 2F26                   MOV.L       R2,@-R15
+    00000146 63F3                   MOV         R15,R3
+    00000148 7310                   ADD         #16,R3
+    0000014A 410B                   JSR         @R1
+    0000014C 2F36                   MOV.L       R3,@-R15
+    0000014E 62F3                   MOV         R15,R2
+    00000150 D32F                   MOV.L       L537+46,R3 ; _atan
+    00000152 7210                   ADD         #16,R2
+    00000154 430B                   JSR         @R3
+    00000156 2F26                   MOV.L       R2,@-R15
+    00000158 7F0C                   ADD         #12,R15
+      Bincommon.    20            
+      Bincommon.    21            if              (c>0 && d>0) 
+    0000015A E300                   MOV         #0,R3
+    0000015C 52FB                   MOV.L       @(44,R15),R2
+    0000015E 2F26                   MOV.L       R2,@-R15
+    00000160 52FB                   MOV.L       @(44,R15),R2
+    00000162 2F26                   MOV.L       R2,@-R15
+    00000164 2F36                   MOV.L       R3,@-R15
+    00000166 D221                   MOV.L       L537+10,R2 ; __gtd
+    00000168 420B                   JSR         @R2
+    0000016A 2F36                   MOV.L       R3,@-R15
+    0000016C 8800                   CMP/EQ      #0,R0
+    0000016E 8913                   BT          L526
+    00000170 53F9                   MOV.L       @(36,R15),R3
+    00000172 E200                   MOV         #0,R2
+    00000174 2F36                   MOV.L       R3,@-R15
+    00000176 53F9                   MOV.L       @(36,R15),R3
+    00000178 2F36                   MOV.L       R3,@-R15
+    0000017A 2F26                   MOV.L       R2,@-R15
+    0000017C D31B                   MOV.L       L537+10,R3 ; __gtd
+    0000017E 430B                   JSR         @R3
+    00000180 2F26                   MOV.L       R2,@-R15
+    00000182 8800                   CMP/EQ      #0,R0
+    00000184 8908                   BT          L526
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Bincommon.    22                                    ha = aa;
+    00000186 62F3                   MOV         R15,R2
+    00000188 7208                   ADD         #8,R2
+    0000018A 61F3                   MOV         R15,R1
+    0000018C 6322                   MOV.L       @R2,R3
+    0000018E 7110                   ADD         #16,R1
+    00000190 2132                   MOV.L       R3,@R1
+    00000192 5321                   MOV.L       @(4,R2),R3
+    00000194 A079                   BRA         L527
+    00000196 1131                   MOV.L       R3,@(4,R1)
+    00000198              L526:                             
+      Bincommon.    23            else if (c>0 && d<0) 
+    00000198 53FB                   MOV.L       @(44,R15),R3
+    0000019A E200                   MOV         #0,R2
+    0000019C 2F36                   MOV.L       R3,@-R15
+    0000019E 53FB                   MOV.L       @(44,R15),R3
+    000001A0 2F36                   MOV.L       R3,@-R15
+    000001A2 2F26                   MOV.L       R2,@-R15
+    000001A4 D311                   MOV.L       L537+10,R3 ; __gtd
+    000001A6 430B                   JSR         @R3
+    000001A8 2F26                   MOV.L       R2,@-R15
+    000001AA 8800                   CMP/EQ      #0,R0
+    000001AC 8934                   BT          L528
+    000001AE E300                   MOV         #0,R3
+    000001B0 52F9                   MOV.L       @(36,R15),R2
+    000001B2 2F26                   MOV.L       R2,@-R15
+    000001B4 52F9                   MOV.L       @(36,R15),R2
+    000001B6 2F26                   MOV.L       R2,@-R15
+    000001B8 2F36                   MOV.L       R3,@-R15
+    000001BA D20F                   MOV.L       L537+22,R2 ; __ltd
+    000001BC 420B                   JSR         @R2
+    000001BE 2F36                   MOV.L       R3,@-R15
+    000001C0 8800                   CMP/EQ      #0,R0
+    000001C2 8929                   BT          L528
+      Bincommon.    24                                    ha = aa + 2*PI;
+    000001C4 53F3                   MOV.L       @(12,R15),R3
+    000001C6 2F36                   MOV.L       R3,@-R15
+    000001C8 53F3                   MOV.L       @(12,R15),R3
+    000001CA 2F36                   MOV.L       R3,@-R15
+    000001CC D209                   MOV.L       L537+18,R2 ; H'53C8D4F1
+    000001CE 2F26                   MOV.L       R2,@-R15
+    000001D0 D20D                   MOV.L       L537+38,R2 ; H'401921FB
+    000001D2 2F26                   MOV.L       R2,@-R15
+    000001D4 D30F                   MOV.L       L537+50,R3 ; __addd
+    000001D6 61F3                   MOV         R15,R1
+    000001D8 7120                   ADD         #32,R1
+    000001DA 430B                   JSR         @R3
+    000001DC 2F16                   MOV.L       R1,@-R15
+    000001DE A054                   BRA         L527
+    000001E0 0009                   NOP
+    000001E2              L537:                             
+    000001E2 0000                   .DATA.W     0
+    000001E4 <00000000>             .DATA.L     __subdr
+    000001E8 <00000000>             .DATA.L     __ned
+    000001EC <00000000>             .DATA.L     __gtd
+    000001F0 3FF921FB               .DATA.L     H'3FF921FB
+    000001F4 53C8D4F1               .DATA.L     H'53C8D4F1
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001F8 <00000000>             .DATA.L     __ltd
+    000001FC 4012D97C               .DATA.L     H'4012D97C
+    00000200 7ED69FB5               .DATA.L     H'7ED69FB5
+    00000204 400921FB               .DATA.L     H'400921FB
+    00000208 401921FB               .DATA.L     H'401921FB
+    0000020C <00000000>             .DATA.L     __divdr
+    00000210 <00000000>             .DATA.L     _atan
+    00000214 <00000000>             .DATA.L     __addd
+    00000218              L528:                             
+      Bincommon.    25            else if (c<0 && d<0) 
+    00000218 50FB                   MOV.L       @(44,R15),R0
+    0000021A E300                   MOV         #0,R3
+    0000021C D29C                   MOV.L       L538,R2    ; __ltd
+    0000021E 2F06                   MOV.L       R0,@-R15
+    00000220 50FB                   MOV.L       @(44,R15),R0
+    00000222 2F06                   MOV.L       R0,@-R15
+    00000224 2F36                   MOV.L       R3,@-R15
+    00000226 420B                   JSR         @R2
+    00000228 2F36                   MOV.L       R3,@-R15
+    0000022A 8800                   CMP/EQ      #0,R0
+    0000022C 890A                   BT          L530
+    0000022E E200                   MOV         #0,R2
+    00000230 53F9                   MOV.L       @(36,R15),R3
+    00000232 2F36                   MOV.L       R3,@-R15
+    00000234 53F9                   MOV.L       @(36,R15),R3
+    00000236 2F36                   MOV.L       R3,@-R15
+    00000238 2F26                   MOV.L       R2,@-R15
+    0000023A D395                   MOV.L       L538,R3    ; __ltd
+    0000023C 430B                   JSR         @R3
+    0000023E 2F26                   MOV.L       R2,@-R15
+    00000240 8800                   CMP/EQ      #0,R0
+    00000242 8B15                   BF          L517
+    00000244              L530:                             
+      Bincommon.    26                            ha = aa + PI;
+      Bincommon.    27            else if (c<0 && d>0) 
+    00000244 52FB                   MOV.L       @(44,R15),R2
+    00000246 E300                   MOV         #0,R3
+    00000248 2F26                   MOV.L       R2,@-R15
+    0000024A 52FB                   MOV.L       @(44,R15),R2
+    0000024C 2F26                   MOV.L       R2,@-R15
+    0000024E 2F36                   MOV.L       R3,@-R15
+    00000250 D28F                   MOV.L       L538,R2    ; __ltd
+    00000252 420B                   JSR         @R2
+    00000254 2F36                   MOV.L       R3,@-R15
+    00000256 8800                   CMP/EQ      #0,R0
+    00000258 8917                   BT          L527
+    0000025A E200                   MOV         #0,R2
+    0000025C 53F9                   MOV.L       @(36,R15),R3
+    0000025E 2F36                   MOV.L       R3,@-R15
+    00000260 53F9                   MOV.L       @(36,R15),R3
+    00000262 2F36                   MOV.L       R3,@-R15
+    00000264 2F26                   MOV.L       R2,@-R15
+    00000266 D38B                   MOV.L       L538+4,R3  ; __gtd
+    00000268 430B                   JSR         @R3
+    0000026A 2F26                   MOV.L       R2,@-R15
+    0000026C 8800                   CMP/EQ      #0,R0
+    0000026E 890C                   BT          L527
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    7
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000270              L517:
+      Bincommon.    28                            ha = aa + PI;
+    00000270 52F3                   MOV.L       @(12,R15),R2
+    00000272 2F26                   MOV.L       R2,@-R15
+    00000274 52F3                   MOV.L       @(12,R15),R2
+    00000276 2F26                   MOV.L       R2,@-R15
+    00000278 D387                   MOV.L       L538+8,R3  ; H'53C8D4F1
+    0000027A 2F36                   MOV.L       R3,@-R15
+    0000027C D387                   MOV.L       L538+12,R3 ; H'400921FB
+    0000027E 2F36                   MOV.L       R3,@-R15
+    00000280 D287                   MOV.L       L538+16,R2 ; __addd
+    00000282 61F3                   MOV         R15,R1
+    00000284 7120                   ADD         #32,R1
+    00000286 420B                   JSR         @R2
+    00000288 2F16                   MOV.L       R1,@-R15
+    0000028A              L527:                             
+      Bincommon.    29            
+      Bincommon.    30            ha = ha*180.0/PI;
+    0000028A 7FF8                   ADD         #-8,R15
+    0000028C D186                   MOV.L       L538+24,R1 ; __muld
+    0000028E E200                   MOV         #0,R2
+    00000290 53F7                   MOV.L       @(28,R15),R3
+    00000292 2F36                   MOV.L       R3,@-R15
+    00000294 53F7                   MOV.L       @(28,R15),R3
+    00000296 2F36                   MOV.L       R3,@-R15
+    00000298 2F26                   MOV.L       R2,@-R15
+    0000029A D282                   MOV.L       L538+20,R2 ; H'40668000
+    0000029C 2F26                   MOV.L       R2,@-R15
+    0000029E 63F3                   MOV         R15,R3
+    000002A0 7310                   ADD         #16,R3
+    000002A2 410B                   JSR         @R1
+    000002A4 2F36                   MOV.L       R3,@-R15
+    000002A6 D27C                   MOV.L       L538+8,R2  ; H'53C8D4F1
+    000002A8 D380                   MOV.L       L538+28,R3 ; __divdr
+    000002AA 2F26                   MOV.L       R2,@-R15
+    000002AC D27B                   MOV.L       L538+12,R2 ; H'400921FB
+    000002AE 2F26                   MOV.L       R2,@-R15
+    000002B0 61F3                   MOV         R15,R1
+    000002B2 7120                   ADD         #32,R1
+    000002B4 430B                   JSR         @R3
+    000002B6 2F16                   MOV.L       R1,@-R15
+      Bincommon.    31            hd = sqrt(c*c+d*d);
+    000002B8 D17B                   MOV.L       L538+24,R1 ; __muld
+    000002BA 7FF0                   ADD         #-16,R15
+    000002BC 52FF                   MOV.L       @(60,R15),R2
+    000002BE E044                   MOV         #68,R0
+    000002C0 2F26                   MOV.L       R2,@-R15
+    000002C2 52FF                   MOV.L       @(60,R15),R2
+    000002C4 2F26                   MOV.L       R2,@-R15
+    000002C6 03FE                   MOV.L       @(R0,R15),R3
+    000002C8 2F36                   MOV.L       R3,@-R15
+    000002CA E044                   MOV         #68,R0
+    000002CC 03FE                   MOV.L       @(R0,R15),R3
+    000002CE 2F36                   MOV.L       R3,@-R15
+    000002D0 62F3                   MOV         R15,R2
+    000002D2 7210                   ADD         #16,R2
+    000002D4 410B                   JSR         @R1
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    8
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000002D6 2F26                   MOV.L       R2,@-R15
+    000002D8 D173                   MOV.L       L538+24,R1 ; __muld
+    000002DA 7FF8                   ADD         #-8,R15
+    000002DC 53FF                   MOV.L       @(60,R15),R3
+    000002DE E044                   MOV         #68,R0
+    000002E0 2F36                   MOV.L       R3,@-R15
+    000002E2 53FF                   MOV.L       @(60,R15),R3
+    000002E4 2F36                   MOV.L       R3,@-R15
+    000002E6 02FE                   MOV.L       @(R0,R15),R2
+    000002E8 2F26                   MOV.L       R2,@-R15
+    000002EA E044                   MOV         #68,R0
+    000002EC 02FE                   MOV.L       @(R0,R15),R2
+    000002EE 2F26                   MOV.L       R2,@-R15
+    000002F0 63F3                   MOV         R15,R3
+    000002F2 7310                   ADD         #16,R3
+    000002F4 410B                   JSR         @R1
+    000002F6 2F36                   MOV.L       R3,@-R15
+    000002F8 D069                   MOV.L       L538+16,R0 ; __addd
+    000002FA 62F3                   MOV         R15,R2
+    000002FC 7210                   ADD         #16,R2
+    000002FE 400B                   JSR         @R0
+    00000300 2F26                   MOV.L       R2,@-R15
+    00000302 63F3                   MOV         R15,R3
+    00000304 D16A                   MOV.L       L538+32,R1 ; _sqrt
+    00000306 7320                   ADD         #32,R3
+    00000308 410B                   JSR         @R1
+    0000030A 2F36                   MOV.L       R3,@-R15
+      Bincommon.    32            *r = hd;
+    0000030C 53F4                   MOV.L       @(16,R15),R3
+    0000030E 62F3                   MOV         R15,R2
+    00000310 7224                   ADD         #36,R2
+    00000312 6133                   MOV         R3,R1
+    00000314 6022                   MOV.L       @R2,R0
+      Bincommon.    33            *t = ha;
+    00000316 63F3                   MOV         R15,R3
+    00000318 2102                   MOV.L       R0,@R1
+    0000031A 731C                   ADD         #28,R3
+    0000031C 5021                   MOV.L       @(4,R2),R0
+    0000031E 1101                   MOV.L       R0,@(4,R1)
+    00000320 51F3                   MOV.L       @(12,R15),R1
+    00000322 6032                   MOV.L       @R3,R0
+    00000324 2102                   MOV.L       R0,@R1
+    00000326 5031                   MOV.L       @(4,R3),R0
+    00000328 1101                   MOV.L       R0,@(4,R1)
+      Bincommon.    34    
+      Bincommon.    35    
+      Bincommon.    36    } 
+    0000032A 7F3C                   ADD         #60,R15
+    0000032C 4F26                   LDS.L       @R15+,PR
+    0000032E 000B                   RTS
+    00000330 0009                   NOP
+      Bincommon.    37    
+      Bincommon.    38    void CalcPosAndDistance (double RX,double RY,double BX,double BY,double EP,
+    00000332              _CalcPosAndDistance:             ; function: CalcPosAndDistance
+                                                           ; frame size=84
+                                                           ; used runtime library name:
+                                                           ; __addd, __subdr, __muld, __divdr, __negd, __ltd
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Bincommon.    39                                                     double *ZH,double *PJ)
+      Bincommon.    40    {
+      Bincommon.    41            double distance,position,E;
+      Bincommon.    42            Pol (BX,BY,RX,RY,&distance,&position);
+    00000332 E054                   MOV         #84,R0
+    00000334 2FE6                   MOV.L       R14,@-R15
+    00000336 6E53                   MOV         R5,R14
+    00000338 2F86                   MOV.L       R8,@-R15
+    0000033A 4F22                   STS.L       PR,@-R15
+    0000033C 7FE4                   ADD         #-28,R15
+    0000033E 2F42                   MOV.L       R4,@R15
+    00000340 53FD                   MOV.L       @(52,R15),R3
+    00000342 2F36                   MOV.L       R3,@-R15
+    00000344 53FD                   MOV.L       @(52,R15),R3
+    00000346 2F36                   MOV.L       R3,@-R15
+    00000348 52FD                   MOV.L       @(52,R15),R2
+    0000034A 2F26                   MOV.L       R2,@-R15
+    0000034C 52FD                   MOV.L       @(52,R15),R2
+    0000034E 2F26                   MOV.L       R2,@-R15
+    00000350 03FE                   MOV.L       @(R0,R15),R3
+    00000352 E054                   MOV         #84,R0
+    00000354 2F36                   MOV.L       R3,@-R15
+    00000356 03FE                   MOV.L       @(R0,R15),R3
+    00000358 2F36                   MOV.L       R3,@-R15
+    0000035A E054                   MOV         #84,R0
+    0000035C 02FE                   MOV.L       @(R0,R15),R2
+    0000035E E054                   MOV         #84,R0
+    00000360 2F26                   MOV.L       R2,@-R15
+    00000362 02FE                   MOV.L       @(R0,R15),R2
+    00000364 2F26                   MOV.L       R2,@-R15
+    00000366 65F3                   MOV         R15,R5
+    00000368 752C                   ADD         #44,R5
+    0000036A 64F3                   MOV         R15,R4
+    0000036C BE48                   BSR         _Pol
+    0000036E 7434                   ADD         #52,R4
+    00000370 7F20                   ADD         #32,R15
+      Bincommon.    43            if (EP<position)
+    00000372 E04C                   MOV         #76,R0
+    00000374 02FE                   MOV.L       @(R0,R15),R2
+    00000376 E04C                   MOV         #76,R0
+    00000378 2F26                   MOV.L       R2,@-R15
+    0000037A 02FE                   MOV.L       @(R0,R15),R2
+    0000037C 2F26                   MOV.L       R2,@-R15
+    0000037E 53F6                   MOV.L       @(24,R15),R3
+    00000380 D243                   MOV.L       L538,R2    ; __ltd
+    00000382 2F36                   MOV.L       R3,@-R15
+    00000384 53F6                   MOV.L       @(24,R15),R3
+    00000386 420B                   JSR         @R2
+    00000388 2F36                   MOV.L       R3,@-R15
+    0000038A 8800                   CMP/EQ      #0,R0
+    0000038C 8910                   BT          L533
+      Bincommon.    44                    E = position-EP;
+    0000038E E054                   MOV         #84,R0
+    00000390 53F4                   MOV.L       @(16,R15),R3
+    00000392 2F36                   MOV.L       R3,@-R15
+    00000394 53F4                   MOV.L       @(16,R15),R3
+    00000396 2F36                   MOV.L       R3,@-R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE   10
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000398 02FE                   MOV.L       @(R0,R15),R2
+    0000039A E054                   MOV         #84,R0
+    0000039C D345                   MOV.L       L538+36,R3 ; __subdr
+    0000039E 2F26                   MOV.L       R2,@-R15
+    000003A0 02FE                   MOV.L       @(R0,R15),R2
+    000003A2 2F26                   MOV.L       R2,@-R15
+    000003A4 61F3                   MOV         R15,R1
+    000003A6 7114                   ADD         #20,R1
+    000003A8 430B                   JSR         @R3
+    000003AA 2F16                   MOV.L       R1,@-R15
+    000003AC A00F                   BRA         L534
+    000003AE 0009                   NOP
+    000003B0              L533:                             
+      Bincommon.    45            else
+      Bincommon.    46                    E = EP-position;
+    000003B0 D240                   MOV.L       L538+36,R2 ; __subdr
+    000003B2 E04C                   MOV         #76,R0
+    000003B4 00FE                   MOV.L       @(R0,R15),R0
+    000003B6 2F06                   MOV.L       R0,@-R15
+    000003B8 E04C                   MOV         #76,R0
+    000003BA 00FE                   MOV.L       @(R0,R15),R0
+    000003BC 2F06                   MOV.L       R0,@-R15
+    000003BE 53F6                   MOV.L       @(24,R15),R3
+    000003C0 2F36                   MOV.L       R3,@-R15
+    000003C2 53F6                   MOV.L       @(24,R15),R3
+    000003C4 2F36                   MOV.L       R3,@-R15
+    000003C6 61F3                   MOV         R15,R1
+    000003C8 7114                   ADD         #20,R1
+    000003CA 420B                   JSR         @R2
+    000003CC 2F16                   MOV.L       R1,@-R15
+    000003CE              L534:                             
+      Bincommon.    47            E = E*PI/180.0;
+    000003CE 7FF8                   ADD         #-8,R15
+    000003D0 D231                   MOV.L       L538+8,R2  ; H'53C8D4F1
+    000003D2 53F4                   MOV.L       @(16,R15),R3
+    000003D4 D134                   MOV.L       L538+24,R1 ; __muld
+    000003D6 2F36                   MOV.L       R3,@-R15
+    000003D8 53F4                   MOV.L       @(16,R15),R3
+    000003DA 2F36                   MOV.L       R3,@-R15
+    000003DC 2F26                   MOV.L       R2,@-R15
+    000003DE D22F                   MOV.L       L538+12,R2 ; H'400921FB
+    000003E0 2F26                   MOV.L       R2,@-R15
+    000003E2 63F3                   MOV         R15,R3
+    000003E4 7310                   ADD         #16,R3
+    000003E6 410B                   JSR         @R1
+    000003E8 2F36                   MOV.L       R3,@-R15
+    000003EA E200                   MOV         #0,R2
+    000003EC D32F                   MOV.L       L538+28,R3 ; __divdr
+    000003EE 2F26                   MOV.L       R2,@-R15
+    000003F0 D22C                   MOV.L       L538+20,R2 ; H'40668000
+    000003F2 2F26                   MOV.L       R2,@-R15
+    000003F4 61F3                   MOV         R15,R1
+    000003F6 7114                   ADD         #20,R1
+    000003F8 430B                   JSR         @R3
+    000003FA 2F16                   MOV.L       R1,@-R15
+      Bincommon.    48            *ZH = common_data.BeginStake + distance*cos(E);
+    000003FC 68F2                   MOV.L       @R15,R8
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE   11
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000003FE E208                   MOV         #8,R2
+    00000400 D32D                   MOV.L       L538+40,R3 ; H'00000008+_common_data
+    00000402 5131                   MOV.L       @(4,R3),R1
+    00000404 2F16                   MOV.L       R1,@-R15
+    00000406 6132                   MOV.L       @R3,R1
+    00000408 2F16                   MOV.L       R1,@-R15
+    0000040A 7FF8                   ADD         #-8,R15
+    0000040C D12B                   MOV.L       L538+44,R1 ; _cos
+    0000040E 50FA                   MOV.L       @(40,R15),R0
+    00000410 2F06                   MOV.L       R0,@-R15
+    00000412 50FA                   MOV.L       @(40,R15),R0
+    00000414 2F06                   MOV.L       R0,@-R15
+    00000416 7FF8                   ADD         #-8,R15
+    00000418 53FA                   MOV.L       @(40,R15),R3
+    0000041A 2F36                   MOV.L       R3,@-R15
+    0000041C 53FA                   MOV.L       @(40,R15),R3
+    0000041E 2F36                   MOV.L       R3,@-R15
+    00000420 32FC                   ADD         R15,R2
+    00000422 410B                   JSR         @R1
+    00000424 2F26                   MOV.L       R2,@-R15
+    00000426 7F0C                   ADD         #12,R15
+    00000428 D11F                   MOV.L       L538+24,R1 ; __muld
+    0000042A 62F3                   MOV         R15,R2
+    0000042C 7210                   ADD         #16,R2
+    0000042E 410B                   JSR         @R1
+    00000430 2F26                   MOV.L       R2,@-R15
+    00000432 D31B                   MOV.L       L538+16,R3 ; __addd
+    00000434 430B                   JSR         @R3
+    00000436 2F86                   MOV.L       R8,@-R15
+      Bincommon.    49            *PJ = sin(E)*distance;
+    00000438 D121                   MOV.L       L538+48,R1 ; _sin
+    0000043A 7FF8                   ADD         #-8,R15
+    0000043C 52F4                   MOV.L       @(16,R15),R2
+    0000043E E308                   MOV         #8,R3
+    00000440 2F26                   MOV.L       R2,@-R15
+    00000442 52F4                   MOV.L       @(16,R15),R2
+    00000444 2F26                   MOV.L       R2,@-R15
+    00000446 33FC                   ADD         R15,R3
+    00000448 410B                   JSR         @R1
+    0000044A 2F36                   MOV.L       R3,@-R15
+    0000044C D216                   MOV.L       L538+24,R2 ; __muld
+    0000044E 7F0C                   ADD         #12,R15
+    00000450 53F8                   MOV.L       @(32,R15),R3
+    00000452 2F36                   MOV.L       R3,@-R15
+    00000454 53F8                   MOV.L       @(32,R15),R3
+    00000456 2F36                   MOV.L       R3,@-R15
+    00000458 420B                   JSR         @R2
+    0000045A 2FE6                   MOV.L       R14,@-R15
+      Bincommon.    50    
+      Bincommon.    51            if(!(EP<position))
+    0000045C E04C                   MOV         #76,R0
+    0000045E 03FE                   MOV.L       @(R0,R15),R3
+    00000460 2F36                   MOV.L       R3,@-R15
+    00000462 E04C                   MOV         #76,R0
+    00000464 03FE                   MOV.L       @(R0,R15),R3
+    00000466 2F36                   MOV.L       R3,@-R15
+    00000468 52F6                   MOV.L       @(24,R15),R2
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE   12
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000046A 2F26                   MOV.L       R2,@-R15
+    0000046C 52F6                   MOV.L       @(24,R15),R2
+    0000046E D308                   MOV.L       L538,R3    ; __ltd
+    00000470 430B                   JSR         @R3
+    00000472 2F26                   MOV.L       R2,@-R15
+    00000474 8800                   CMP/EQ      #0,R0
+    00000476 8B06                   BF          L535
+      Bincommon.    52                    *PJ=-*PJ;
+    00000478 52E1                   MOV.L       @(4,R14),R2
+    0000047A 2F26                   MOV.L       R2,@-R15
+    0000047C 62E2                   MOV.L       @R14,R2
+    0000047E 2F26                   MOV.L       R2,@-R15
+    00000480 D310                   MOV.L       L538+52,R3 ; __negd
+    00000482 430B                   JSR         @R3
+    00000484 2FE6                   MOV.L       R14,@-R15
+    00000486              L535:                             
+      Bincommon.    53    }
+    00000486 7F1C                   ADD         #28,R15
+    00000488 4F26                   LDS.L       @R15+,PR
+    0000048A 68F6                   MOV.L       @R15+,R8
+    0000048C 000B                   RTS
+    0000048E 6EF6                   MOV.L       @R15+,R14
+    00000490              L538:                             
+    00000490 <00000000>             .DATA.L     __ltd
+    00000494 <00000000>             .DATA.L     __gtd
+    00000498 53C8D4F1               .DATA.L     H'53C8D4F1
+    0000049C 400921FB               .DATA.L     H'400921FB
+    000004A0 <00000000>             .DATA.L     __addd
+    000004A4 40668000               .DATA.L     H'40668000
+    000004A8 <00000000>             .DATA.L     __muld
+    000004AC <00000000>             .DATA.L     __divdr
+    000004B0 <00000000>             .DATA.L     _sqrt
+    000004B4 <00000000>             .DATA.L     __subdr
+    000004B8 <00000008>             .DATA.L     H'00000008+_common_data
+    000004BC <00000000>             .DATA.L     _cos
+    000004C0 <00000000>             .DATA.L     _sin
+    000004C4 <00000000>             .DATA.L     __negd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 14:08:35  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       53
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000004C8 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 000004C8 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:           13
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           2
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk438D.tmp 
+

@@ -1,0 +1,1207 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-6½»µã·¨×ªÏßÔªÍÆÁ´±í\2015-06-4½»µã·¨×ªÏßÔªÍÆÁ´±í\celiang.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c     1    #include<stdio.h>
+P   00000000              _ShowTitle:                      ; function: ShowTitle
+                                                           ; frame size=0
+    00000000 D32E                   MOV.L       L626+12,R3 ; _Bdisp_AreaReverseVRAM
+    00000002 E732                   MOV         #50,R7
+    00000004 E60D                   MOV         #13,R6
+    00000006 E500                   MOV         #0,R5
+    00000008 432B                   JMP         @R3
+    0000000A E401                   MOV         #1,R4
+    0000000C              _InputDefProc:                   ; function: InputDefProc
+                                                           ; frame size=80
+    0000000C 2FE6                   MOV.L       R14,@-R15
+    0000000E 2FD6                   MOV.L       R13,@-R15
+    00000010 2FC6                   MOV.L       R12,@-R15
+    00000012 2FB6                   MOV.L       R11,@-R15
+    00000014 2FA6                   MOV.L       R10,@-R15
+    00000016 EA00                   MOV         #0,R10
+    00000018 DD29                   MOV.L       L626+16,R13; _key
+    0000001A 2F96                   MOV.L       R9,@-R15
+    0000001C 2F86                   MOV.L       R8,@-R15
+    0000001E 4F22                   STS.L       PR,@-R15
+    00000020 DE28                   MOV.L       L626+20,R14; _index
+    00000022 7FD4                   ADD         #-44,R15
+    00000024 9344                   MOV.W       L626,R3    ; H'7542
+    00000026 1F41                   MOV.L       R4,@(4,R15)
+    00000028 2F62                   MOV.L       R6,@R15
+    0000002A 1F72                   MOV.L       R7,@(8,R15)
+    0000002C 62D2                   MOV.L       @R13,R2
+    0000002E 3230                   CMP/EQ      R3,R2
+    00000030 8F09                   BF/S        L602
+    00000032 6B53                   MOV         R5,R11
+    00000034 60E2                   MOV.L       @R14,R0
+    00000036 70FF                   ADD         #-1,R0
+    00000038 4011                   CMP/PZ      R0
+    0000003A 8D10                   BT/S        L582
+    0000003C 2E02                   MOV.L       R0,@R14
+    0000003E 61B3                   MOV         R11,R1
+    00000040 71FF                   ADD         #-1,R1
+    00000042 A00C                   BRA         L582
+    00000044 2E12                   MOV.L       R1,@R14
+    00000046              L602:                             
+    00000046 9034                   MOV.W       L626+2,R0  ; H'7547
+    00000048 62D2                   MOV.L       @R13,R2
+    0000004A 3200                   CMP/EQ      R0,R2
+    0000004C 8B0A                   BF          L604
+    0000004E 61B3                   MOV         R11,R1
+    00000050 62E2                   MOV.L       @R14,R2
+    00000052 71FF                   ADD         #-1,R1
+    00000054 7201                   ADD         #1,R2
+    00000056 3217                   CMP/GT      R1,R2
+    00000058 2E22                   MOV.L       R2,@R14
+    0000005A 8B00                   BF          L582
+    0000005C 2EA2                   MOV.L       R10,@R14
+    0000005E              L582:
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000005E E301                   MOV         #1,R3
+    00000060 D219                   MOV.L       L626+24,R2 ; _need_redraw
+    00000062 2232                   MOV.L       R3,@R2
+    00000064              L604:                             
+    00000064 D919                   MOV.L       L626+28,R9 ; _mode
+    00000066 9325                   MOV.W       L626+4,R3  ; H'7532
+    00000068 62D2                   MOV.L       @R13,R2
+    0000006A 3230                   CMP/EQ      R3,R2
+    0000006C 8B02                   BF          L607
+    0000006E E050                   MOV         #80,R0
+    00000070 00FE                   MOV.L       @(R0,R15),R0
+    00000072 2902                   MOV.L       R0,@R9
+    00000074              L607:                             
+    00000074 D316                   MOV.L       L626+32,R3 ; _GetPressNumChar
+    00000076 430B                   JSR         @R3
+    00000078 64D2                   MOV.L       @R13,R4
+    0000007A 6503                   MOV         R0,R5
+    0000007C 600E                   EXTS.B      R0,R0
+    0000007E 2008                   TST         R0,R0
+    00000080 8B09                   BF          L609
+    00000082 9318                   MOV.W       L626+6,R3  ; H'7549
+    00000084 D10E                   MOV.L       L626+16,R1 ; _key
+    00000086 6212                   MOV.L       @R1,R2
+    00000088 3230                   CMP/EQ      R3,R2
+    0000008A 8904                   BT          L609
+    0000008C 9214                   MOV.W       L626+8,R2  ; H'753F
+    0000008E D10C                   MOV.L       L626+16,R1 ; _key
+    00000090 6012                   MOV.L       @R1,R0
+    00000092 3020                   CMP/EQ      R2,R0
+    00000094 8B69                   BF          L608
+    00000096              L609:                             
+    00000096 6CF3                   MOV         R15,R12
+    00000098 920D                   MOV.W       L626+6,R2  ; H'7549
+    0000009A 7C0C                   ADD         #12,R12
+    0000009C 63D2                   MOV.L       @R13,R3
+    0000009E 3320                   CMP/EQ      R2,R3
+    000000A0 8D04                   BT/S        L611
+    000000A2 64C3                   MOV         R12,R4
+    000000A4 9008                   MOV.W       L626+8,R0  ; H'753F
+    000000A6 61D2                   MOV.L       @R13,R1
+    000000A8 3100                   CMP/EQ      R0,R1
+    000000AA 8B13                   BF          L610
+    000000AC              L611:                             
+    000000AC A015                   BRA         L612
+    000000AE 24A0                   MOV.B       R10,@R4
+    000000B0              L626:                             
+    000000B0 7542                   .DATA.W     H'7542
+    000000B2 7547                   .DATA.W     H'7547
+    000000B4 7532                   .DATA.W     H'7532
+    000000B6 7549                   .DATA.W     H'7549
+    000000B8 753F                   .DATA.W     H'753F
+    000000BA 0000                   .DATA.W     0
+    000000BC <00000000>             .DATA.L     _Bdisp_AreaReverseVRAM
+    000000C0 <00000000>             .DATA.L     _key
+    000000C4 <00000000>             .DATA.L     _index
+    000000C8 <00000000>             .DATA.L     _need_redraw
+    000000CC <00000000>             .DATA.L     _mode
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000D0 <00000000>             .DATA.L     _GetPressNumChar
+    000000D4              L610:                             
+    000000D4 2450                   MOV.B       R5,@R4
+    000000D6 60A3                   MOV         R10,R0
+    000000D8 80C1                   MOV.B       R0,@(1,R12)
+    000000DA              L612:                             
+    000000DA E30C                   MOV         #12,R3
+    000000DC 2F36                   MOV.L       R3,@-R15
+    000000DE E700                   MOV         #0,R7
+    000000E0 65E2                   MOV.L       @R14,R5
+    000000E2 66C3                   MOV         R12,R6
+    000000E4 51F3                   MOV.L       @(12,R15),R1
+    000000E6 6253                   MOV         R5,R2
+    000000E8 4500                   SHLL        R5
+    000000EA 352C                   ADD         R2,R5
+    000000EC D226                   MOV.L       L627+8,R2  ; _InputString
+    000000EE 4508                   SHLL2       R5
+    000000F0 351C                   ADD         R1,R5
+    000000F2 420B                   JSR         @R2
+    000000F4 54F1                   MOV.L       @(4,R15),R4
+    000000F6 6803                   MOV         R0,R8
+    000000F8 9342                   MOV.W       L627,R3    ; H'7532
+    000000FA 3830                   CMP/EQ      R3,R8
+    000000FC 8D2F                   BT/S        L613
+    000000FE 7F04                   ADD         #4,R15
+    00000100 D122                   MOV.L       L627+12,R1 ; _strlen
+    00000102 410B                   JSR         @R1
+    00000104 64C3                   MOV         R12,R4
+    00000106 E300                   MOV         #0,R3
+    00000108 3036                   CMP/HI      R3,R0
+    0000010A 8B09                   BF          L614
+    0000010C 61E2                   MOV.L       @R14,R1
+    0000010E 4108                   SHLL2       R1
+    00000110 52F1                   MOV.L       @(4,R15),R2
+    00000112 4100                   SHLL        R1
+    00000114 312C                   ADD         R2,R1
+    00000116 2F16                   MOV.L       R1,@-R15
+    00000118 D11D                   MOV.L       L627+16,R1 ; _atof
+    0000011A 410B                   JSR         @R1
+    0000011C 64C3                   MOV         R12,R4
+    0000011E 7F04                   ADD         #4,R15
+    00000120              L614:                             
+    00000120 912F                   MOV.W       L627+2,R1  ; H'7547
+    00000122 6083                   MOV         R8,R0
+    00000124 3010                   CMP/EQ      R1,R0
+    00000126 8907                   BT          L583
+    00000128 912C                   MOV.W       L627+4,R1  ; H'7534
+    0000012A 3010                   CMP/EQ      R1,R0
+    0000012C 8904                   BT          L584
+    0000012E 912A                   MOV.W       L627+6,R1  ; H'7542
+    00000130 3010                   CMP/EQ      R1,R0
+    00000132 890C                   BT          L585
+    00000134 A016                   BRA         L618
+    00000136 0009                   NOP
+    00000138              L583:                            ; case label 
+    00000138              L584:                            ; case label 
+    00000138 63E2                   MOV.L       @R14,R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000013A 7BFF                   ADD         #-1,R11
+    0000013C 7301                   ADD         #1,R3
+    0000013E 33B7                   CMP/GT      R11,R3
+    00000140 8F10                   BF/S        L618
+    00000142 2E32                   MOV.L       R3,@R14
+    00000144 E04C                   MOV         #76,R0
+    00000146 03FE                   MOV.L       @(R0,R15),R3
+    00000148 2932                   MOV.L       R3,@R9
+    0000014A A00B                   BRA         L618
+    0000014C 2EA2                   MOV.L       R10,@R14
+    0000014E              L585:                            ; case label 
+    0000014E 62E2                   MOV.L       @R14,R2
+    00000150 72FF                   ADD         #-1,R2
+    00000152 4211                   CMP/PZ      R2
+    00000154 8D06                   BT/S        L618
+    00000156 2E22                   MOV.L       R2,@R14
+    00000158 7BFF                   ADD         #-1,R11
+    0000015A A003                   BRA         L618
+    0000015C 2EB2                   MOV.L       R11,@R14
+    0000015E              L613:                             
+    0000015E E050                   MOV         #80,R0
+    00000160 02FE                   MOV.L       @(R0,R15),R2
+    00000162 2922                   MOV.L       R2,@R9
+    00000164              L618:                             
+    00000164 D10B                   MOV.L       L627+20,R1 ; _need_redraw
+    00000166 E301                   MOV         #1,R3
+    00000168 2132                   MOV.L       R3,@R1
+    0000016A              L608:                             
+    0000016A E000                   MOV         #0,R0
+    0000016C 7F2C                   ADD         #44,R15
+    0000016E 4F26                   LDS.L       @R15+,PR
+    00000170 68F6                   MOV.L       @R15+,R8
+    00000172 69F6                   MOV.L       @R15+,R9
+    00000174 6AF6                   MOV.L       @R15+,R10
+    00000176 6BF6                   MOV.L       @R15+,R11
+    00000178 6CF6                   MOV.L       @R15+,R12
+    0000017A 6DF6                   MOV.L       @R15+,R13
+    0000017C 000B                   RTS
+    0000017E 6EF6                   MOV.L       @R15+,R14
+    00000180              L627:                             
+    00000180 7532                   .DATA.W     H'7532
+    00000182 7547                   .DATA.W     H'7547
+    00000184 7534                   .DATA.W     H'7534
+    00000186 7542                   .DATA.W     H'7542
+    00000188 <00000000>             .DATA.L     _InputString
+    0000018C <00000000>             .DATA.L     _strlen
+    00000190 <00000000>             .DATA.L     _atof
+    00000194 <00000000>             .DATA.L     _need_redraw
+    00000198              _LoadInit:                       ; function: LoadInit
+                                                           ; frame size=24
+    00000198 2FE6                   MOV.L       R14,@-R15
+    0000019A 2FD6                   MOV.L       R13,@-R15
+    0000019C 2FC6                   MOV.L       R12,@-R15
+    0000019E 2FB6                   MOV.L       R11,@-R15
+    000001A0 2FA6                   MOV.L       R10,@-R15
+    000001A2 4F22                   STS.L       PR,@-R15
+    000001A4 D585                   MOV.L       L628,R5    ; _stAsc6x12
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001A6 D486                   MOV.L       L628+4,R4  ; _stHz14x14
+    000001A8 D386                   MOV.L       L628+8,R3  ; _SetMyFont
+    000001AA 430B                   JSR         @R3
+    000001AC 0009                   NOP
+    000001AE E504                   MOV         #4,R5
+    000001B0 D286                   MOV.L       L628+16,R2 ; _DispStr
+    000001B2 D685                   MOV.L       L628+12,R6 ; L538
+    000001B4 420B                   JSR         @R2
+    000001B6 E416                   MOV         #22,R4
+    000001B8 DA85                   MOV.L       L628+20,R10; _Sleep
+    000001BA EB76                   MOV         #118,R11
+    000001BC DC85                   MOV.L       L628+24,R12; _Bdisp_DrawLineVRAM
+    000001BE ED0A                   MOV         #10,R13
+    000001C0 DE85                   MOV.L       L628+28,R14; _Bdisp_SetPoint_DD
+    000001C2              L620:                             
+    000001C2 E601                   MOV         #1,R6
+    000001C4 E537                   MOV         #55,R5
+    000001C6 4E0B                   JSR         @R14
+    000001C8 64D3                   MOV         R13,R4
+    000001CA E601                   MOV         #1,R6
+    000001CC E538                   MOV         #56,R5
+    000001CE 4E0B                   JSR         @R14
+    000001D0 64D3                   MOV         R13,R4
+    000001D2 E601                   MOV         #1,R6
+    000001D4 E539                   MOV         #57,R5
+    000001D6 4E0B                   JSR         @R14
+    000001D8 64D3                   MOV         R13,R4
+    000001DA E601                   MOV         #1,R6
+    000001DC E53A                   MOV         #58,R5
+    000001DE 4E0B                   JSR         @R14
+    000001E0 64D3                   MOV         R13,R4
+    000001E2 E601                   MOV         #1,R6
+    000001E4 E53B                   MOV         #59,R5
+    000001E6 4E0B                   JSR         @R14
+    000001E8 64D3                   MOV         R13,R4
+    000001EA E601                   MOV         #1,R6
+    000001EC E53C                   MOV         #60,R5
+    000001EE 4E0B                   JSR         @R14
+    000001F0 64D3                   MOV         R13,R4
+    000001F2 E601                   MOV         #1,R6
+    000001F4 E53D                   MOV         #61,R5
+    000001F6 4E0B                   JSR         @R14
+    000001F8 64D3                   MOV         R13,R4
+    000001FA E601                   MOV         #1,R6
+    000001FC E53E                   MOV         #62,R5
+    000001FE 4E0B                   JSR         @R14
+    00000200 64D3                   MOV         R13,R4
+    00000202 E601                   MOV         #1,R6
+    00000204 E53F                   MOV         #63,R5
+    00000206 4E0B                   JSR         @R14
+    00000208 64D3                   MOV         R13,R4
+    0000020A E601                   MOV         #1,R6
+    0000020C E540                   MOV         #64,R5
+    0000020E 4E0B                   JSR         @R14
+    00000210 64D3                   MOV         R13,R4
+    00000212 E71F                   MOV         #31,R7
+    00000214 E67F                   MOV         #127,R6
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000216 6573                   MOV         R7,R5
+    00000218 4C0B                   JSR         @R12
+    0000021A E400                   MOV         #0,R4
+    0000021C E73F                   MOV         #63,R7
+    0000021E 6673                   MOV         R7,R6
+    00000220 E500                   MOV         #0,R5
+    00000222 4C0B                   JSR         @R12
+    00000224 6473                   MOV         R7,R4
+    00000226 4A0B                   JSR         @R10
+    00000228 E40A                   MOV         #10,R4
+    0000022A 7D01                   ADD         #1,R13
+    0000022C 3DB3                   CMP/GE      R11,R13
+    0000022E 8BC8                   BF          L620
+    00000230 4F26                   LDS.L       @R15+,PR
+    00000232 6AF6                   MOV.L       @R15+,R10
+    00000234 6BF6                   MOV.L       @R15+,R11
+    00000236 6CF6                   MOV.L       @R15+,R12
+    00000238 6DF6                   MOV.L       @R15+,R13
+    0000023A 000B                   RTS
+    0000023C 6EF6                   MOV.L       @R15+,R14
+    0000023E              _AddIn_main:                     ; function: AddIn_main
+                                                           ; frame size=0
+    0000023E DE67                   MOV.L       L628+32,R14; _Bdisp_AllClr_DDVRAM
+    00000240 4E0B                   JSR         @R14
+    00000242 0009                   NOP
+    00000244 4E0B                   JSR         @R14
+    00000246 0009                   NOP
+    00000248 B080                   BSR         _JDFNewFolder
+    0000024A 0009                   NOP
+    0000024C B08C                   BSR         _XYNewFolder
+    0000024E 0009                   NOP
+    00000250 B098                   BSR         _ZDMNewFolder
+    00000252 0009                   NOP
+    00000254 B0A4                   BSR         _PMNewFolder
+    00000256 0009                   NOP
+    00000258 D461                   MOV.L       L628+36,R4 ; _route
+    0000025A D362                   MOV.L       L628+40,R3 ; _route_initial
+    0000025C 430B                   JSR         @R3
+    0000025E 0009                   NOP
+    00000260 D45F                   MOV.L       L628+36,R4 ; _route
+    00000262 D261                   MOV.L       L628+44,R2 ; _route_push_back
+    00000264 420B                   JSR         @R2
+    00000266 0009                   NOP
+    00000268 D460                   MOV.L       L628+48,R4 ; _jdfroute
+    0000026A D361                   MOV.L       L628+52,R3 ; _jdfroute_initial
+    0000026C 430B                   JSR         @R3
+    0000026E 0009                   NOP
+    00000270 D45E                   MOV.L       L628+48,R4 ; _jdfroute
+    00000272 D260                   MOV.L       L628+56,R2 ; _jdfroute_push_back
+    00000274 420B                   JSR         @R2
+    00000276 0009                   NOP
+    00000278 D45F                   MOV.L       L628+60,R4 ; _zdmroute
+    0000027A D360                   MOV.L       L628+64,R3 ; _zdmroute_initial
+    0000027C 430B                   JSR         @R3
+    0000027E 0009                   NOP
+    00000280 D45D                   MOV.L       L628+60,R4 ; _zdmroute
+    00000282 D25F                   MOV.L       L628+68,R2 ; _zdmroute_push_back
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    7
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000284 420B                   JSR         @R2
+    00000286 0009                   NOP
+    00000288 BF86                   BSR         _LoadInit
+    0000028A 0009                   NOP
+    0000028C D25D                   MOV.L       L628+72,R2 ; _LoadLastDataJDFFile
+    0000028E 420B                   JSR         @R2
+    00000290 0009                   NOP
+    00000292 D35D                   MOV.L       L628+76,R3 ; _LoadLastDataSRDFile
+    00000294 430B                   JSR         @R3
+    00000296 0009                   NOP
+       celiang.c     2    #include "headfile.h"
+
+
+
+
+
+
+
+
+
+
+
+
+       celiang.c     3    #include "runmain.h"
+       celiang.c     4    #include "MyFont.h"
+
+
+       celiang.c     5    
+       celiang.c     6    
+       celiang.c     7    unsigned int key;
+       celiang.c     8    int mode,index,need_redraw;
+       celiang.c     9    COMMONDATA common_data={0,0,0,0,{0,0,0,0},0,0};
+       celiang.c    10    double *value = common_data.value;
+       celiang.c    11    
+       celiang.c    12    
+       celiang.c    13    
+       celiang.c    14    void ShowTitle (char *title)
+       celiang.c    15    {
+       celiang.c    16            //PrintChStrV(title,1,0);
+       celiang.c    17            Bdisp_AreaReverseVRAM(1,0,13,50);
+       celiang.c    18    }
+       celiang.c    19    
+       celiang.c    20    int InputDefProc (double *value,int index_max,int px,int py,int next_mode,int pre_mode)
+       celiang.c    21    {
+       celiang.c    22            char ch;
+       celiang.c    23            if (key==KEY_CTRL_UP)
+       celiang.c    24            {
+       celiang.c    25                    if(--index<0)index = index_max-1;
+       celiang.c    26                    need_redraw = REDRAW_PART;
+       celiang.c    27            }
+       celiang.c    28            else if(key==KEY_CTRL_DOWN)
+       celiang.c    29            {
+       celiang.c    30                    if(++index>index_max-1)index = 0;
+       celiang.c    31                    need_redraw = REDRAW_PART;
+       celiang.c    32            }
+       celiang.c    33            if (key==KEY_CTRL_EXIT)
+       celiang.c    34            {
+       celiang.c    35                    mode = pre_mode;
+       celiang.c    36            }
+       celiang.c    37            if ((ch=GetPressNumChar(key))!=0 
+       celiang.c    38                            /*|| key==KEY_CTRL_LEFT || key==KEY_CTRL_RIGHT*/
+       celiang.c    39                            || key==KEY_CTRL_DEL || key==KEY_CTRL_AC)
+       celiang.c    40            {
+       celiang.c    41                    int suc;
+       celiang.c    42                    char str[30];
+       celiang.c    43                    /*if(key==KEY_CTRL_LEFT || key==KEY_CTRL_RIGHT)
+       celiang.c    44                    {
+       celiang.c    45                            ftoa(str,value[index],4);
+       celiang.c    46                    }*/
+       celiang.c    47                    if (key==KEY_CTRL_DEL || key==KEY_CTRL_AC)
+       celiang.c    48                    {
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    8
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c    49                            str[0] = 0;
+       celiang.c    50                    }
+       celiang.c    51                    else
+       celiang.c    52                    {
+       celiang.c    53                            str[0] = ch;str[1] = 0;
+       celiang.c    54                    }
+       celiang.c    55                    suc = InputString(px,py+index*12,str,0,12);
+       celiang.c    56                    if(suc != KEY_CTRL_EXIT)
+       celiang.c    57                    {
+       celiang.c    58                            if(strlen(str)>0)value[index] = atof(str);
+       celiang.c    59                            switch(suc)
+       celiang.c    60                            {
+       celiang.c    61                                    case KEY_CTRL_DOWN:
+       celiang.c    62                                    case KEY_CTRL_EXE:
+       celiang.c    63                                            if(++index>index_max-1)
+       celiang.c    64                                            {
+       celiang.c    65                                                    mode = next_mode;
+       celiang.c    66                                                    index = 0;
+       celiang.c    67                                            }
+       celiang.c    68                                            break;
+       celiang.c    69                                    case KEY_CTRL_UP:
+       celiang.c    70                                            if(--index<0)index = index_max-1;
+       celiang.c    71                                            break;
+       celiang.c    72                            }
+       celiang.c    73                    }
+       celiang.c    74                    else
+       celiang.c    75                    {
+       celiang.c    76                            mode = pre_mode;
+       celiang.c    77                    }
+       celiang.c    78                    need_redraw = 1;
+       celiang.c    79            }
+       celiang.c    80            return 0;
+       celiang.c    81    }
+       celiang.c    82    
+       celiang.c    83    struct list l_pqx; 
+       celiang.c    84    
+       celiang.c    85    s_sqx  l_sqx[19];
+       celiang.c    86    
+       celiang.c    87    QXYS    qxys[2];
+       celiang.c    88    HPYS    hpys[50];
+       celiang.c    89    ZFSET   zfset   =       {0.0,0.0,0.0,0.0};
+       celiang.c    90    SETUP   setup   =       {0,0,0,0,0,0.0,0.0,0.0};
+       celiang.c    91    YSCS    yscs    =       {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}; 
+       celiang.c    92    
+       celiang.c    93    int LoadInit()
+       celiang.c    94    {
+       celiang.c    95            int i;
+       celiang.c    96            SetMyFont(&stHz14x14,&stAsc6x12);
+       celiang.c    97            DispStr(22,4,"\xB2\xE2\xBC\xC6\xCA\xA6\xCC\xE5\xD1\xE9\xB0\xE6"); 
+       celiang.c    98            for (i=10;i<118;++i){   
+       celiang.c    99                Bdisp_SetPoint_DD (i,55,1);
+       celiang.c   100                Bdisp_SetPoint_DD (i,56,1);
+       celiang.c   101                    Bdisp_SetPoint_DD (i,57,1);
+       celiang.c   102                    Bdisp_SetPoint_DD (i,58,1);
+       celiang.c   103                    Bdisp_SetPoint_DD (i,59,1);
+       celiang.c   104                    Bdisp_SetPoint_DD (i,60,1);
+       celiang.c   105                    Bdisp_SetPoint_DD (i,61,1);
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c   106                    Bdisp_SetPoint_DD (i,62,1);
+       celiang.c   107                    Bdisp_SetPoint_DD (i,63,1);
+       celiang.c   108                    Bdisp_SetPoint_DD (i,64,1);
+       celiang.c   109                    Bdisp_DrawLineVRAM(0,31,127,31);
+       celiang.c   110            Bdisp_DrawLineVRAM(63,0,63,63);
+       celiang.c   111                    Sleep(10);
+       celiang.c   112                }  
+       celiang.c   113    
+       celiang.c   114    }
+       celiang.c   115    
+       celiang.c   116    
+       celiang.c   117    
+       celiang.c   118    int AddIn_main(int isAppli, unsigned short OptionNum)
+       celiang.c   119    {
+       celiang.c   120            uint refresh = 1,key;
+       celiang.c   121            int nMenuIdx=-1;
+       celiang.c   122            Bdisp_AllClr_DDVRAM(); 
+       celiang.c   123            //while (CheckReg() != TRUE) ;
+       celiang.c   124            Bdisp_AllClr_DDVRAM();
+       celiang.c   125            JDFNewFolder();
+       celiang.c   126            XYNewFolder();
+       celiang.c   127            ZDMNewFolder();
+       celiang.c   128            PMNewFolder();
+       celiang.c   129            route_initial(&route);
+       celiang.c   130            route_push_back(&route);
+       celiang.c   131            
+       celiang.c   132            jdfroute_initial(&jdfroute);
+       celiang.c   133            jdfroute_push_back(&jdfroute);
+       celiang.c   134            
+       celiang.c   135            zdmroute_initial(&zdmroute);
+       celiang.c   136            zdmroute_push_back(&zdmroute);
+       celiang.c   137            
+       celiang.c   138            //pmroute_initial(&pmroute);
+       celiang.c   139            //pmroute_push_back(&pmroute);  
+       celiang.c   140            LoadInit(); //åŠ è½½æµ‹è®¡å¸ˆæ³¨å†Œç‰ˆ
+       celiang.c   141            
+       celiang.c   142            //LoadLastDataFile(); //åŠ è½½è¦ç´ è¡¨æ ¼
+       celiang.c   143            
+       celiang.c   144            LoadLastDataJDFFile();
+       celiang.c   145            
+       celiang.c   146            LoadLastDataSRDFile();
+       celiang.c   147            
+       celiang.c   148            LoadLastDataSRDFile3();
+       celiang.c   149            
+       celiang.c   150            
+       celiang.c   151            
+       celiang.c   152            MenuInit();
+       celiang.c   153            
+       celiang.c   154        Bdisp_AllClr_DDVRAM();
+       celiang.c   155        while(1){
+       celiang.c   156                            Bdisp_AllClr_VRAM();
+       celiang.c   157                            ListMenu();
+       celiang.c   158                            nMenuIdx=DoMyMenu();
+       celiang.c   159    
+       celiang.c   160                    switch(nMenuIdx){
+       celiang.c   161                            case 1:
+       celiang.c   162                                    refresh = 1;
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   10
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c   163                                    computeZS();
+       celiang.c   164                                    break;
+       celiang.c   165                            case 2:
+       celiang.c   166                                    refresh = 1;
+       celiang.c   167                                    computeFS();
+       celiang.c   168                                    break;
+       celiang.c   169                            //case 3:
+       celiang.c   170                                    //refresh = 1;
+       celiang.c   171                                    //SD();
+       celiang.c   172                                    //break;
+       celiang.c   173                            case 5:
+       celiang.c   174                                refresh = 1;
+       celiang.c   175                                    ChangeSetup ();
+       celiang.c   176                                    break;  
+       celiang.c   177                                    
+       celiang.c   178                                    
+       celiang.c   179                            case 7: 
+       celiang.c   180                            refresh = 1;
+       celiang.c   181                            JDF_parameter();
+       celiang.c   182                            break;  
+       celiang.c   183                    
+       celiang.c   184                            case 8: 
+       celiang.c   185                            refresh = 1;
+       celiang.c   186                            XY_parameter();
+       celiang.c   187                            break;
+       celiang.c   188                            
+       celiang.c   189                            case 9: 
+       celiang.c   190                            refresh = 1;
+       celiang.c   191                            ZDM_parameter();
+       celiang.c   192                            break;
+       celiang.c   193    
+       celiang.c   194                            case 17:        
+       celiang.c   195                            refresh = 1;
+       celiang.c   196                            PM_parameter();
+       celiang.c   197                            break;
+       celiang.c   198                            
+       celiang.c   199                            
+       celiang.c   200                                    
+       celiang.c   201                            case 22:
+       celiang.c   202                                    refresh = 1;
+       celiang.c   203                                    BinMain_1();
+       celiang.c   204                                    break;
+       celiang.c   205                                    
+       celiang.c   206                            case 23:
+       celiang.c   207                                    refresh = 1;
+       celiang.c   208                                    BinMain_2();
+       celiang.c   209                                    break;  
+       celiang.c   210                                    
+       celiang.c   211                            case -1:
+       celiang.c   212                                    refresh = 1;
+       celiang.c   213                                    About();
+       celiang.c   214                                    break;
+       celiang.c   215                    }
+       celiang.c   216        }
+       celiang.c   217        return 1;
+       celiang.c   218    }
+       celiang.c   219    
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   11
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c   220    
+       celiang.c   221    int JDFNewFolder()
+       celiang.c   222    {
+       celiang.c   223            # ifdef RELEASE
+       celiang.c   224            FONTCHARACTER pt_folder[] = { '\\','\\','f','l','s','0','\\','J','D','F','\0'} ;
+       celiang.c   225            # else
+       celiang.c   226            FONTCHARACTER pt_folder[] = { '\\','\\','c','r','d','0','\\','J','D','F','\0'} ;
+       celiang.c   227            # endif
+       celiang.c   228            
+       celiang.c   229            Bfile_CreateDirectory(pt_folder) ;
+       celiang.c   230    }
+       celiang.c   231    
+       celiang.c   232    int XYNewFolder()
+       celiang.c   233    {
+       celiang.c   234            # ifdef RELEASE
+       celiang.c   235            FONTCHARACTER pt_folder[] = { '\\','\\','f','l','s','0','\\','S','R','D','\0'} ;
+       celiang.c   236            # else
+       celiang.c   237            FONTCHARACTER pt_folder[] = { '\\','\\','c','r','d','0','\\','S','R','D','\0'} ;
+       celiang.c   238            # endif
+       celiang.c   239            
+       celiang.c   240            Bfile_CreateDirectory(pt_folder) ;
+       celiang.c   241    }
+       celiang.c   242    
+       celiang.c   243    int ZDMNewFolder()
+       celiang.c   244    {
+       celiang.c   245            # ifdef RELEASE
+       celiang.c   246            FONTCHARACTER pt_folder[] = { '\\','\\','f','l','s','0','\\','Z','D','M','\0'} ;
+       celiang.c   247            # else
+       celiang.c   248            FONTCHARACTER pt_folder[] = { '\\','\\','c','r','d','0','\\','Z','D','M','\0'} ;
+       celiang.c   249            # endif
+       celiang.c   250            
+       celiang.c   251            Bfile_CreateDirectory(pt_folder) ;
+       celiang.c   252    }
+       celiang.c   253    
+       celiang.c   254    
+       celiang.c   255    int PMNewFolder()
+       celiang.c   256    {
+       celiang.c   257            # ifdef RELEASE
+       celiang.c   258            FONTCHARACTER pt_folder[] = { '\\','\\','f','l','s','0','\\','P','M','\0'} ;
+       celiang.c   259            # else
+       celiang.c   260            FONTCHARACTER pt_folder[] = { '\\','\\','c','r','d','0','\\','P','M','\0'} ;
+       celiang.c   261            # endif
+       celiang.c   262            
+       celiang.c   263            Bfile_CreateDirectory(pt_folder) ;
+       celiang.c   264    }
+       celiang.c   265    
+       celiang.c   266    
+       celiang.c   267    
+       celiang.c   268    
+       celiang.c   269    
+       celiang.c   270    #pragma section _BR_Size
+       celiang.c   271    unsigned long BR_Size;
+       celiang.c   272    #pragma section
+       celiang.c   273    
+       celiang.c   274    #pragma section _TOP
+       celiang.c   275    int InitializeSystem(int isAppli, unsigned short OptionNum)
+       celiang.c   276    {
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   12
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       celiang.c   277        return INIT_ADDIN_APPLICATION(isAppli, OptionNum);
+       celiang.c   278    }
+       celiang.c   279    #pragma section
+    00000298 D25C                   MOV.L       L628+80,R2 ; _LoadLastDataSRDFile3
+    0000029A 420B                   JSR         @R2
+    0000029C 0009                   NOP
+    0000029E D35C                   MOV.L       L628+84,R3 ; _MenuInit
+    000002A0 430B                   JSR         @R3
+    000002A2 0009                   NOP
+    000002A4 4E0B                   JSR         @R14
+    000002A6 0009                   NOP
+    000002A8 D85A                   MOV.L       L628+88,R8 ; _JDF_parameter
+    000002AA D95B                   MOV.L       L628+92,R9 ; _ChangeSetup
+    000002AC DA5B                   MOV.L       L628+96,R10; _computeFS
+    000002AE DB5C                   MOV.L       L628+100,R11; _computeZS
+    000002B0 DC5C                   MOV.L       L628+104,R12; _DoMyMenu
+    000002B2 DD5D                   MOV.L       L628+108,R13; _ListMenu
+    000002B4 DE5D                   MOV.L       L628+112,R14; _Bdisp_AllClr_VRAM
+    000002B6              L622:                             
+    000002B6 4E0B                   JSR         @R14
+    000002B8 0009                   NOP
+    000002BA 4D0B                   JSR         @R13
+    000002BC 0009                   NOP
+    000002BE 4C0B                   JSR         @R12
+    000002C0 0009                   NOP
+    000002C2 8801                   CMP/EQ      #1,R0
+    000002C4 8D14                   BT/S        L587
+    000002C6 6403                   MOV         R0,R4
+    000002C8 8802                   CMP/EQ      #2,R0
+    000002CA 8915                   BT          L588
+    000002CC 8805                   CMP/EQ      #5,R0
+    000002CE 8917                   BT          L589
+    000002D0 8807                   CMP/EQ      #7,R0
+    000002D2 8919                   BT          L590
+    000002D4 8808                   CMP/EQ      #8,R0
+    000002D6 891B                   BT          L591
+    000002D8 8809                   CMP/EQ      #9,R0
+    000002DA 891E                   BT          L592
+    000002DC 8811                   CMP/EQ      #17,R0
+    000002DE 8921                   BT          L593
+    000002E0 8816                   CMP/EQ      #22,R0
+    000002E2 8924                   BT          L594
+    000002E4 8817                   CMP/EQ      #23,R0
+    000002E6 8927                   BT          L595
+    000002E8 88FF                   CMP/EQ      #-1,R0
+    000002EA 892A                   BT          L596
+    000002EC AFE3                   BRA         L622
+    000002EE 0009                   NOP
+    000002F0              L587:                            ; case label 
+    000002F0 4B0B                   JSR         @R11
+    000002F2 0009                   NOP
+    000002F4 AFDF                   BRA         L622
+    000002F6 0009                   NOP
+    000002F8              L588:                            ; case label 
+    000002F8 4A0B                   JSR         @R10
+    000002FA 0009                   NOP
+    000002FC AFDB                   BRA         L622
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   13
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000002FE 0009                   NOP
+    00000300              L589:                            ; case label 
+    00000300 490B                   JSR         @R9
+    00000302 0009                   NOP
+    00000304 AFD7                   BRA         L622
+    00000306 0009                   NOP
+    00000308              L590:                            ; case label 
+    00000308 480B                   JSR         @R8
+    0000030A 0009                   NOP
+    0000030C AFD3                   BRA         L622
+    0000030E 0009                   NOP
+    00000310              L591:                            ; case label 
+    00000310 D347                   MOV.L       L628+116,R3; _XY_parameter
+    00000312 430B                   JSR         @R3
+    00000314 0009                   NOP
+    00000316 AFCE                   BRA         L622
+    00000318 0009                   NOP
+    0000031A              L592:                            ; case label 
+    0000031A D346                   MOV.L       L628+120,R3; _ZDM_parameter
+    0000031C 430B                   JSR         @R3
+    0000031E 0009                   NOP
+    00000320 AFC9                   BRA         L622
+    00000322 0009                   NOP
+    00000324              L593:                            ; case label 
+    00000324 D344                   MOV.L       L628+124,R3; _PM_parameter
+    00000326 430B                   JSR         @R3
+    00000328 0009                   NOP
+    0000032A AFC4                   BRA         L622
+    0000032C 0009                   NOP
+    0000032E              L594:                            ; case label 
+    0000032E D343                   MOV.L       L628+128,R3; _BinMain_1
+    00000330 430B                   JSR         @R3
+    00000332 0009                   NOP
+    00000334 AFBF                   BRA         L622
+    00000336 0009                   NOP
+    00000338              L595:                            ; case label 
+    00000338 D341                   MOV.L       L628+132,R3; _BinMain_2
+    0000033A 430B                   JSR         @R3
+    0000033C 0009                   NOP
+    0000033E AFBA                   BRA         L622
+    00000340 0009                   NOP
+    00000342              L596:                            ; case label 
+    00000342 D340                   MOV.L       L628+136,R3; _About
+    00000344 430B                   JSR         @R3
+    00000346 0009                   NOP
+    00000348 AFB5                   BRA         L622
+    0000034A 0009                   NOP
+    0000034C              _JDFNewFolder:                   ; function: JDFNewFolder
+                                                           ; frame size=28
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    0000034C 4F22                   STS.L       PR,@-R15
+    0000034E 7FE8                   ADD         #-24,R15
+    00000350 D23D                   MOV.L       L628+140,R2; L567
+    00000352 61F3                   MOV         R15,R1
+    00000354 D33D                   MOV.L       L628+144,R3; __slow_mvn
+    00000356 430B                   JSR         @R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   14
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000358 E016                   MOV         #22,R0
+    0000035A D13D                   MOV.L       L628+148,R1; _Bfile_CreateDirectory
+    0000035C 410B                   JSR         @R1
+    0000035E 64F3                   MOV         R15,R4
+    00000360 7F18                   ADD         #24,R15
+    00000362 4F26                   LDS.L       @R15+,PR
+    00000364 000B                   RTS
+    00000366 0009                   NOP
+    00000368              _XYNewFolder:                    ; function: XYNewFolder
+                                                           ; frame size=28
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    00000368 4F22                   STS.L       PR,@-R15
+    0000036A 7FE8                   ADD         #-24,R15
+    0000036C D239                   MOV.L       L628+152,R2; L570
+    0000036E 61F3                   MOV         R15,R1
+    00000370 D336                   MOV.L       L628+144,R3; __slow_mvn
+    00000372 430B                   JSR         @R3
+    00000374 E016                   MOV         #22,R0
+    00000376 D136                   MOV.L       L628+148,R1; _Bfile_CreateDirectory
+    00000378 410B                   JSR         @R1
+    0000037A 64F3                   MOV         R15,R4
+    0000037C 7F18                   ADD         #24,R15
+    0000037E 4F26                   LDS.L       @R15+,PR
+    00000380 000B                   RTS
+    00000382 0009                   NOP
+    00000384              _ZDMNewFolder:                   ; function: ZDMNewFolder
+                                                           ; frame size=28
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    00000384 4F22                   STS.L       PR,@-R15
+    00000386 7FE8                   ADD         #-24,R15
+    00000388 D233                   MOV.L       L628+156,R2; L573
+    0000038A 61F3                   MOV         R15,R1
+    0000038C D32F                   MOV.L       L628+144,R3; __slow_mvn
+    0000038E 430B                   JSR         @R3
+    00000390 E016                   MOV         #22,R0
+    00000392 D12F                   MOV.L       L628+148,R1; _Bfile_CreateDirectory
+    00000394 410B                   JSR         @R1
+    00000396 64F3                   MOV         R15,R4
+    00000398 7F18                   ADD         #24,R15
+    0000039A 4F26                   LDS.L       @R15+,PR
+    0000039C 000B                   RTS
+    0000039E 0009                   NOP
+    000003A0              _PMNewFolder:                    ; function: PMNewFolder
+                                                           ; frame size=24
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    000003A0 4F22                   STS.L       PR,@-R15
+    000003A2 7FEC                   ADD         #-20,R15
+    000003A4 D22D                   MOV.L       L628+160,R2; L576
+    000003A6 61F3                   MOV         R15,R1
+    000003A8 D328                   MOV.L       L628+144,R3; __slow_mvn
+    000003AA 430B                   JSR         @R3
+    000003AC E014                   MOV         #20,R0
+    000003AE D128                   MOV.L       L628+148,R1; _Bfile_CreateDirectory
+    000003B0 410B                   JSR         @R1
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   15
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000003B2 64F3                   MOV         R15,R4
+    000003B4 7F14                   ADD         #20,R15
+    000003B6 4F26                   LDS.L       @R15+,PR
+    000003B8 000B                   RTS
+    000003BA 0009                   NOP
+    000003BC              L628:                             
+    000003BC <00000000>             .DATA.L     _stAsc6x12
+    000003C0 <00000000>             .DATA.L     _stHz14x14
+    000003C4 <00000000>             .DATA.L     _SetMyFont
+    000003C8 <00000000>             .DATA.L     L538
+    000003CC <00000000>             .DATA.L     _DispStr
+    000003D0 <00000000>             .DATA.L     _Sleep
+    000003D4 <00000000>             .DATA.L     _Bdisp_DrawLineVRAM
+    000003D8 <00000000>             .DATA.L     _Bdisp_SetPoint_DD
+    000003DC <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+    000003E0 <00000000>             .DATA.L     _route
+    000003E4 <00000000>             .DATA.L     _route_initial
+    000003E8 <00000000>             .DATA.L     _route_push_back
+    000003EC <00000000>             .DATA.L     _jdfroute
+    000003F0 <00000000>             .DATA.L     _jdfroute_initial
+    000003F4 <00000000>             .DATA.L     _jdfroute_push_back
+    000003F8 <00000000>             .DATA.L     _zdmroute
+    000003FC <00000000>             .DATA.L     _zdmroute_initial
+    00000400 <00000000>             .DATA.L     _zdmroute_push_back
+    00000404 <00000000>             .DATA.L     _LoadLastDataJDFFile
+    00000408 <00000000>             .DATA.L     _LoadLastDataSRDFile
+    0000040C <00000000>             .DATA.L     _LoadLastDataSRDFile3
+    00000410 <00000000>             .DATA.L     _MenuInit
+    00000414 <00000000>             .DATA.L     _JDF_parameter
+    00000418 <00000000>             .DATA.L     _ChangeSetup
+    0000041C <00000000>             .DATA.L     _computeFS
+    00000420 <00000000>             .DATA.L     _computeZS
+    00000424 <00000000>             .DATA.L     _DoMyMenu
+    00000428 <00000000>             .DATA.L     _ListMenu
+    0000042C <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
+    00000430 <00000000>             .DATA.L     _XY_parameter
+    00000434 <00000000>             .DATA.L     _ZDM_parameter
+    00000438 <00000000>             .DATA.L     _PM_parameter
+    0000043C <00000000>             .DATA.L     _BinMain_1
+    00000440 <00000000>             .DATA.L     _BinMain_2
+    00000444 <00000000>             .DATA.L     _About
+    00000448 <00000000>             .DATA.L     L567
+    0000044C <00000000>             .DATA.L     __slow_mvn
+    00000450 <00000000>             .DATA.L     _Bfile_CreateDirectory
+    00000454 <00000000>             .DATA.L     L570
+    00000458 <00000000>             .DATA.L     L573
+    0000045C <00000000>             .DATA.L     L576
+P_T 00000000              _InitializeSystem:               ; function: InitializeSystem
+                                                           ; frame size=0
+    00000000 D301                   MOV.L       L629+2,R3  ; _INIT_ADDIN_APPLICATION
+    00000002 432B                   JMP         @R3
+    00000004 0009                   NOP
+    00000006              L629:                             
+    00000006 0000                   .DATA.W     0
+    00000008 <00000000>             .DATA.L     _INIT_ADDIN_APPLICATION
+D   00000000              _common_data:                    ; static: common_data
+    00000000 0000000000             .DATA.L     H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   16
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+             0000000000 +                       H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,
+             0000000000 +                       H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+    00000050              _value:                          ; static: value
+    00000050 <00000020>             .DATA.L     H'00000020+_common_data
+    00000054              _zfset:                          ; static: zfset
+    00000054 0000000000             .DATA.L     H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,
+             0000000000 +                       H'00000000
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000         
+    00000074              _setup:                          ; static: setup
+    00000074 0000000000             .DATA.L     H'00000000,H'00000000,H'00000000,H'00000000,H'00000000
+             0000000000   
+             0000000000   
+             0000000000   
+    00000088 0000000000             .DATA.L     H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000
+             0000000000   
+             0000000000   
+             0000000000   
+             00000000     
+    000000A0              _yscs:                           ; static: yscs
+    000000A0 0000000000             .DATA.L     H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,
+             0000000000 +                       H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,H'00000000,
+             0000000000 +                       H'00000000,H'00000000,H'00000000,H'00000000
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000         
+C   00000000              L538:
+    00000000 B2E2BCC6CA             .DATA.B     H'B2,H'E2,H'BC,H'C6,H'CA,H'A6,H'CC,H'E5,H'D1,H'E9,H'B0,H'E6,H'00
+             A6CCE5D1E9   
+             B0E600       
+    0000000D 00000001               .RES.B      1
+    0000000E              L567:
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE   17
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000000E 005C005C00             .DATA.W     H'005C,H'005C,H'0063,H'0072,H'0064,H'0030,H'005C,H'004A,H'0044,H'0046,H'0000
+             6300720064   
+             0030005C00   
+             4A00440046   
+             0000         
+    00000024              L570:
+    00000024 005C005C00             .DATA.W     H'005C,H'005C,H'0063,H'0072,H'0064,H'0030,H'005C,H'0053,H'0052,H'0044,H'0000
+             6300720064   
+             0030005C00   
+             5300520044   
+             0000         
+    0000003A              L573:
+    0000003A 005C005C00             .DATA.W     H'005C,H'005C,H'0063,H'0072,H'0064,H'0030,H'005C,H'005A,H'0044,H'004D,H'0000
+             6300720064   
+             0030005C00   
+             5A0044004D   
+             0000         
+    00000050              L576:
+    00000050 005C005C00             .DATA.W     H'005C,H'005C,H'0063,H'0072,H'0064,H'0030,H'005C,H'0050,H'004D,H'0000
+             6300720064   
+             0030005C00   
+             50004D0000   
+B   00000000              _l_pqx:                          ; static: l_pqx
+    00000000 00000044               .RES.L      17
+    00000044              _l_sqx:                          ; static: l_sqx
+    00000044 00000428               .RES.L      266
+    0000046C              _qxys:                           ; static: qxys
+    0000046C 00000070               .RES.L      28
+    000004DC              _hpys:                           ; static: hpys
+    000004DC 000007D0               .RES.L      500
+    00000CAC              _key:                            ; static: key
+    00000CAC 00000004               .RES.L      1
+    00000CB0              _mode:                           ; static: mode
+    00000CB0 00000004               .RES.L      1
+    00000CB4              _index:                          ; static: index
+    00000CB4 00000004               .RES.L      1
+    00000CB8              _need_redraw:                    ; static: need_redraw
+    00000CB8 00000004               .RES.L      1
+B_B 00000000              _BR_Size:                        ; static: BR_Size
+    00000000 00000004               .RES.L      1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        14
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:      279
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000460 Byte(s)
+PROGRAM  SECTION (P_BR_Size):                       00000000 Byte(s)
+PROGRAM  SECTION (P_TOP):                           0000000C Byte(s)
+CONSTANT SECTION (C):                               00000064 Byte(s)
+CONSTANT SECTION (C_BR_Size):                       00000000 Byte(s)
+CONSTANT SECTION (C_TOP):                           00000000 Byte(s)
+DATA     SECTION (D):                               000000E8 Byte(s)
+DATA     SECTION (D_BR_Size):                       00000000 Byte(s)
+DATA     SECTION (D_TOP):                           00000000 Byte(s)
+BSS      SECTION (B):                               00000CBC Byte(s)
+BSS      SECTION (B_BR_Size):                       00000004 Byte(s)
+BSS      SECTION (B_TOP):                           00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00001278 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:           42
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:          23
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:           101
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk3D90.tmp 
+

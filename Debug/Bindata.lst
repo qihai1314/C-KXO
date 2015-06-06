@@ -1,0 +1,1199 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-1平面移入交点法\Bindata.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Bindata.c     1    #include "Bindata.h"
+
+
+
+
+
+
+       Bindata.c     2    #include <string.h>
+       Bindata.c     3    
+       Bindata.c     4    #define NULL 0
+       Bindata.c     5    
+       Bindata.c     6    JDFROUTE jdfroute;
+       Bindata.c     7    ROUTE route;
+       Bindata.c     8    ZDMROUTE zdmroute;
+       Bindata.c     9    PMROUTE  pmroute;
+       Bindata.c    10    
+       Bindata.c    11    
+       Bindata.c    12    JDFROUTE jdfroute;
+       Bindata.c    13    void jdfroute_initial(JDFROUTE *l)
+P   00000000              _jdfroute_initial:               ; function: jdfroute_initial
+                                                           ; frame size=0
+       Bindata.c    14    {
+       Bindata.c    15            l->size = 0;
+    00000000 E500                   MOV         #0,R5
+    00000002 1451                   MOV.L       R5,@(4,R4)
+       Bindata.c    16            l->set = NULL;
+       Bindata.c    17    }
+    00000004 000B                   RTS
+    00000006 2452                   MOV.L       R5,@R4
+       Bindata.c    18    
+       Bindata.c    19    void jdfroute_push_back(JDFROUTE *l)
+    00000008              _jdfroute_push_back:             ; function: jdfroute_push_back
+                                                           ; frame size=4
+    00000008 2F46                   MOV.L       R4,@-R15
+       Bindata.c    20    {
+       Bindata.c    21            jdfroute_insert(l,l->size);
+    0000000A 6543                   MOV         R4,R5
+    0000000C 5551                   MOV.L       @(4,R5),R5
+    0000000E 7F04                   ADD         #4,R15
+       Bindata.c    22    }
+       Bindata.c    23    
+       Bindata.c    24    void jdfroute_insert(JDFROUTE *l,int index)
+    00000010              _jdfroute_insert:                ; function: jdfroute_insert
+                                                           ; frame size=36
+    00000010 2FE6                   MOV.L       R14,@-R15
+    00000012 2FD6                   MOV.L       R13,@-R15
+    00000014 2FC6                   MOV.L       R12,@-R15
+    00000016 6D43                   MOV         R4,R13
+       Bindata.c    25    {
+       Bindata.c    26            JDFPOINT * pre_set = l->set;
+       Bindata.c    27            int new_size = l->size + 1;
+       Bindata.c    28            int i,j;
+       Bindata.c    29            l->set = (JDFPOINT*)calloc(new_size,sizeof(JDFPOINT));
+    00000018 D39C                   MOV.L       L416,R3    ; _calloc
+    0000001A 2FB6                   MOV.L       R11,@-R15
+    0000001C 2FA6                   MOV.L       R10,@-R15
+    0000001E 2F96                   MOV.L       R9,@-R15
+    00000020 4F22                   STS.L       PR,@-R15
+    00000022 4F12                   STS.L       MACL,@-R15
+    00000024 7FFC                   ADD         #-4,R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000026 2F52                   MOV.L       R5,@R15
+    00000028 6BD2                   MOV.L       @R13,R11
+    0000002A E54C                   MOV         #76,R5
+    0000002C 59D1                   MOV.L       @(4,R13),R9
+    0000002E 7901                   ADD         #1,R9
+    00000030 430B                   JSR         @R3
+    00000032 6493                   MOV         R9,R4
+       Bindata.c    30            if (pre_set != NULL)
+    00000034 2BB8                   TST         R11,R11
+    00000036 8D1C                   BT/S        L380
+    00000038 2D02                   MOV.L       R0,@R13
+       Bindata.c    31            {
+       Bindata.c    32                    for (i = 0,j = 0; i < l->size ;++i,++j)
+    0000003A E400                   MOV         #0,R4
+    0000003C DA94                   MOV.L       L416+4,R10 ; _memcpy
+    0000003E 6E43                   MOV         R4,R14
+    00000040 A011                   BRA         L381
+    00000042 6C43                   MOV         R4,R12
+    00000044              L382:                             
+       Bindata.c    33                    {
+       Bindata.c    34                            if (i==index)++j;
+    00000044 62F2                   MOV.L       @R15,R2
+    00000046 3E20                   CMP/EQ      R2,R14
+    00000048 8F01                   BF/S        L383
+       Bindata.c    35                            memcpy(& l->set[j],& pre_set[i],sizeof(JDFPOINT));
+    0000004A E64C                   MOV         #76,R6
+    0000004C 7C01                   ADD         #1,R12
+    0000004E              L383:                             
+    0000004E 6563                   MOV         R6,R5
+    00000050 63D2                   MOV.L       @R13,R3
+    00000052 6463                   MOV         R6,R4
+    00000054 0E57                   MUL.L       R5,R14
+    00000056 051A                   STS         MACL,R5
+    00000058 0C47                   MUL.L       R4,R12
+    0000005A 35BC                   ADD         R11,R5
+    0000005C 041A                   STS         MACL,R4
+    0000005E 4A0B                   JSR         @R10
+    00000060 343C                   ADD         R3,R4
+    00000062 7E01                   ADD         #1,R14
+    00000064 7C01                   ADD         #1,R12
+    00000066              L381:                             
+    00000066 52D1                   MOV.L       @(4,R13),R2
+    00000068 3E23                   CMP/GE      R2,R14
+    0000006A 8BEB                   BF          L382
+       Bindata.c    36                    }
+       Bindata.c    37                    free(pre_set);
+    0000006C D289                   MOV.L       L416+8,R2  ; _free
+    0000006E 420B                   JSR         @R2
+    00000070 64B3                   MOV         R11,R4
+    00000072              L380:                             
+       Bindata.c    38            }
+       Bindata.c    39            l->size = new_size;
+    00000072 1D91                   MOV.L       R9,@(4,R13)
+       Bindata.c    40    }
+    00000074 7F04                   ADD         #4,R15
+    00000076 4F16                   LDS.L       @R15+,MACL
+    00000078 4F26                   LDS.L       @R15+,PR
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000007A 69F6                   MOV.L       @R15+,R9
+    0000007C 6AF6                   MOV.L       @R15+,R10
+    0000007E 6BF6                   MOV.L       @R15+,R11
+    00000080 6CF6                   MOV.L       @R15+,R12
+    00000082 6DF6                   MOV.L       @R15+,R13
+    00000084 000B                   RTS
+    00000086 6EF6                   MOV.L       @R15+,R14
+       Bindata.c    41    
+       Bindata.c    42    void jdfroute_del(JDFROUTE *l,int index)
+    00000088              _jdfroute_del:                   ; function: jdfroute_del
+                                                           ; frame size=40
+    00000088 2FE6                   MOV.L       R14,@-R15
+    0000008A 6E43                   MOV         R4,R14
+    0000008C 2FD6                   MOV.L       R13,@-R15
+    0000008E 2FC6                   MOV.L       R12,@-R15
+    00000090 2FB6                   MOV.L       R11,@-R15
+    00000092 2FA6                   MOV.L       R10,@-R15
+    00000094 2F96                   MOV.L       R9,@-R15
+    00000096 2F86                   MOV.L       R8,@-R15
+    00000098 4F22                   STS.L       PR,@-R15
+    0000009A 4F12                   STS.L       MACL,@-R15
+    0000009C 7FFC                   ADD         #-4,R15
+    0000009E 2F52                   MOV.L       R5,@R15
+       Bindata.c    43    {
+       Bindata.c    44            JDFPOINT * pre_set = l->set;
+    000000A0 6BE2                   MOV.L       @R14,R11
+       Bindata.c    45            int new_size = l->size - 1;
+    000000A2 5CE1                   MOV.L       @(4,R14),R12
+    000000A4 7CFF                   ADD         #-1,R12
+       Bindata.c    46            if (new_size == 0)
+    000000A6 2CC8                   TST         R12,R12
+    000000A8 8F05                   BF/S        L384
+    000000AA E800                   MOV         #0,R8
+       Bindata.c    47            {
+       Bindata.c    48                    free(l->set);
+    000000AC D279                   MOV.L       L416+8,R2  ; _free
+    000000AE 420B                   JSR         @R2
+    000000B0 64E2                   MOV.L       @R14,R4
+       Bindata.c    49                    l->set = NULL;
+    000000B2 A01F                   BRA         L385
+    000000B4 2E82                   MOV.L       R8,@R14
+    000000B6              L384:                             
+       Bindata.c    50            }
+       Bindata.c    51            else
+       Bindata.c    52            {
+       Bindata.c    53                    int i,j;
+       Bindata.c    54                    l->set = (JDFPOINT*)calloc(new_size,sizeof(JDFPOINT));
+    000000B6 E54C                   MOV         #76,R5
+    000000B8 D274                   MOV.L       L416,R2    ; _calloc
+    000000BA 420B                   JSR         @R2
+    000000BC 64C3                   MOV         R12,R4
+       Bindata.c    55                    for (i = 0,j = 0;i<l->size;++i)
+    000000BE 6D83                   MOV         R8,R13
+    000000C0 2E02                   MOV.L       R0,@R14
+    000000C2 DA73                   MOV.L       L416+4,R10 ; _memcpy
+    000000C4 A010                   BRA         L386
+    000000C6 6983                   MOV         R8,R9
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000C8              L387:                             
+       Bindata.c    56                    {
+       Bindata.c    57                            if (i!=index)
+    000000C8 62F2                   MOV.L       @R15,R2
+    000000CA 3D20                   CMP/EQ      R2,R13
+    000000CC 890B                   BT          L388
+       Bindata.c    58                                    memcpy(& l->set[j++],& pre_set[i],sizeof(JDFPOINT));
+    000000CE E64C                   MOV         #76,R6
+    000000D0 62E2                   MOV.L       @R14,R2
+    000000D2 6563                   MOV         R6,R5
+    000000D4 0D57                   MUL.L       R5,R13
+    000000D6 6363                   MOV         R6,R3
+    000000D8 051A                   STS         MACL,R5
+    000000DA 35BC                   ADD         R11,R5
+    000000DC 0937                   MUL.L       R3,R9
+    000000DE 7901                   ADD         #1,R9
+    000000E0 041A                   STS         MACL,R4
+    000000E2 4A0B                   JSR         @R10
+    000000E4 342C                   ADD         R2,R4
+    000000E6              L388:                             
+    000000E6 7D01                   ADD         #1,R13
+    000000E8              L386:                             
+    000000E8 53E1                   MOV.L       @(4,R14),R3
+    000000EA 3D33                   CMP/GE      R3,R13
+    000000EC 8BEC                   BF          L387
+       Bindata.c    59                    }
+       Bindata.c    60                    free(pre_set);
+    000000EE D369                   MOV.L       L416+8,R3  ; _free
+    000000F0 430B                   JSR         @R3
+    000000F2 64B3                   MOV         R11,R4
+    000000F4              L385:                             
+       Bindata.c    61            }
+       Bindata.c    62            l->size = new_size;
+    000000F4 1EC1                   MOV.L       R12,@(4,R14)
+       Bindata.c    63    }
+    000000F6 7F04                   ADD         #4,R15
+    000000F8 4F16                   LDS.L       @R15+,MACL
+    000000FA 4F26                   LDS.L       @R15+,PR
+    000000FC 68F6                   MOV.L       @R15+,R8
+    000000FE 69F6                   MOV.L       @R15+,R9
+    00000100 6AF6                   MOV.L       @R15+,R10
+    00000102 6BF6                   MOV.L       @R15+,R11
+    00000104 6CF6                   MOV.L       @R15+,R12
+    00000106 6DF6                   MOV.L       @R15+,R13
+    00000108 000B                   RTS
+    0000010A 6EF6                   MOV.L       @R15+,R14
+       Bindata.c    64    
+       Bindata.c    65    void jdfroute_clr(JDFROUTE *l)
+    0000010C              _jdfroute_clr:                   ; function: jdfroute_clr
+                                                           ; frame size=8
+    0000010C 2FE6                   MOV.L       R14,@-R15
+    0000010E 6E43                   MOV         R4,R14
+       Bindata.c    66    {
+       Bindata.c    67            free(l->set);
+    00000110 D360                   MOV.L       L416+8,R3  ; _free
+    00000112 4F22                   STS.L       PR,@-R15
+    00000114 430B                   JSR         @R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000116 64E2                   MOV.L       @R14,R4
+       Bindata.c    68            l->set = NULL;
+    00000118 E400                   MOV         #0,R4
+    0000011A 2E42                   MOV.L       R4,@R14
+       Bindata.c    69            l->size = 0;
+    0000011C 1E41                   MOV.L       R4,@(4,R14)
+       Bindata.c    70    }
+    0000011E 4F26                   LDS.L       @R15+,PR
+    00000120 000B                   RTS
+    00000122 6EF6                   MOV.L       @R15+,R14
+       Bindata.c    71    
+       Bindata.c    72    
+       Bindata.c    73    
+       Bindata.c    74    
+       Bindata.c    75    void route_initial (ROUTE *l)
+    00000124              _route_initial:                  ; function: route_initial
+                                                           ; frame size=0
+       Bindata.c    76    {
+       Bindata.c    77            l->size = 0;
+    00000124 E500                   MOV         #0,R5
+    00000126 1459                   MOV.L       R5,@(36,R4)
+       Bindata.c    78            l->set = NULL;
+       Bindata.c    79    }
+    00000128 000B                   RTS
+    0000012A 1458                   MOV.L       R5,@(32,R4)
+       Bindata.c    80    
+       Bindata.c    81    void route_push_back (ROUTE *l)
+    0000012C              _route_push_back:                ; function: route_push_back
+                                                           ; frame size=4
+    0000012C 2F46                   MOV.L       R4,@-R15
+       Bindata.c    82    {
+       Bindata.c    83            route_insert(l,l->size);
+    0000012E 6543                   MOV         R4,R5
+    00000130 5559                   MOV.L       @(36,R5),R5
+    00000132 7F04                   ADD         #4,R15
+       Bindata.c    84    }
+       Bindata.c    85    
+       Bindata.c    86    void route_insert (ROUTE *l,int index)
+    00000134              _route_insert:                   ; function: route_insert
+                                                           ; frame size=36
+    00000134 2FE6                   MOV.L       R14,@-R15
+    00000136 2FD6                   MOV.L       R13,@-R15
+    00000138 2FC6                   MOV.L       R12,@-R15
+    0000013A 6D43                   MOV         R4,R13
+       Bindata.c    87    {
+       Bindata.c    88            POINT * pre_set = l->set;
+       Bindata.c    89            int new_size = l->size + 1;
+       Bindata.c    90            int i,j;
+       Bindata.c    91            l->set = (POINT*)calloc(new_size,sizeof(POINT));
+    0000013C D353                   MOV.L       L416,R3    ; _calloc
+    0000013E 2FB6                   MOV.L       R11,@-R15
+    00000140 2FA6                   MOV.L       R10,@-R15
+    00000142 2F96                   MOV.L       R9,@-R15
+    00000144 4F22                   STS.L       PR,@-R15
+    00000146 4F12                   STS.L       MACL,@-R15
+    00000148 7FFC                   ADD         #-4,R15
+    0000014A 2F52                   MOV.L       R5,@R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000014C 5BD8                   MOV.L       @(32,R13),R11
+    0000014E E54C                   MOV         #76,R5
+    00000150 59D9                   MOV.L       @(36,R13),R9
+    00000152 7901                   ADD         #1,R9
+    00000154 430B                   JSR         @R3
+    00000156 6493                   MOV         R9,R4
+       Bindata.c    92            if (pre_set != NULL)
+    00000158 2BB8                   TST         R11,R11
+    0000015A 8D1C                   BT/S        L389
+    0000015C 1D08                   MOV.L       R0,@(32,R13)
+       Bindata.c    93            {
+       Bindata.c    94                    for (i = 0,j = 0; i < l->size ;++i,++j)
+    0000015E E400                   MOV         #0,R4
+    00000160 DA4B                   MOV.L       L416+4,R10 ; _memcpy
+    00000162 6E43                   MOV         R4,R14
+    00000164 A011                   BRA         L390
+    00000166 6C43                   MOV         R4,R12
+    00000168              L391:                             
+       Bindata.c    95                    {
+       Bindata.c    96                            if (i==index)++j;
+    00000168 62F2                   MOV.L       @R15,R2
+    0000016A 3E20                   CMP/EQ      R2,R14
+    0000016C 8F01                   BF/S        L392
+       Bindata.c    97                            memcpy(& l->set[j],& pre_set[i],sizeof(POINT));
+    0000016E E64C                   MOV         #76,R6
+    00000170 7C01                   ADD         #1,R12
+    00000172              L392:                             
+    00000172 6563                   MOV         R6,R5
+    00000174 53D8                   MOV.L       @(32,R13),R3
+    00000176 6463                   MOV         R6,R4
+    00000178 0E57                   MUL.L       R5,R14
+    0000017A 051A                   STS         MACL,R5
+    0000017C 0C47                   MUL.L       R4,R12
+    0000017E 35BC                   ADD         R11,R5
+    00000180 041A                   STS         MACL,R4
+    00000182 4A0B                   JSR         @R10
+    00000184 343C                   ADD         R3,R4
+    00000186 7E01                   ADD         #1,R14
+    00000188 7C01                   ADD         #1,R12
+    0000018A              L390:                             
+    0000018A 52D9                   MOV.L       @(36,R13),R2
+    0000018C 3E23                   CMP/GE      R2,R14
+    0000018E 8BEB                   BF          L391
+       Bindata.c    98                    }
+       Bindata.c    99                    free(pre_set);
+    00000190 D240                   MOV.L       L416+8,R2  ; _free
+    00000192 420B                   JSR         @R2
+    00000194 64B3                   MOV         R11,R4
+    00000196              L389:                             
+       Bindata.c   100            }
+       Bindata.c   101            l->size = new_size;
+    00000196 1D99                   MOV.L       R9,@(36,R13)
+       Bindata.c   102    }
+    00000198 7F04                   ADD         #4,R15
+    0000019A 4F16                   LDS.L       @R15+,MACL
+    0000019C 4F26                   LDS.L       @R15+,PR
+    0000019E 69F6                   MOV.L       @R15+,R9
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    7
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001A0 6AF6                   MOV.L       @R15+,R10
+    000001A2 6BF6                   MOV.L       @R15+,R11
+    000001A4 6CF6                   MOV.L       @R15+,R12
+    000001A6 6DF6                   MOV.L       @R15+,R13
+    000001A8 000B                   RTS
+    000001AA 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   103    
+       Bindata.c   104    void route_del (ROUTE *l,int index)
+    000001AC              _route_del:                      ; function: route_del
+                                                           ; frame size=40
+    000001AC 2FE6                   MOV.L       R14,@-R15
+    000001AE 6E43                   MOV         R4,R14
+    000001B0 2FD6                   MOV.L       R13,@-R15
+    000001B2 2FC6                   MOV.L       R12,@-R15
+    000001B4 2FB6                   MOV.L       R11,@-R15
+    000001B6 2FA6                   MOV.L       R10,@-R15
+    000001B8 2F96                   MOV.L       R9,@-R15
+    000001BA 2F86                   MOV.L       R8,@-R15
+    000001BC 4F22                   STS.L       PR,@-R15
+    000001BE 4F12                   STS.L       MACL,@-R15
+    000001C0 7FFC                   ADD         #-4,R15
+    000001C2 2F52                   MOV.L       R5,@R15
+       Bindata.c   105    {
+       Bindata.c   106            POINT * pre_set = l->set;
+    000001C4 5BE8                   MOV.L       @(32,R14),R11
+       Bindata.c   107            int new_size = l->size - 1;
+    000001C6 5CE9                   MOV.L       @(36,R14),R12
+    000001C8 7CFF                   ADD         #-1,R12
+       Bindata.c   108            if (new_size == 0)
+    000001CA 2CC8                   TST         R12,R12
+    000001CC 8F05                   BF/S        L393
+    000001CE E800                   MOV         #0,R8
+       Bindata.c   109            {
+       Bindata.c   110                    free(l->set);
+    000001D0 D230                   MOV.L       L416+8,R2  ; _free
+    000001D2 420B                   JSR         @R2
+    000001D4 54E8                   MOV.L       @(32,R14),R4
+       Bindata.c   111                    l->set = NULL;
+    000001D6 A01F                   BRA         L394
+    000001D8 1E88                   MOV.L       R8,@(32,R14)
+    000001DA              L393:                             
+       Bindata.c   112            }
+       Bindata.c   113            else
+       Bindata.c   114            {
+       Bindata.c   115                    int i,j;
+       Bindata.c   116                    l->set = (POINT*)calloc(new_size,sizeof(POINT));
+    000001DA E54C                   MOV         #76,R5
+    000001DC D22B                   MOV.L       L416,R2    ; _calloc
+    000001DE 420B                   JSR         @R2
+    000001E0 64C3                   MOV         R12,R4
+       Bindata.c   117                    for (i = 0,j = 0;i<l->size;++i)
+    000001E2 6D83                   MOV         R8,R13
+    000001E4 1E08                   MOV.L       R0,@(32,R14)
+    000001E6 DA2A                   MOV.L       L416+4,R10 ; _memcpy
+    000001E8 A010                   BRA         L395
+    000001EA 6983                   MOV         R8,R9
+    000001EC              L396:                             
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    8
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Bindata.c   118                    {
+       Bindata.c   119                            if (i!=index)
+    000001EC 62F2                   MOV.L       @R15,R2
+    000001EE 3D20                   CMP/EQ      R2,R13
+    000001F0 890B                   BT          L397
+       Bindata.c   120                                    memcpy(& l->set[j++],& pre_set[i],sizeof(POINT));
+    000001F2 E64C                   MOV         #76,R6
+    000001F4 52E8                   MOV.L       @(32,R14),R2
+    000001F6 6563                   MOV         R6,R5
+    000001F8 0D57                   MUL.L       R5,R13
+    000001FA 6363                   MOV         R6,R3
+    000001FC 051A                   STS         MACL,R5
+    000001FE 35BC                   ADD         R11,R5
+    00000200 0937                   MUL.L       R3,R9
+    00000202 7901                   ADD         #1,R9
+    00000204 041A                   STS         MACL,R4
+    00000206 4A0B                   JSR         @R10
+    00000208 342C                   ADD         R2,R4
+    0000020A              L397:                             
+    0000020A 7D01                   ADD         #1,R13
+    0000020C              L395:                             
+    0000020C 53E9                   MOV.L       @(36,R14),R3
+    0000020E 3D33                   CMP/GE      R3,R13
+    00000210 8BEC                   BF          L396
+       Bindata.c   121                    }
+       Bindata.c   122                    free(pre_set);
+    00000212 D320                   MOV.L       L416+8,R3  ; _free
+    00000214 430B                   JSR         @R3
+    00000216 64B3                   MOV         R11,R4
+    00000218              L394:                             
+       Bindata.c   123            }
+       Bindata.c   124            l->size = new_size;
+    00000218 1EC9                   MOV.L       R12,@(36,R14)
+       Bindata.c   125    }
+    0000021A 7F04                   ADD         #4,R15
+    0000021C 4F16                   LDS.L       @R15+,MACL
+    0000021E 4F26                   LDS.L       @R15+,PR
+    00000220 68F6                   MOV.L       @R15+,R8
+    00000222 69F6                   MOV.L       @R15+,R9
+    00000224 6AF6                   MOV.L       @R15+,R10
+    00000226 6BF6                   MOV.L       @R15+,R11
+    00000228 6CF6                   MOV.L       @R15+,R12
+    0000022A 6DF6                   MOV.L       @R15+,R13
+    0000022C 000B                   RTS
+    0000022E 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   126    
+       Bindata.c   127    void route_clr (ROUTE *l)
+    00000230              _route_clr:                      ; function: route_clr
+                                                           ; frame size=8
+    00000230 2FE6                   MOV.L       R14,@-R15
+    00000232 6E43                   MOV         R4,R14
+       Bindata.c   128    {
+       Bindata.c   129            free(l->set);
+    00000234 D317                   MOV.L       L416+8,R3  ; _free
+    00000236 4F22                   STS.L       PR,@-R15
+    00000238 430B                   JSR         @R3
+    0000023A 54E8                   MOV.L       @(32,R14),R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Bindata.c   130            l->set = NULL;
+    0000023C E400                   MOV         #0,R4
+    0000023E 1E48                   MOV.L       R4,@(32,R14)
+       Bindata.c   131            l->size = 0;
+    00000240 1E49                   MOV.L       R4,@(36,R14)
+       Bindata.c   132    }
+    00000242 4F26                   LDS.L       @R15+,PR
+    00000244 000B                   RTS
+    00000246 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   133    
+       Bindata.c   134    
+       Bindata.c   135    
+       Bindata.c   136    ZDMROUTE zdmroute;
+       Bindata.c   137    void zdmroute_initial(ZDMROUTE *l)
+    00000248              _zdmroute_initial:               ; function: zdmroute_initial
+                                                           ; frame size=0
+       Bindata.c   138    {
+       Bindata.c   139            l->size = 0;
+    00000248 E500                   MOV         #0,R5
+    0000024A 1451                   MOV.L       R5,@(4,R4)
+       Bindata.c   140            l->set = NULL;
+       Bindata.c   141    }
+    0000024C 000B                   RTS
+    0000024E 2452                   MOV.L       R5,@R4
+       Bindata.c   142    
+       Bindata.c   143    void zdmroute_push_back(ZDMROUTE *l)
+    00000250              _zdmroute_push_back:             ; function: zdmroute_push_back
+                                                           ; frame size=4
+    00000250 2F46                   MOV.L       R4,@-R15
+       Bindata.c   144    {
+       Bindata.c   145            zdmroute_insert(l,l->size);
+    00000252 6543                   MOV         R4,R5
+    00000254 5551                   MOV.L       @(4,R5),R5
+    00000256 7F04                   ADD         #4,R15
+       Bindata.c   146    }
+       Bindata.c   147    
+       Bindata.c   148    void zdmroute_insert(ZDMROUTE *l,int index)
+    00000258              _zdmroute_insert:                ; function: zdmroute_insert
+                                                           ; frame size=36
+    00000258 2FE6                   MOV.L       R14,@-R15
+    0000025A 2FD6                   MOV.L       R13,@-R15
+    0000025C 2FC6                   MOV.L       R12,@-R15
+    0000025E 6D43                   MOV         R4,R13
+       Bindata.c   149    {
+       Bindata.c   150            ZDMPOINT * pre_set = l->set;
+       Bindata.c   151            int new_size = l->size + 1;
+       Bindata.c   152            int i,j;
+       Bindata.c   153            l->set = (ZDMPOINT*)calloc(new_size,sizeof(ZDMPOINT));
+    00000260 D30A                   MOV.L       L416,R3    ; _calloc
+    00000262 2FB6                   MOV.L       R11,@-R15
+    00000264 2FA6                   MOV.L       R10,@-R15
+    00000266 2F96                   MOV.L       R9,@-R15
+    00000268 4F22                   STS.L       PR,@-R15
+    0000026A 4F12                   STS.L       MACL,@-R15
+    0000026C 7FFC                   ADD         #-4,R15
+    0000026E 2F52                   MOV.L       R5,@R15
+    00000270 6BD2                   MOV.L       @R13,R11
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   10
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000272 E52C                   MOV         #44,R5
+    00000274 59D1                   MOV.L       @(4,R13),R9
+    00000276 7901                   ADD         #1,R9
+    00000278 430B                   JSR         @R3
+    0000027A 6493                   MOV         R9,R4
+       Bindata.c   154            if (pre_set != NULL)
+    0000027C 2BB8                   TST         R11,R11
+    0000027E 8D22                   BT/S        L398
+    00000280 2D02                   MOV.L       R0,@R13
+       Bindata.c   155            {
+       Bindata.c   156                    for (i = 0,j = 0; i < l->size ;++i,++j)
+    00000282 E400                   MOV         #0,R4
+    00000284 DA02                   MOV.L       L416+4,R10 ; _memcpy
+    00000286 6E43                   MOV         R4,R14
+    00000288 A017                   BRA         L399
+    0000028A 6C43                   MOV         R4,R12
+    0000028C              L416:                             
+    0000028C <00000000>             .DATA.L     _calloc
+    00000290 <00000000>             .DATA.L     _memcpy
+    00000294 <00000000>             .DATA.L     _free
+    00000298              L400:                             
+       Bindata.c   157                    {
+       Bindata.c   158                            if (i==index)++j;
+    00000298 62F2                   MOV.L       @R15,R2
+    0000029A 3E20                   CMP/EQ      R2,R14
+    0000029C 8F01                   BF/S        L401
+       Bindata.c   159                            memcpy(& l->set[j],& pre_set[i],sizeof(ZDMPOINT));
+    0000029E E62C                   MOV         #44,R6
+    000002A0 7C01                   ADD         #1,R12
+    000002A2              L401:                             
+    000002A2 6563                   MOV         R6,R5
+    000002A4 63D2                   MOV.L       @R13,R3
+    000002A6 6463                   MOV         R6,R4
+    000002A8 0E57                   MUL.L       R5,R14
+    000002AA 051A                   STS         MACL,R5
+    000002AC 0C47                   MUL.L       R4,R12
+    000002AE 35BC                   ADD         R11,R5
+    000002B0 041A                   STS         MACL,R4
+    000002B2 4A0B                   JSR         @R10
+    000002B4 343C                   ADD         R3,R4
+    000002B6 7E01                   ADD         #1,R14
+    000002B8 7C01                   ADD         #1,R12
+    000002BA              L399:                             
+    000002BA 52D1                   MOV.L       @(4,R13),R2
+    000002BC 3E23                   CMP/GE      R2,R14
+    000002BE 8BEB                   BF          L400
+       Bindata.c   160                    }
+       Bindata.c   161                    free(pre_set);
+    000002C0 D276                   MOV.L       L417,R2    ; _free
+    000002C2 420B                   JSR         @R2
+    000002C4 64B3                   MOV         R11,R4
+    000002C6              L398:                             
+       Bindata.c   162            }
+       Bindata.c   163            l->size = new_size;
+    000002C6 1D91                   MOV.L       R9,@(4,R13)
+       Bindata.c   164    }
+    000002C8 7F04                   ADD         #4,R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   11
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000002CA 4F16                   LDS.L       @R15+,MACL
+    000002CC 4F26                   LDS.L       @R15+,PR
+    000002CE 69F6                   MOV.L       @R15+,R9
+    000002D0 6AF6                   MOV.L       @R15+,R10
+    000002D2 6BF6                   MOV.L       @R15+,R11
+    000002D4 6CF6                   MOV.L       @R15+,R12
+    000002D6 6DF6                   MOV.L       @R15+,R13
+    000002D8 000B                   RTS
+    000002DA 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   165    
+       Bindata.c   166    void zdmroute_del(ZDMROUTE *l,int index)
+    000002DC              _zdmroute_del:                   ; function: zdmroute_del
+                                                           ; frame size=40
+    000002DC 2FE6                   MOV.L       R14,@-R15
+    000002DE 6E43                   MOV         R4,R14
+    000002E0 2FD6                   MOV.L       R13,@-R15
+    000002E2 2FC6                   MOV.L       R12,@-R15
+    000002E4 2FB6                   MOV.L       R11,@-R15
+    000002E6 2FA6                   MOV.L       R10,@-R15
+    000002E8 2F96                   MOV.L       R9,@-R15
+    000002EA 2F86                   MOV.L       R8,@-R15
+    000002EC 4F22                   STS.L       PR,@-R15
+    000002EE 4F12                   STS.L       MACL,@-R15
+    000002F0 7FFC                   ADD         #-4,R15
+    000002F2 2F52                   MOV.L       R5,@R15
+       Bindata.c   167    {
+       Bindata.c   168            ZDMPOINT * pre_set = l->set;
+    000002F4 6BE2                   MOV.L       @R14,R11
+       Bindata.c   169            int new_size = l->size - 1;
+    000002F6 5CE1                   MOV.L       @(4,R14),R12
+    000002F8 7CFF                   ADD         #-1,R12
+       Bindata.c   170            if (new_size == 0)
+    000002FA 2CC8                   TST         R12,R12
+    000002FC 8F05                   BF/S        L402
+    000002FE E800                   MOV         #0,R8
+       Bindata.c   171            {
+       Bindata.c   172                    free(l->set);
+    00000300 D266                   MOV.L       L417,R2    ; _free
+    00000302 420B                   JSR         @R2
+    00000304 64E2                   MOV.L       @R14,R4
+       Bindata.c   173                    l->set = NULL;
+    00000306 A01F                   BRA         L403
+    00000308 2E82                   MOV.L       R8,@R14
+    0000030A              L402:                             
+       Bindata.c   174            }
+       Bindata.c   175            else
+       Bindata.c   176            {
+       Bindata.c   177                    int i,j;
+       Bindata.c   178                    l->set = (ZDMPOINT*)calloc(new_size,sizeof(ZDMPOINT));
+    0000030A E52C                   MOV         #44,R5
+    0000030C D264                   MOV.L       L417+4,R2  ; _calloc
+    0000030E 420B                   JSR         @R2
+    00000310 64C3                   MOV         R12,R4
+       Bindata.c   179                    for (i = 0,j = 0;i<l->size;++i)
+    00000312 6D83                   MOV         R8,R13
+    00000314 2E02                   MOV.L       R0,@R14
+    00000316 DA63                   MOV.L       L417+8,R10 ; _memcpy
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   12
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000318 A010                   BRA         L404
+    0000031A 6983                   MOV         R8,R9
+    0000031C              L405:                             
+       Bindata.c   180                    {
+       Bindata.c   181                            if (i!=index)
+    0000031C 62F2                   MOV.L       @R15,R2
+    0000031E 3D20                   CMP/EQ      R2,R13
+    00000320 890B                   BT          L406
+       Bindata.c   182                                    memcpy(& l->set[j++],& pre_set[i],sizeof(ZDMPOINT));
+    00000322 E62C                   MOV         #44,R6
+    00000324 62E2                   MOV.L       @R14,R2
+    00000326 6563                   MOV         R6,R5
+    00000328 0D57                   MUL.L       R5,R13
+    0000032A 6363                   MOV         R6,R3
+    0000032C 051A                   STS         MACL,R5
+    0000032E 35BC                   ADD         R11,R5
+    00000330 0937                   MUL.L       R3,R9
+    00000332 7901                   ADD         #1,R9
+    00000334 041A                   STS         MACL,R4
+    00000336 4A0B                   JSR         @R10
+    00000338 342C                   ADD         R2,R4
+    0000033A              L406:                             
+    0000033A 7D01                   ADD         #1,R13
+    0000033C              L404:                             
+    0000033C 53E1                   MOV.L       @(4,R14),R3
+    0000033E 3D33                   CMP/GE      R3,R13
+    00000340 8BEC                   BF          L405
+       Bindata.c   183                    }
+       Bindata.c   184                    free(pre_set);
+    00000342 D356                   MOV.L       L417,R3    ; _free
+    00000344 430B                   JSR         @R3
+    00000346 64B3                   MOV         R11,R4
+    00000348              L403:                             
+       Bindata.c   185            }
+       Bindata.c   186            l->size = new_size;
+    00000348 1EC1                   MOV.L       R12,@(4,R14)
+       Bindata.c   187    }
+    0000034A 7F04                   ADD         #4,R15
+    0000034C 4F16                   LDS.L       @R15+,MACL
+    0000034E 4F26                   LDS.L       @R15+,PR
+    00000350 68F6                   MOV.L       @R15+,R8
+    00000352 69F6                   MOV.L       @R15+,R9
+    00000354 6AF6                   MOV.L       @R15+,R10
+    00000356 6BF6                   MOV.L       @R15+,R11
+    00000358 6CF6                   MOV.L       @R15+,R12
+    0000035A 6DF6                   MOV.L       @R15+,R13
+    0000035C 000B                   RTS
+    0000035E 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   188    
+       Bindata.c   189    void zdmroute_clr(ZDMROUTE *l)
+    00000360              _zdmroute_clr:                   ; function: zdmroute_clr
+                                                           ; frame size=8
+    00000360 2FE6                   MOV.L       R14,@-R15
+    00000362 6E43                   MOV         R4,R14
+       Bindata.c   190    {
+       Bindata.c   191            free(l->set);
+    00000364 D34D                   MOV.L       L417,R3    ; _free
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   13
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000366 4F22                   STS.L       PR,@-R15
+    00000368 430B                   JSR         @R3
+    0000036A 64E2                   MOV.L       @R14,R4
+       Bindata.c   192            l->set = NULL;
+    0000036C E400                   MOV         #0,R4
+    0000036E 2E42                   MOV.L       R4,@R14
+       Bindata.c   193            l->size = 0;
+    00000370 1E41                   MOV.L       R4,@(4,R14)
+       Bindata.c   194    }
+    00000372 4F26                   LDS.L       @R15+,PR
+    00000374 000B                   RTS
+    00000376 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   195    
+       Bindata.c   196    
+       Bindata.c   197    
+       Bindata.c   198    PMROUTE pmroute;
+       Bindata.c   199    
+       Bindata.c   200    void pmroute_initial(PMROUTE *l)
+    00000378              _pmroute_initial:                ; function: pmroute_initial
+                                                           ; frame size=0
+       Bindata.c   201    {
+       Bindata.c   202            l->size = 0;
+    00000378 E500                   MOV         #0,R5
+    0000037A 1451                   MOV.L       R5,@(4,R4)
+       Bindata.c   203            l->set = NULL;
+       Bindata.c   204    }
+    0000037C 000B                   RTS
+    0000037E 2452                   MOV.L       R5,@R4
+       Bindata.c   205    
+       Bindata.c   206    
+       Bindata.c   207    void pmroute_push_back(PMROUTE *l)
+    00000380              _pmroute_push_back:              ; function: pmroute_push_back
+                                                           ; frame size=4
+    00000380 2F46                   MOV.L       R4,@-R15
+       Bindata.c   208    {
+       Bindata.c   209            pmroute_insert(l,l->size);
+    00000382 6543                   MOV         R4,R5
+    00000384 5551                   MOV.L       @(4,R5),R5
+    00000386 7F04                   ADD         #4,R15
+       Bindata.c   210    }
+       Bindata.c   211    
+       Bindata.c   212    
+       Bindata.c   213    void pmroute_insert(PMROUTE *l,int index)
+    00000388              _pmroute_insert:                 ; function: pmroute_insert
+                                                           ; frame size=36
+    00000388 2FE6                   MOV.L       R14,@-R15
+    0000038A 2FD6                   MOV.L       R13,@-R15
+    0000038C 2FC6                   MOV.L       R12,@-R15
+    0000038E 6D43                   MOV         R4,R13
+       Bindata.c   214    {
+       Bindata.c   215            PMPOINT * pre_set = l->set;
+       Bindata.c   216            int new_size = l->size + 1;
+       Bindata.c   217            int i,j;
+       Bindata.c   218            l->set = (PMPOINT*)calloc(new_size,sizeof(PMPOINT));
+    00000390 D343                   MOV.L       L417+4,R3  ; _calloc
+    00000392 2FB6                   MOV.L       R11,@-R15
+    00000394 2FA6                   MOV.L       R10,@-R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   14
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000396 2F96                   MOV.L       R9,@-R15
+    00000398 4F22                   STS.L       PR,@-R15
+    0000039A 4F12                   STS.L       MACL,@-R15
+    0000039C 7FFC                   ADD         #-4,R15
+    0000039E 2F52                   MOV.L       R5,@R15
+    000003A0 6BD2                   MOV.L       @R13,R11
+    000003A2 E54C                   MOV         #76,R5
+    000003A4 59D1                   MOV.L       @(4,R13),R9
+    000003A6 7901                   ADD         #1,R9
+    000003A8 430B                   JSR         @R3
+    000003AA 6493                   MOV         R9,R4
+       Bindata.c   219            if (pre_set != NULL)
+    000003AC 2BB8                   TST         R11,R11
+    000003AE 8D1C                   BT/S        L407
+    000003B0 2D02                   MOV.L       R0,@R13
+       Bindata.c   220            {
+       Bindata.c   221                    for (i = 0,j = 0; i < l->size ;++i,++j)
+    000003B2 E400                   MOV         #0,R4
+    000003B4 DA3B                   MOV.L       L417+8,R10 ; _memcpy
+    000003B6 6E43                   MOV         R4,R14
+    000003B8 A011                   BRA         L408
+    000003BA 6C43                   MOV         R4,R12
+    000003BC              L409:                             
+       Bindata.c   222                    {
+       Bindata.c   223                            if (i==index)++j;
+    000003BC 62F2                   MOV.L       @R15,R2
+    000003BE 3E20                   CMP/EQ      R2,R14
+    000003C0 8F01                   BF/S        L410
+       Bindata.c   224                            memcpy(& l->set[j],& pre_set[i],sizeof(PMPOINT));
+    000003C2 E64C                   MOV         #76,R6
+    000003C4 7C01                   ADD         #1,R12
+    000003C6              L410:                             
+    000003C6 6563                   MOV         R6,R5
+    000003C8 63D2                   MOV.L       @R13,R3
+    000003CA 6463                   MOV         R6,R4
+    000003CC 0E57                   MUL.L       R5,R14
+    000003CE 051A                   STS         MACL,R5
+    000003D0 0C47                   MUL.L       R4,R12
+    000003D2 35BC                   ADD         R11,R5
+    000003D4 041A                   STS         MACL,R4
+    000003D6 4A0B                   JSR         @R10
+    000003D8 343C                   ADD         R3,R4
+    000003DA 7E01                   ADD         #1,R14
+    000003DC 7C01                   ADD         #1,R12
+    000003DE              L408:                             
+    000003DE 52D1                   MOV.L       @(4,R13),R2
+    000003E0 3E23                   CMP/GE      R2,R14
+    000003E2 8BEB                   BF          L409
+       Bindata.c   225                    }
+       Bindata.c   226                    free(pre_set);
+    000003E4 D22D                   MOV.L       L417,R2    ; _free
+    000003E6 420B                   JSR         @R2
+    000003E8 64B3                   MOV         R11,R4
+    000003EA              L407:                             
+       Bindata.c   227            }
+       Bindata.c   228            l->size = new_size;
+    000003EA 1D91                   MOV.L       R9,@(4,R13)
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   15
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Bindata.c   229    }
+    000003EC 7F04                   ADD         #4,R15
+    000003EE 4F16                   LDS.L       @R15+,MACL
+    000003F0 4F26                   LDS.L       @R15+,PR
+    000003F2 69F6                   MOV.L       @R15+,R9
+    000003F4 6AF6                   MOV.L       @R15+,R10
+    000003F6 6BF6                   MOV.L       @R15+,R11
+    000003F8 6CF6                   MOV.L       @R15+,R12
+    000003FA 6DF6                   MOV.L       @R15+,R13
+    000003FC 000B                   RTS
+    000003FE 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   230    
+       Bindata.c   231    
+       Bindata.c   232    
+       Bindata.c   233    void pmroute_del(PMROUTE *l,int index)
+    00000400              _pmroute_del:                    ; function: pmroute_del
+                                                           ; frame size=40
+    00000400 2FE6                   MOV.L       R14,@-R15
+    00000402 6E43                   MOV         R4,R14
+    00000404 2FD6                   MOV.L       R13,@-R15
+    00000406 2FC6                   MOV.L       R12,@-R15
+    00000408 2FB6                   MOV.L       R11,@-R15
+    0000040A 2FA6                   MOV.L       R10,@-R15
+    0000040C 2F96                   MOV.L       R9,@-R15
+    0000040E 2F86                   MOV.L       R8,@-R15
+    00000410 4F22                   STS.L       PR,@-R15
+    00000412 4F12                   STS.L       MACL,@-R15
+    00000414 7FFC                   ADD         #-4,R15
+    00000416 2F52                   MOV.L       R5,@R15
+       Bindata.c   234    {
+       Bindata.c   235            PMPOINT * pre_set = l->set;
+    00000418 6BE2                   MOV.L       @R14,R11
+       Bindata.c   236            int new_size = l->size - 1;
+    0000041A 5CE1                   MOV.L       @(4,R14),R12
+    0000041C 7CFF                   ADD         #-1,R12
+       Bindata.c   237            if (new_size == 0)
+    0000041E 2CC8                   TST         R12,R12
+    00000420 8F05                   BF/S        L411
+    00000422 E800                   MOV         #0,R8
+       Bindata.c   238            {
+       Bindata.c   239                    free(l->set);
+    00000424 D21D                   MOV.L       L417,R2    ; _free
+    00000426 420B                   JSR         @R2
+    00000428 64E2                   MOV.L       @R14,R4
+       Bindata.c   240                    l->set = NULL;
+    0000042A A01F                   BRA         L412
+    0000042C 2E82                   MOV.L       R8,@R14
+    0000042E              L411:                             
+       Bindata.c   241            }
+       Bindata.c   242            else
+       Bindata.c   243            {
+       Bindata.c   244                    int i,j;
+       Bindata.c   245                    l->set = (PMPOINT*)calloc(new_size,sizeof(PMPOINT));
+    0000042E E54C                   MOV         #76,R5
+    00000430 D21B                   MOV.L       L417+4,R2  ; _calloc
+    00000432 420B                   JSR         @R2
+    00000434 64C3                   MOV         R12,R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   16
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Bindata.c   246                    for (i = 0,j = 0;i<l->size;++i)
+    00000436 6D83                   MOV         R8,R13
+    00000438 2E02                   MOV.L       R0,@R14
+    0000043A DA1A                   MOV.L       L417+8,R10 ; _memcpy
+    0000043C A010                   BRA         L413
+    0000043E 6983                   MOV         R8,R9
+    00000440              L414:                             
+       Bindata.c   247                    {
+       Bindata.c   248                            if (i!=index)
+    00000440 62F2                   MOV.L       @R15,R2
+    00000442 3D20                   CMP/EQ      R2,R13
+    00000444 890B                   BT          L415
+       Bindata.c   249                                    memcpy(& l->set[j++],& pre_set[i],sizeof(PMPOINT));
+    00000446 E64C                   MOV         #76,R6
+    00000448 62E2                   MOV.L       @R14,R2
+    0000044A 6563                   MOV         R6,R5
+    0000044C 0D57                   MUL.L       R5,R13
+    0000044E 6363                   MOV         R6,R3
+    00000450 051A                   STS         MACL,R5
+    00000452 35BC                   ADD         R11,R5
+    00000454 0937                   MUL.L       R3,R9
+    00000456 7901                   ADD         #1,R9
+    00000458 041A                   STS         MACL,R4
+    0000045A 4A0B                   JSR         @R10
+    0000045C 342C                   ADD         R2,R4
+    0000045E              L415:                             
+    0000045E 7D01                   ADD         #1,R13
+    00000460              L413:                             
+    00000460 53E1                   MOV.L       @(4,R14),R3
+    00000462 3D33                   CMP/GE      R3,R13
+    00000464 8BEC                   BF          L414
+       Bindata.c   250                    }
+       Bindata.c   251                    free(pre_set);
+    00000466 D30D                   MOV.L       L417,R3    ; _free
+    00000468 430B                   JSR         @R3
+    0000046A 64B3                   MOV         R11,R4
+    0000046C              L412:                             
+       Bindata.c   252            }
+       Bindata.c   253            l->size = new_size;
+    0000046C 1EC1                   MOV.L       R12,@(4,R14)
+       Bindata.c   254    }
+    0000046E 7F04                   ADD         #4,R15
+    00000470 4F16                   LDS.L       @R15+,MACL
+    00000472 4F26                   LDS.L       @R15+,PR
+    00000474 68F6                   MOV.L       @R15+,R8
+    00000476 69F6                   MOV.L       @R15+,R9
+    00000478 6AF6                   MOV.L       @R15+,R10
+    0000047A 6BF6                   MOV.L       @R15+,R11
+    0000047C 6CF6                   MOV.L       @R15+,R12
+    0000047E 6DF6                   MOV.L       @R15+,R13
+    00000480 000B                   RTS
+    00000482 6EF6                   MOV.L       @R15+,R14
+       Bindata.c   255    
+       Bindata.c   256    void pmroute_clr(PMROUTE *l)
+    00000484              _pmroute_clr:                    ; function: pmroute_clr
+                                                           ; frame size=8
+    00000484 2FE6                   MOV.L       R14,@-R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE   17
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000486 6E43                   MOV         R4,R14
+       Bindata.c   257    {
+       Bindata.c   258            free(l->set);
+    00000488 D304                   MOV.L       L417,R3    ; _free
+    0000048A 4F22                   STS.L       PR,@-R15
+    0000048C 430B                   JSR         @R3
+    0000048E 64E2                   MOV.L       @R14,R4
+       Bindata.c   259            l->set = NULL;
+    00000490 E400                   MOV         #0,R4
+    00000492 2E42                   MOV.L       R4,@R14
+       Bindata.c   260            l->size = 0;
+    00000494 1E41                   MOV.L       R4,@(4,R14)
+       Bindata.c   261    }
+    00000496 4F26                   LDS.L       @R15+,PR
+    00000498 000B                   RTS
+    0000049A 6EF6                   MOV.L       @R15+,R14
+    0000049C              L417:                             
+    0000049C <00000000>             .DATA.L     _free
+    000004A0 <00000000>             .DATA.L     _calloc
+    000004A4 <00000000>             .DATA.L     _memcpy
+       Bindata.c   262    
+       Bindata.c   263    
+       Bindata.c   264    
+       Bindata.c   265    
+       Bindata.c   266    
+       Bindata.c   267    
+       Bindata.c   268    
+       Bindata.c   269    
+B   00000000              _jdfroute:                       ; static: jdfroute
+    00000000 00000008               .RES.L      2
+    00000008              _route:                          ; static: route
+    00000008 00000028               .RES.L      10
+    00000030              _zdmroute:                       ; static: zdmroute
+    00000030 00000008               .RES.L      2
+    00000038              _pmroute:                        ; static: pmroute
+    00000038 00000008               .RES.L      2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 01-Jun-2015 13:50:39  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         1
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:      269
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000004A8 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000040 Byte(s)
+
+ TOTAL PROGRAM SIZE: 000004E8 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            3
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:          24
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            65
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmkDB0B.tmp 
+

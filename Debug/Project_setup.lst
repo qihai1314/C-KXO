@@ -1,0 +1,413 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-6½»µã·¨×ªÏßÔªÍÆÁ´±í\2015-06-4½»µã·¨×ªÏßÔªÍÆÁ´±í\Project_setup.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Project_se     1    #include "headfile.h"
+
+
+
+
+
+
+
+P   00000000              _ChangeSetup:                    ; function: ChangeSetup
+                                                           ; frame size=80
+                                                           ; used runtime library name:
+                                                           ; __dtoi, __itod, __gtd, __ltd
+    00000000 2FE6                   MOV.L       R14,@-R15
+    00000002 2FD6                   MOV.L       R13,@-R15
+    00000004 2FC6                   MOV.L       R12,@-R15
+    00000006 2FB6                   MOV.L       R11,@-R15
+    00000008 2FA6                   MOV.L       R10,@-R15
+    0000000A 2F96                   MOV.L       R9,@-R15
+    0000000C 2F86                   MOV.L       R8,@-R15
+    0000000E 4F22                   STS.L       PR,@-R15
+    00000010 D23F                   MOV.L       L520+2,R2  ; _setup_data
+    00000012 7FE0                   ADD         #-32,R15
+    00000014 D33F                   MOV.L       L520+6,R3  ; __itod
+    00000016 6CF3                   MOV         R15,R12
+    00000018 2FC6                   MOV.L       R12,@-R15
+    0000001A 6EC3                   MOV         R12,R14
+    0000001C 430B                   JSR         @R3
+    0000001E 6022                   MOV.L       @R2,R0
+    00000020 DA3D                   MOV.L       L520+10,R10; _index
+    00000022 ED00                   MOV         #0,R13
+    00000024 D93D                   MOV.L       L520+14,R9 ; _need_redraw
+    00000026 E301                   MOV         #1,R3
+    00000028 D13D                   MOV.L       L520+18,R1 ; _Bdisp_AllClr_DDVRAM
+    0000002A 2AD2                   MOV.L       R13,@R10
+    0000002C 410B                   JSR         @R1
+    0000002E 2932                   MOV.L       R3,@R9
+    00000030 D23C                   MOV.L       L520+22,R2 ; _L_GRAPH_SETUP
+    00000032 E720                   MOV         #32,R7
+    00000034 D33C                   MOV.L       L520+26,R3 ; _DrawPicture
+    00000036 E630                   MOV         #48,R6
+    00000038 2F26                   MOV.L       R2,@-R15
+    0000003A 65D3                   MOV         R13,R5
+    0000003C 430B                   JSR         @R3
+    0000003E 64D3                   MOV         R13,R4
+    00000040 D23A                   MOV.L       L520+30,R2 ; _Bdisp_AreaReverseVRAM
+    00000042 7F04                   ADD         #4,R15
+    00000044 E70E                   MOV         #14,R7
+    00000046 E67F                   MOV         #127,R6
+    00000048 65D3                   MOV         R13,R5
+    0000004A 420B                   JSR         @R2
+    0000004C 64D3                   MOV         R13,R4
+    0000004E D838                   MOV.L       L520+34,R8 ; _PrintFloat
+    00000050 9B5D                   MOV.W       L520,R11   ; H'7532
+    00000052              L511:                             
+    00000052 6092                   MOV.L       @R9,R0
+    00000054 8801                   CMP/EQ      #1,R0
+    00000056 8B35                   BF          L512
+    00000058 52E1                   MOV.L       @(4,R14),R2
+    0000005A E300                   MOV         #0,R3
+    0000005C 2F26                   MOV.L       R2,@-R15
+    0000005E 62E2                   MOV.L       @R14,R2
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000060 2F26                   MOV.L       R2,@-R15
+    00000062 2F36                   MOV.L       R3,@-R15
+    00000064 D333                   MOV.L       L520+38,R3 ; H'40280000
+    00000066 D234                   MOV.L       L520+42,R2 ; __gtd
+    00000068 420B                   JSR         @R2
+    0000006A 2F36                   MOV.L       R3,@-R15
+    0000006C 8800                   CMP/EQ      #0,R0
+    0000006E 8905                   BT          L513
+    00000070 D130                   MOV.L       L520+38,R1 ; H'40280000
+    00000072 63E3                   MOV         R14,R3
+    00000074 2312                   MOV.L       R1,@R3
+    00000076 E100                   MOV         #0,R1
+    00000078 A00F                   BRA         L515
+    0000007A 1311                   MOV.L       R1,@(4,R3)
+    0000007C              L513:                             
+    0000007C 52E1                   MOV.L       @(4,R14),R2
+    0000007E E300                   MOV         #0,R3
+    00000080 2F26                   MOV.L       R2,@-R15
+    00000082 62E2                   MOV.L       @R14,R2
+    00000084 2F26                   MOV.L       R2,@-R15
+    00000086 2F36                   MOV.L       R3,@-R15
+    00000088 D22C                   MOV.L       L520+46,R2 ; __ltd
+    0000008A 420B                   JSR         @R2
+    0000008C 2F36                   MOV.L       R3,@-R15
+    0000008E 8800                   CMP/EQ      #0,R0
+    00000090 8903                   BT          L515
+    00000092 63E3                   MOV         R14,R3
+    00000094 E100                   MOV         #0,R1
+    00000096 2312                   MOV.L       R1,@R3
+    00000098 1311                   MOV.L       R1,@(4,R3)
+    0000009A              L515:                             
+    0000009A 52E1                   MOV.L       @(4,R14),R2
+    0000009C D328                   MOV.L       L520+50,R3 ; __dtoi
+    0000009E 2F26                   MOV.L       R2,@-R15
+    000000A0 62E2                   MOV.L       @R14,R2
+    000000A2 430B                   JSR         @R3
+    000000A4 2F26                   MOV.L       R2,@-R15
+    000000A6 D21B                   MOV.L       L520+6,R2  ; __itod
+    000000A8 420B                   JSR         @R2
+    000000AA 2FE6                   MOV.L       R14,@-R15
+    000000AC 53E1                   MOV.L       @(4,R14),R3
+    000000AE E700                   MOV         #0,R7
+    000000B0 2F36                   MOV.L       R3,@-R15
+    000000B2 E510                   MOV         #16,R5
+    000000B4 63E2                   MOV.L       @R14,R3
+    000000B6 2F36                   MOV.L       R3,@-R15
+    000000B8 66A2                   MOV.L       @R10,R6
+    000000BA 2668                   TST         R6,R6
+    000000BC 0629                   MOVT        R6
+    000000BE 480B                   JSR         @R8
+    000000C0 E42A                   MOV         #42,R4
+    000000C2 7F08                   ADD         #8,R15
+    000000C4              L512:                             
+    000000C4 D41F                   MOV.L       L520+54,R4 ; _key
+    000000C6 D220                   MOV.L       L520+58,R2 ; _GetKey
+    000000C8 420B                   JSR         @R2
+    000000CA 0009                   NOP
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000CC D21D                   MOV.L       L520+54,R2 ; _key
+    000000CE 6322                   MOV.L       @R2,R3
+    000000D0 33B0                   CMP/EQ      R11,R3
+    000000D2 890A                   BT          L519
+    000000D4 2FD6                   MOV.L       R13,@-R15
+    000000D6 E300                   MOV         #0,R3
+    000000D8 D21C                   MOV.L       L520+62,R2 ; _InputDefProc
+    000000DA E710                   MOV         #16,R7
+    000000DC 2F36                   MOV.L       R3,@-R15
+    000000DE E62A                   MOV         #42,R6
+    000000E0 E501                   MOV         #1,R5
+    000000E2 420B                   JSR         @R2
+    000000E4 64C3                   MOV         R12,R4
+    000000E6 AFB4                   BRA         L511
+    000000E8 7F08                   ADD         #8,R15
+    000000EA              L519:                             
+    000000EA 53E1                   MOV.L       @(4,R14),R3
+    000000EC D214                   MOV.L       L520+50,R2 ; __dtoi
+    000000EE 2F36                   MOV.L       R3,@-R15
+    000000F0 63E2                   MOV.L       @R14,R3
+    000000F2 420B                   JSR         @R2
+    000000F4 2F36                   MOV.L       R3,@-R15
+    000000F6 D306                   MOV.L       L520+2,R3  ; _setup_data
+    000000F8 2302                   MOV.L       R0,@R3
+    000000FA 7F20                   ADD         #32,R15
+    000000FC 4F26                   LDS.L       @R15+,PR
+    000000FE 68F6                   MOV.L       @R15+,R8
+    00000100 69F6                   MOV.L       @R15+,R9
+    00000102 6AF6                   MOV.L       @R15+,R10
+    00000104 6BF6                   MOV.L       @R15+,R11
+    00000106 6CF6                   MOV.L       @R15+,R12
+    00000108 6DF6                   MOV.L       @R15+,R13
+    0000010A 000B                   RTS
+    0000010C 6EF6                   MOV.L       @R15+,R14
+    0000010E              L520:                             
+    0000010E 7532                   .DATA.W     H'7532
+    00000110 <00000000>             .DATA.L     _setup_data
+    00000114 <00000000>             .DATA.L     __itod
+    00000118 <00000000>             .DATA.L     _index
+    0000011C <00000000>             .DATA.L     _need_redraw
+    00000120 <00000000>             .DATA.L     _Bdisp_AllClr_DDVRAM
+    00000124 <00000000>             .DATA.L     _L_GRAPH_SETUP
+    00000128 <00000000>             .DATA.L     _DrawPicture
+    0000012C <00000000>             .DATA.L     _Bdisp_AreaReverseVRAM
+    00000130 <00000000>             .DATA.L     _PrintFloat
+    00000134 40280000               .DATA.L     H'40280000
+    00000138 <00000000>             .DATA.L     __gtd
+    0000013C <00000000>             .DATA.L     __ltd
+    00000140 <00000000>             .DATA.L     __dtoi
+    00000144 <00000000>             .DATA.L     _key
+    00000148 <00000000>             .DATA.L     _GetKey
+    0000014C <00000000>             .DATA.L     _InputDefProc
+
+
+
+
+
+      Project_se     2    #include "runmain.h"
+      Project_se     3    
+      Project_se     4    const unsigned char L_GRAPH_SETUP[]={
+      Project_se     5    0,0,0,0,0,0,
+      Project_se     6    0,0,0,0,0,0,
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Project_se     7    0x23,0xC3,0xFE,0,0,0,
+      Project_se     8    0x12,0x42,0x52,0,0,0,
+      Project_se     9    0x02,0x43,0xFE,0,0,0,
+      Project_se    10    0x02,0x70,0x20,0,0,0,
+      Project_se    11    0x74,0x07,0xFF,0,0,0,
+      Project_se    12    0x1B,0xE1,0x04,0,0,0,
+      Project_se    13    0x12,0x21,0xFC,0,0,0,
+      Project_se    14    0x11,0x41,0x04,0,0,0,
+      Project_se    15    0x18,0x81,0xFC,0,0,0,
+      Project_se    16    0x11,0x41,0x04,0,0,0,
+      Project_se    17    0x0E,0x37,0xFF,0,0,0,
+      Project_se    18    0,0,0,0,0,0,
+      Project_se    19    0,0,0,0,0,0,
+      Project_se    20    0,0,0,0,0,0,
+      Project_se    21    0x02,0x04,0xA8,0x02,0,0,
+      Project_se    22    0x02,0x02,0xC8,0x03,0xE0,0,
+      Project_se    23    0x02,0x07,0xEF,0x02,0,0,
+      Project_se    24    0x0A,0x81,0x92,0x02,0,0,
+      Project_se    25    0x0A,0x42,0xD2,0x1F,0xC0,0,
+      Project_se    26    0x12,0x24,0xAA,0x10,0x40,0,
+      Project_se    27    0x22,0x11,0x0A,0x10,0x40,0,
+      Project_se    28    0x42,0x17,0xE4,0x1F,0xC0,0,
+      Project_se    29    0x02,0x02,0x44,0,0,0,
+      Project_se    30    0x02,0x01,0xCA,0x24,0xA0,0,
+      Project_se    31    0x0E,0x06,0x31,0x64,0x90,0,
+      Project_se    32    0,0,0,0,0,0,
+      Project_se    33    0,0,0,0,0,0,
+      Project_se    34    0,0,0,0,0,0,
+      Project_se    35    0,0,0,0,0,0,
+      Project_se    36    0,0,0,0,0,0};
+      Project_se    37    SETUPDATA setup_data = {4,""};
+      Project_se    38    
+      Project_se    39    
+      Project_se    40    void ChangeSetup ()
+      Project_se    41    {
+      Project_se    42            double data[4];
+      Project_se    43            data[0] = setup_data.point;
+      Project_se    44            index = 0;
+      Project_se    45            need_redraw = REDRAW_PART;
+      Project_se    46    
+      Project_se    47            Bdisp_AllClr_DDVRAM();
+      Project_se    48            DrawPicture(0,0,48,32,L_GRAPH_SETUP);
+      Project_se    49            Bdisp_AreaReverseVRAM(0,0,127,14);
+      Project_se    50    
+      Project_se    51            do
+      Project_se    52            {
+      Project_se    53                    if (need_redraw == REDRAW_PART)
+      Project_se    54                    {
+      Project_se    55                            int i;
+      Project_se    56                            data[0] > 12 ? data[0] = 12.0:data[0] < 0?data[0]=0:0;
+      Project_se    57                            data[0] = (int)data[0];
+      Project_se    58                            for (i=0;i<1;++i)
+      Project_se    59                                    PrintFloat (data[i],42,16,index == i,0);
+      Project_se    60                    }
+      Project_se    61                    GetKey (&key);
+      Project_se    62                    if (key==KEY_CTRL_EXIT)break;
+      Project_se    63                    InputDefProc (data,1,42,16,0,0);
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Project_se    64            }
+      Project_se    65            while (1);
+      Project_se    66            
+      Project_se    67            setup_data.point = data[0];
+      Project_se    68    }
+C   00000000              _L_GRAPH_SETUP:                  ; static: L_GRAPH_SETUP
+    00000000 0000000000             .DATA.B     H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'23,H'C3,H'FE,H'00,
+             0000000000 +                       H'00,H'00,H'12,H'42,H'52,H'00,H'00,H'00,H'02,H'43,H'FE,H'00,H'00,H'00,H'02,H'70,
+             000023C3FE +                       H'20,H'00,H'00,H'00,H'74,H'07,H'FF,H'00,H'00,H'00,H'1B,H'E1,H'04,H'00,H'00,H'00,
+             0000001242 +                       H'12,H'21,H'FC,H'00,H'00,H'00,H'11,H'41,H'04,H'00,H'00,H'00,H'18,H'81,H'FC,H'00,
+             5200000002 +                       H'00,H'00,H'11,H'41,H'04,H'00,H'00,H'00,H'0E,H'37,H'FF,H'00,H'00,H'00,H'00,H'00,
+             43FE000000 +                       H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,
+             0270200000 +                       H'02,H'04,H'A8,H'02,H'00,H'00,H'02,H'02,H'C8,H'03,H'E0,H'00,H'02,H'07,H'EF,H'02,
+             007407FF00 +                       H'00,H'00,H'0A,H'81,H'92,H'02,H'00,H'00,H'0A,H'42,H'D2,H'1F,H'C0,H'00,H'12,H'24,
+             00001BE104 +                       H'AA,H'10,H'40,H'00,H'22,H'11,H'0A,H'10,H'40,H'00,H'42,H'17,H'E4,H'1F,H'C0,H'00,
+             0000001221 +                       H'02,H'02,H'44,H'00,H'00,H'00,H'02,H'01,H'CA,H'24,H'A0,H'00,H'0E,H'06,H'31,H'64,
+             FC00000011 +                       H'90,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,
+             4104000000 +                       H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00,H'00
+             1881FC0000   
+             0011410400   
+             00000E37FF   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             000204A802   
+             00000202C8   
+             03E0000207   
+             EF0200000A   
+             8192020000   
+             0A42D21FC0   
+             001224AA10   
+             400022110A   
+             1040004217   
+             E41FC00002   
+             0244000000   
+             0201CA24A0   
+             000E063164   
+             9000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000000000   
+             0000         
+D   00000000              _setup_data:                     ; static: setup_data
+    00000000 00000004               .DATA.L     H'00000004
+    00000004 00                     .DATA.B     H'00
+    00000005 0000000C01             .DATAB.B    12,0
+             00           
+    00000011 0000002701             .DATAB.B    39,0
+             00           
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:19  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        12
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       68
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000150 Byte(s)
+CONSTANT SECTION (C):                               000000C0 Byte(s)
+DATA     SECTION (D):                               00000038 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000248 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:           13
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           3
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk7EDD.tmp 
+

@@ -1,0 +1,12 @@
+//------------------------------------------------------------------
+// Addin-Application header control file, created with the CASIO SDK
+//------------------------------------------------------------------
+[OUTPUT]     : "SDCLSQ.G1A"
+[BINDATA]    : "FXADDINror.bin"
+[DISPNAME]   : "SDCLSQ"
+[APPNAME]    : "@SDCLSQ"
+[VERSION]    : "11.19.2011"
+[APL_ICON]   : "MainIcon.bmp"
+[MODULE_NUM] : 0
+[MOD1_TITLE] : "celiangSD"
+[MOD1_ICON]  : "eActivityIcon.bmp"

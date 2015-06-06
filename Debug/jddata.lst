@@ -1,0 +1,408 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: F:\0.开发\0.两个重要编程和字库\2014-11-11\2014-09-25\jddata.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+        jddata.c     1    #include "jddata.h"
+
+P   00000000              _route_initial:                  ; function: route_initial
+                                                           ; frame size=0
+    00000000 E500                   MOV         #0,R5
+    00000002 1459                   MOV.L       R5,@(36,R4)
+    00000004 000B                   RTS
+    00000006 1458                   MOV.L       R5,@(32,R4)
+    00000008              _route_push_back:                ; function: route_push_back
+                                                           ; frame size=4
+    00000008 2F46                   MOV.L       R4,@-R15
+
+    0000000A 6543                   MOV         R4,R5
+    0000000C 5559                   MOV.L       @(36,R5),R5
+    0000000E 7F04                   ADD         #4,R15
+    00000010              _route_insert:                   ; function: route_insert
+                                                           ; frame size=32
+    00000010 2FE6                   MOV.L       R14,@-R15
+    00000012 2FD6                   MOV.L       R13,@-R15
+    00000014 2FC6                   MOV.L       R12,@-R15
+    00000016 6D43                   MOV         R4,R13
+    00000018 D346                   MOV.L       L295,R3    ; _calloc
+    0000001A 2FB6                   MOV.L       R11,@-R15
+    0000001C 2FA6                   MOV.L       R10,@-R15
+    0000001E 2F96                   MOV.L       R9,@-R15
+    00000020 4F22                   STS.L       PR,@-R15
+    00000022 7FFC                   ADD         #-4,R15
+    00000024 2F52                   MOV.L       R5,@R15
+    00000026 E544                   MOV         #68,R5
+    00000028 5BD8                   MOV.L       @(32,R13),R11
+    0000002A 59D9                   MOV.L       @(36,R13),R9
+    0000002C 7901                   ADD         #1,R9
+    0000002E 430B                   JSR         @R3
+    00000030 6493                   MOV         R9,R4
+    00000032 2BB8                   TST         R11,R11
+    00000034 8D22                   BT/S        L286
+    00000036 1D08                   MOV.L       R0,@(32,R13)
+    00000038 DA3F                   MOV.L       L295+4,R10 ; _memcpy
+    0000003A E400                   MOV         #0,R4
+    0000003C 6E43                   MOV         R4,R14
+    0000003E A017                   BRA         L287
+    00000040 6C43                   MOV         R4,R12
+    00000042              L288:                             
+    00000042 62F2                   MOV.L       @R15,R2
+    00000044 3E20                   CMP/EQ      R2,R14
+    00000046 8F01                   BF/S        L289
+    00000048 E644                   MOV         #68,R6
+    0000004A 7C01                   ADD         #1,R12
+    0000004C              L289:                             
+    0000004C 52D8                   MOV.L       @(32,R13),R2
+    0000004E 65E3                   MOV         R14,R5
+    00000050 63E3                   MOV         R14,R3
+    00000052 4508                   SHLL2       R5
+    00000054 4508                   SHLL2       R5
+    00000056 353C                   ADD         R3,R5
+    00000058 4508                   SHLL2       R5
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000005A 35BC                   ADD         R11,R5
+    0000005C 64C3                   MOV         R12,R4
+    0000005E 63C3                   MOV         R12,R3
+    00000060 4408                   SHLL2       R4
+    00000062 4408                   SHLL2       R4
+    00000064 343C                   ADD         R3,R4
+    00000066 4408                   SHLL2       R4
+    00000068 4A0B                   JSR         @R10
+    0000006A 342C                   ADD         R2,R4
+    0000006C 7E01                   ADD         #1,R14
+    0000006E 7C01                   ADD         #1,R12
+    00000070              L287:                             
+    00000070 53D9                   MOV.L       @(36,R13),R3
+    00000072 3E33                   CMP/GE      R3,R14
+    00000074 8BE5                   BF          L288
+    00000076 D331                   MOV.L       L295+8,R3  ; _free
+    00000078 430B                   JSR         @R3
+    0000007A 64B3                   MOV         R11,R4
+    0000007C              L286:                             
+    0000007C 1D99                   MOV.L       R9,@(36,R13)
+    0000007E 7F04                   ADD         #4,R15
+    00000080 4F26                   LDS.L       @R15+,PR
+    00000082 69F6                   MOV.L       @R15+,R9
+    00000084 6AF6                   MOV.L       @R15+,R10
+    00000086 6BF6                   MOV.L       @R15+,R11
+    00000088 6CF6                   MOV.L       @R15+,R12
+    0000008A 6DF6                   MOV.L       @R15+,R13
+    0000008C 000B                   RTS
+    0000008E 6EF6                   MOV.L       @R15+,R14
+    00000090              _route_del:                      ; function: route_del
+                                                           ; frame size=36
+    00000090 2FE6                   MOV.L       R14,@-R15
+    00000092 6E43                   MOV         R4,R14
+    00000094 2FD6                   MOV.L       R13,@-R15
+    00000096 2FC6                   MOV.L       R12,@-R15
+    00000098 2FB6                   MOV.L       R11,@-R15
+    0000009A 2FA6                   MOV.L       R10,@-R15
+    0000009C 2F96                   MOV.L       R9,@-R15
+    0000009E 2F86                   MOV.L       R8,@-R15
+    000000A0 4F22                   STS.L       PR,@-R15
+    000000A2 7FFC                   ADD         #-4,R15
+    000000A4 2F52                   MOV.L       R5,@R15
+    000000A6 5BE8                   MOV.L       @(32,R14),R11
+    000000A8 5CE9                   MOV.L       @(36,R14),R12
+    000000AA 7CFF                   ADD         #-1,R12
+    000000AC 2CC8                   TST         R12,R12
+    000000AE 8F05                   BF/S        L290
+    000000B0 E800                   MOV         #0,R8
+    000000B2 D222                   MOV.L       L295+8,R2  ; _free
+    000000B4 420B                   JSR         @R2
+    000000B6 54E8                   MOV.L       @(32,R14),R4
+    000000B8 A025                   BRA         L291
+    000000BA 1E88                   MOV.L       R8,@(32,R14)
+    000000BC              L290:                             
+
+    000000BC D21D                   MOV.L       L295,R2    ; _calloc
+    000000BE E544                   MOV         #68,R5
+    000000C0 420B                   JSR         @R2
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000C2 64C3                   MOV         R12,R4
+    000000C4 1E08                   MOV.L       R0,@(32,R14)
+    000000C6 6D83                   MOV         R8,R13
+    000000C8 DA1B                   MOV.L       L295+4,R10 ; _memcpy
+    000000CA A016                   BRA         L292
+    000000CC 6983                   MOV         R8,R9
+    000000CE              L293:                             
+    000000CE 62F2                   MOV.L       @R15,R2
+    000000D0 3D20                   CMP/EQ      R2,R13
+    000000D2 8911                   BT          L294
+    000000D4 52E8                   MOV.L       @(32,R14),R2
+    000000D6 E644                   MOV         #68,R6
+    000000D8 65D3                   MOV         R13,R5
+    000000DA 63D3                   MOV         R13,R3
+    000000DC 4508                   SHLL2       R5
+    000000DE 4508                   SHLL2       R5
+    000000E0 353C                   ADD         R3,R5
+    000000E2 4508                   SHLL2       R5
+    000000E4 35BC                   ADD         R11,R5
+    000000E6 6493                   MOV         R9,R4
+    000000E8 7901                   ADD         #1,R9
+    000000EA 6343                   MOV         R4,R3
+    000000EC 4408                   SHLL2       R4
+    000000EE 4408                   SHLL2       R4
+    000000F0 343C                   ADD         R3,R4
+    000000F2 4408                   SHLL2       R4
+    000000F4 4A0B                   JSR         @R10
+    000000F6 342C                   ADD         R2,R4
+    000000F8              L294:                             
+    000000F8 7D01                   ADD         #1,R13
+    000000FA              L292:                             
+    000000FA 53E9                   MOV.L       @(36,R14),R3
+    000000FC 3D33                   CMP/GE      R3,R13
+    000000FE 8BE6                   BF          L293
+    00000100 D30E                   MOV.L       L295+8,R3  ; _free
+    00000102 430B                   JSR         @R3
+    00000104 64B3                   MOV         R11,R4
+    00000106              L291:                             
+
+    00000106 1EC9                   MOV.L       R12,@(36,R14)
+    00000108 7F04                   ADD         #4,R15
+    0000010A 4F26                   LDS.L       @R15+,PR
+    0000010C 68F6                   MOV.L       @R15+,R8
+    0000010E 69F6                   MOV.L       @R15+,R9
+    00000110 6AF6                   MOV.L       @R15+,R10
+    00000112 6BF6                   MOV.L       @R15+,R11
+    00000114 6CF6                   MOV.L       @R15+,R12
+    00000116 6DF6                   MOV.L       @R15+,R13
+    00000118 000B                   RTS
+    0000011A 6EF6                   MOV.L       @R15+,R14
+
+    0000011C              _route_clr:                      ; function: route_clr
+                                                           ; frame size=8
+    0000011C 2FE6                   MOV.L       R14,@-R15
+    0000011E 6E43                   MOV         R4,R14
+
+    00000120 D306                   MOV.L       L295+8,R3  ; _free
+    00000122 4F22                   STS.L       PR,@-R15
+    00000124 430B                   JSR         @R3
+    00000126 54E8                   MOV.L       @(32,R14),R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000128 E400                   MOV         #0,R4
+    0000012A 1E48                   MOV.L       R4,@(32,R14)
+    0000012C 1E49                   MOV.L       R4,@(36,R14)
+    0000012E 4F26                   LDS.L       @R15+,PR
+    00000130 000B                   RTS
+    00000132 6EF6                   MOV.L       @R15+,R14
+    00000134              L295:                             
+    00000134 <00000000>             .DATA.L     _calloc
+    00000138 <00000000>             .DATA.L     _memcpy
+    0000013C <00000000>             .DATA.L     _free
+
+        jddata.c     2    #include <string.h>
+        jddata.c     3    
+        jddata.c     4    #define NULL 0
+        jddata.c     5    
+        jddata.c     6    ROUTE route;
+        jddata.c     7    
+        jddata.c     8    void route_initial (ROUTE *l)
+        jddata.c     9    {
+        jddata.c    10            l->size = 0;
+        jddata.c    11            l->set = NULL;
+        jddata.c    12    }
+        jddata.c    13    
+        jddata.c    14    void route_push_back (ROUTE *l)
+        jddata.c    15    {
+        jddata.c    16            route_insert(l,l->size);
+        jddata.c    17    }
+        jddata.c    18    
+        jddata.c    19    void route_insert (ROUTE *l,int index)
+        jddata.c    20    {
+        jddata.c    21            POINT * pre_set = l->set;
+        jddata.c    22            int new_size = l->size + 1;
+        jddata.c    23            int i,j;
+        jddata.c    24            l->set = (POINT*)calloc(new_size,sizeof(POINT));
+        jddata.c    25            if (pre_set != NULL)
+        jddata.c    26            {
+        jddata.c    27                    for (i = 0,j = 0; i < l->size ;++i,++j)
+        jddata.c    28                    {
+        jddata.c    29                            if (i==index)++j;
+        jddata.c    30                            memcpy(& l->set[j],& pre_set[i],sizeof(POINT));
+        jddata.c    31                    }
+        jddata.c    32                    free(pre_set);
+        jddata.c    33            }
+        jddata.c    34            l->size = new_size;
+        jddata.c    35    }
+        jddata.c    36    
+        jddata.c    37    void route_del (ROUTE *l,int index)
+        jddata.c    38    {
+        jddata.c    39            POINT * pre_set = l->set;
+        jddata.c    40            int new_size = l->size - 1;
+        jddata.c    41            if (new_size == 0)
+        jddata.c    42            {
+        jddata.c    43                    free(l->set);
+        jddata.c    44                    l->set = NULL;
+        jddata.c    45            }
+        jddata.c    46            else
+        jddata.c    47            {
+        jddata.c    48                    int i,j;
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+        jddata.c    49                    l->set = (POINT*)calloc(new_size,sizeof(POINT));
+        jddata.c    50                    for (i = 0,j = 0;i<l->size;++i)
+        jddata.c    51                    {
+        jddata.c    52                            if (i!=index)
+        jddata.c    53                                    memcpy(& l->set[j++],& pre_set[i],sizeof(POINT));
+        jddata.c    54                    }
+        jddata.c    55                    free(pre_set);
+        jddata.c    56            }
+        jddata.c    57            l->size = new_size;
+        jddata.c    58    }
+        jddata.c    59    
+        jddata.c    60    void route_clr (ROUTE *l)
+        jddata.c    61    {
+        jddata.c    62            free(l->set);
+        jddata.c    63            l->set = NULL;
+        jddata.c    64            l->size = 0;
+        jddata.c    65    }
+B   00000000              _route:                          ; static: route
+    00000000 00000028               .RES.L      10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Jan-2015 21:46:31  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         1
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       65
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000140 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000028 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000168 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            3
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           6
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmkCD77.tmp 
+

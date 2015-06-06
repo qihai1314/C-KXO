@@ -1,0 +1,481 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-6½»µã·¨×ªÏßÔªÍÆÁ´±í\2015-06-4½»µã·¨×ªÏßÔªÍÆÁ´±í\Chinese.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Chinese.c     1    #include "headfile.h"
+P   00000000              _OpenFont:                       ; function: OpenFont
+                                                           ; frame size=44
+    00000000 4F22                   STS.L       PR,@-R15
+    00000002 7FD8                   ADD         #-40,R15
+
+
+
+
+
+
+    00000004 D44A                   MOV.L       L562+6,R4  ; L507
+    00000006 D34B                   MOV.L       L562+10,R3 ; _CharToFont
+    00000008 430B                   JSR         @R3
+    0000000A 65F3                   MOV         R15,R5
+    0000000C D24A                   MOV.L       L562+14,R2 ; _Bfile_OpenFile
+    0000000E E501                   MOV         #1,R5
+    00000010 420B                   JSR         @R2
+    00000012 64F3                   MOV         R15,R4
+    00000014 D349                   MOV.L       L562+18,R3 ; _fh_HZK
+    00000016 2302                   MOV.L       R0,@R3
+    00000018 7F28                   ADD         #40,R15
+    0000001A 4F26                   LDS.L       @R15+,PR
+    0000001C 000B                   RTS
+    0000001E 0009                   NOP
+    00000020              _CloseFont:                      ; function: CloseFont
+                                                           ; frame size=0
+    00000020 D246                   MOV.L       L562+18,R2 ; _fh_HZK
+    00000022 D347                   MOV.L       L562+22,R3 ; _Bfile_CloseFile
+    00000024 432B                   JMP         @R3
+    00000026 6422                   MOV.L       @R2,R4
+    00000028              _PrintChChar:                    ; function: PrintChChar
+                                                           ; frame size=52
+    00000028 4F22                   STS.L       PR,@-R15
+
+    0000002A 644C                   EXTU.B      R4,R4
+    0000002C D043                   MOV.L       L562+18,R0 ; _fh_HZK
+    0000002E 655C                   EXTU.B      R5,R5
+    00000030 4F12                   STS.L       MACL,@-R15
+    00000032 E35E                   MOV         #94,R3
+    00000034 7FD8                   ADD         #-40,R15
+    00000036 1F61                   MOV.L       R6,@(4,R15)
+    00000038 2F72                   MOV.L       R7,@R15
+    0000003A 9676                   MOV.W       L562,R6    ; H'FF60
+    0000003C 346C                   ADD         R6,R4
+    0000003E 356C                   ADD         R6,R5
+    00000040 1F43                   MOV.L       R4,@(12,R15)
+    00000042 6253                   MOV         R5,R2
+    00000044 1F52                   MOV.L       R5,@(8,R15)
+    00000046 E618                   MOV         #24,R6
+    00000048 57F3                   MOV.L       @(12,R15),R7
+    0000004A 65F3                   MOV         R15,R5
+    0000004C 77FF                   ADD         #-1,R7
+    0000004E 7510                   ADD         #16,R5
+    00000050 0737                   MUL.L       R3,R7
+    00000052 071A                   STS         MACL,R7
+    00000054 D33B                   MOV.L       L562+26,R3 ; _Bfile_ReadFile
+    00000056 372C                   ADD         R2,R7
+    00000058 77FF                   ADD         #-1,R7
+    0000005A 6173                   MOV         R7,R1
+    0000005C 4700                   SHLL        R7
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000005E 371C                   ADD         R1,R7
+    00000060 4708                   SHLL2       R7
+    00000062 4700                   SHLL        R7
+    00000064 430B                   JSR         @R3
+    00000066 6402                   MOV.L       @R0,R4
+    00000068 D337                   MOV.L       L562+30,R3 ; _DrawPicture
+    0000006A 62F3                   MOV         R15,R2
+    0000006C 7210                   ADD         #16,R2
+    0000006E E70C                   MOV         #12,R7
+    00000070 2F26                   MOV.L       R2,@-R15
+    00000072 6673                   MOV         R7,R6
+    00000074 55F1                   MOV.L       @(4,R15),R5
+    00000076 430B                   JSR         @R3
+    00000078 54F2                   MOV.L       @(8,R15),R4
+    0000007A 7F2C                   ADD         #44,R15
+    0000007C 4F16                   LDS.L       @R15+,MACL
+    0000007E 4F26                   LDS.L       @R15+,PR
+    00000080 000B                   RTS
+    00000082 0009                   NOP
+    00000084              _PrintChStr:                     ; function: PrintChStr
+                                                           ; frame size=36
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    00000084 2FE6                   MOV.L       R14,@-R15
+    00000086 6E43                   MOV         R4,R14
+    00000088 D230                   MOV.L       L562+34,R2 ; L526
+    0000008A 2FD6                   MOV.L       R13,@-R15
+    0000008C 2FC6                   MOV.L       R12,@-R15
+    0000008E 6D53                   MOV         R5,R13
+    00000090 D32F                   MOV.L       L562+38,R3 ; __slow_mvn
+    00000092 2FB6                   MOV.L       R11,@-R15
+    00000094 2FA6                   MOV.L       R10,@-R15
+    00000096 2F96                   MOV.L       R9,@-R15
+    00000098 2F86                   MOV.L       R8,@-R15
+    0000009A 6963                   MOV         R6,R9
+    0000009C 4F22                   STS.L       PR,@-R15
+    0000009E 7FFC                   ADD         #-4,R15
+    000000A0 6BF3                   MOV         R15,R11
+    000000A2 61F3                   MOV         R15,R1
+    000000A4 430B                   JSR         @R3
+    000000A6 E002                   MOV         #2,R0
+    000000A8 9A40                   MOV.W       L562+2,R10 ; H'0080
+    000000AA 6893                   MOV         R9,R8
+    000000AC 6CB3                   MOV         R11,R12
+    000000AE A018                   BRA         L550
+    000000B0 7803                   ADD         #3,R8
+    000000B2              L551:                             
+    000000B2 63E0                   MOV.B       @R14,R3
+    000000B4 633C                   EXTU.B      R3,R3
+    000000B6 23A8                   TST         R10,R3
+    000000B8 8906                   BT          L552
+    000000BA 6793                   MOV         R9,R7
+    000000BC 64E4                   MOV.B       @R14+,R4
+    000000BE 65E4                   MOV.B       @R14+,R5
+    000000C0 BFB2                   BSR         _PrintChChar
+    000000C2 66D3                   MOV         R13,R6
+    000000C4 A00D                   BRA         L550
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000C6 7D0C                   ADD         #12,R13
+    000000C8              L552:                             
+    000000C8 63E4                   MOV.B       @R14+,R3
+    000000CA 2C30                   MOV.B       R3,@R12
+    000000CC 60C0                   MOV.B       @R12,R0
+    000000CE 600C                   EXTU.B      R0,R0
+    000000D0 880A                   CMP/EQ      #10,R0
+    000000D2 8906                   BT          L550
+    000000D4 D21F                   MOV.L       L562+42,R2 ; _PrintXY
+    000000D6 E700                   MOV         #0,R7
+    000000D8 66B3                   MOV         R11,R6
+    000000DA 6583                   MOV         R8,R5
+    000000DC 420B                   JSR         @R2
+    000000DE 64D3                   MOV         R13,R4
+    000000E0 7D06                   ADD         #6,R13
+    000000E2              L550:                             
+    000000E2 63E0                   MOV.B       @R14,R3
+    000000E4 2338                   TST         R3,R3
+    000000E6 8BE4                   BF          L551
+    000000E8 E000                   MOV         #0,R0
+    000000EA 7F04                   ADD         #4,R15
+    000000EC 4F26                   LDS.L       @R15+,PR
+    000000EE 68F6                   MOV.L       @R15+,R8
+    000000F0 69F6                   MOV.L       @R15+,R9
+    000000F2 6AF6                   MOV.L       @R15+,R10
+    000000F4 6BF6                   MOV.L       @R15+,R11
+    000000F6 6CF6                   MOV.L       @R15+,R12
+    000000F8 6DF6                   MOV.L       @R15+,R13
+    000000FA 000B                   RTS
+    000000FC 6EF6                   MOV.L       @R15+,R14
+    000000FE              _PrintChStrV:                    ; function: PrintChStrV
+                                                           ; frame size=36
+                                                           ; used runtime library name:
+                                                           ; __slow_mvn
+    000000FE 2FE6                   MOV.L       R14,@-R15
+    00000100 2FD6                   MOV.L       R13,@-R15
+    00000102 6E43                   MOV         R4,R14
+    00000104 D214                   MOV.L       L562+46,R2 ; L539
+    00000106 6D63                   MOV         R6,R13
+    00000108 D311                   MOV.L       L562+38,R3 ; __slow_mvn
+    0000010A 2FC6                   MOV.L       R12,@-R15
+    0000010C 2FB6                   MOV.L       R11,@-R15
+    0000010E 2FA6                   MOV.L       R10,@-R15
+    00000110 2F96                   MOV.L       R9,@-R15
+    00000112 6A53                   MOV         R5,R10
+    00000114 2F86                   MOV.L       R8,@-R15
+    00000116 4F22                   STS.L       PR,@-R15
+    00000118 7FFC                   ADD         #-4,R15
+    0000011A 6BF3                   MOV         R15,R11
+    0000011C 61F3                   MOV         R15,R1
+    0000011E 430B                   JSR         @R3
+    00000120 E002                   MOV         #2,R0
+    00000122 D80C                   MOV.L       L562+42,R8 ; _PrintXY
+    00000124 9902                   MOV.W       L562+2,R9  ; H'0080
+    00000126 A031                   BRA         L556
+    00000128 6CB3                   MOV         R11,R12
+    0000012A              L562:                             
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000012A FF60                   .DATA.W     H'FF60
+    0000012C 0080                   .DATA.W     H'0080
+    0000012E 0000                   .DATA.W     0
+    00000130 <00000000>             .DATA.L     L507
+    00000134 <00000000>             .DATA.L     _CharToFont
+    00000138 <00000000>             .DATA.L     _Bfile_OpenFile
+    0000013C <00000000>             .DATA.L     _fh_HZK
+    00000140 <00000000>             .DATA.L     _Bfile_CloseFile
+    00000144 <00000000>             .DATA.L     _Bfile_ReadFile
+    00000148 <00000000>             .DATA.L     _DrawPicture
+    0000014C <00000000>             .DATA.L     L526
+    00000150 <00000000>             .DATA.L     __slow_mvn
+    00000154 <00000000>             .DATA.L     _PrintXY
+    00000158 <00000000>             .DATA.L     L539
+    0000015C              L557:                             
+    0000015C 63E0                   MOV.B       @R14,R3
+    0000015E 633C                   EXTU.B      R3,R3
+    00000160 2398                   TST         R9,R3
+    00000162 8906                   BT          L558
+    00000164 64E4                   MOV.B       @R14+,R4
+    00000166 67D3                   MOV         R13,R7
+    00000168 65E4                   MOV.B       @R14+,R5
+    0000016A BF5D                   BSR         _PrintChChar
+    0000016C 66A3                   MOV         R10,R6
+    0000016E A00D                   BRA         L556
+    00000170 7D10                   ADD         #16,R13
+    00000172              L558:                             
+    00000172 63E4                   MOV.B       @R14+,R3
+    00000174 2C30                   MOV.B       R3,@R12
+    00000176 60C0                   MOV.B       @R12,R0
+    00000178 600C                   EXTU.B      R0,R0
+    0000017A 880A                   CMP/EQ      #10,R0
+    0000017C 8906                   BT          L556
+    0000017E E700                   MOV         #0,R7
+    00000180 66B3                   MOV         R11,R6
+    00000182 65D3                   MOV         R13,R5
+    00000184 7503                   ADD         #3,R5
+    00000186 480B                   JSR         @R8
+    00000188 64A3                   MOV         R10,R4
+    0000018A 7D0A                   ADD         #10,R13
+    0000018C              L556:                             
+    0000018C 62E0                   MOV.B       @R14,R2
+    0000018E 2228                   TST         R2,R2
+    00000190 8BE4                   BF          L557
+
+    00000192 E000                   MOV         #0,R0
+    00000194 7F04                   ADD         #4,R15
+    00000196 4F26                   LDS.L       @R15+,PR
+    00000198 68F6                   MOV.L       @R15+,R8
+    0000019A 69F6                   MOV.L       @R15+,R9
+    0000019C 6AF6                   MOV.L       @R15+,R10
+    0000019E 6BF6                   MOV.L       @R15+,R11
+    000001A0 6CF6                   MOV.L       @R15+,R12
+    000001A2 6DF6                   MOV.L       @R15+,R13
+    000001A4 000B                   RTS
+    000001A6 6EF6                   MOV.L       @R15+,R14
+
+
+
+
+       Chinese.c     2    #include "MyFont.h"
+
+
+       Chinese.c     3    
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Chinese.c     4    #define IS_CH(C) ((C) & 0x80)
+       Chinese.c     5    int fh_HZK = 0;
+       Chinese.c     6    
+       Chinese.c     7    int OpenFont()
+       Chinese.c     8    {
+       Chinese.c     9            FONTCHARACTER FileName[20];
+       Chinese.c    10            //CharToFont("\\\\fls0\\HZK12.df",FileName);
+       Chinese.c    11        CharToFont("\\\\crd0\\HZK12.df",FileName);
+       Chinese.c    12            fh_HZK = Bfile_OpenFile(FileName,_OPENMODE_READ);
+       Chinese.c    13            return fh_HZK;
+       Chinese.c    14    }
+       Chinese.c    15    
+       Chinese.c    16    int CloseFont()
+       Chinese.c    17    {
+       Chinese.c    18            Bfile_CloseFile(fh_HZK);
+       Chinese.c    19            
+       Chinese.c    20    }
+       Chinese.c    21    
+       Chinese.c    22    
+       Chinese.c    23    int PrintChChar (unsigned char c1,unsigned char c2,int pX,int pY)
+       Chinese.c    24    {
+       Chinese.c    25            unsigned char mat[12][2];
+       Chinese.c    26            int i,j,k;
+       Chinese.c    27            int sec,pot; 
+       Chinese.c    28            sec = c1-0xa0;
+       Chinese.c    29            pot = c2-0xa0;
+       Chinese.c    30            Bfile_ReadFile(fh_HZK,mat,24,(94*(sec-1)+(pot-1))*24l);
+       Chinese.c    31            DrawPicture (pX,pY,12,12,mat);
+       Chinese.c    32    }
+       Chinese.c    33    
+       Chinese.c    34    int PrintChStr (unsigned char *cStr,int pX,int pY)
+       Chinese.c    35    {
+       Chinese.c    36            unsigned int key;
+       Chinese.c    37            unsigned char c[]=" ";
+       Chinese.c    38            while (*cStr)
+       Chinese.c    39            {
+       Chinese.c    40                    if (IS_CH(*cStr))
+       Chinese.c    41                    {
+       Chinese.c    42                            unsigned char c1 = *cStr++,
+       Chinese.c    43                                                      c2 = *cStr;
+       Chinese.c    44                            PrintChChar(c1,c2,pX,pY);
+       Chinese.c    45                            ++cStr;
+       Chinese.c    46                            pX +=12;
+       Chinese.c    47                    }
+       Chinese.c    48                    else
+       Chinese.c    49                    {
+       Chinese.c    50                            c[0]=*(cStr++);
+       Chinese.c    51                            if (c[0]!='\n')
+       Chinese.c    52                            {
+       Chinese.c    53                                    PrintXY(pX,pY+3,c,0);
+       Chinese.c    54                                    pX +=6;
+       Chinese.c    55                            }
+       Chinese.c    56                    }
+       Chinese.c    57            }
+       Chinese.c    58            return 0;
+       Chinese.c    59    }
+       Chinese.c    60    
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       Chinese.c    61    int PrintChStrV (unsigned char *cStr,int pX,int pY)
+       Chinese.c    62    {
+       Chinese.c    63            unsigned int key;
+       Chinese.c    64            unsigned char c[]=" ";
+       Chinese.c    65            while (*cStr)
+       Chinese.c    66            {
+       Chinese.c    67                    if (IS_CH(*cStr))
+       Chinese.c    68                    {
+       Chinese.c    69                            unsigned char c1 = *cStr++,
+       Chinese.c    70                                                      c2 = *cStr;
+       Chinese.c    71                            PrintChChar(c1,c2,pX,pY);
+       Chinese.c    72                            ++cStr;
+       Chinese.c    73                            pY +=16;
+       Chinese.c    74                    }
+       Chinese.c    75                    else
+       Chinese.c    76                    {
+       Chinese.c    77                            c[0]=*(cStr++);
+       Chinese.c    78                            if (c[0]!='\n')
+       Chinese.c    79                            {
+       Chinese.c    80                                    PrintXY(pX,pY+3,c,0);
+       Chinese.c    81                                    pY +=10;
+       Chinese.c    82                            }
+       Chinese.c    83                    }
+       Chinese.c    84            }
+       Chinese.c    85            return 0;
+       Chinese.c    86    }
+       Chinese.c    87    
+D   00000000              _fh_HZK:                         ; static: fh_HZK
+    00000000 00000000               .DATA.L     H'00000000
+C   00000000              L507:
+    00000000 5C5C637264             .SDATA      "\\crd0\HZK12.df"
+             305C485A4B   
+             31322E6466   
+    0000000F 00                     .DATA.B     H'00
+    00000010              L526:
+    00000010 20                     .SDATA      " "
+    00000011 00                     .DATA.B     H'00
+    00000012              L539:
+    00000012 20                     .SDATA      " "
+    00000013 00                     .DATA.B     H'00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:02  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        14
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       87
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000001A8 Byte(s)
+CONSTANT SECTION (C):                               00000014 Byte(s)
+DATA     SECTION (D):                               00000004 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 000001C0 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            7
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           6
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk3FF1.tmp 
+

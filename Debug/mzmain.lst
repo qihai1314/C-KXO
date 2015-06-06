@@ -1,0 +1,215 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Feb-2015 21:30:33  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-02-01桌面文件\2015-1-27备份移入正反算算法修改界面\2015-1-26备份移入正反算算法修改界面
+           \mzmain.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+        mzmain.c     1    #include "mzmain.h"
+P   00000000              _sd_to_mz:                       ; function: sd_to_mz
+                                                           ; frame size=120
+                                                           ; used runtime library name:
+                                                           ; __gtd
+    00000000 2FE6                   MOV.L       R14,@-R15
+    00000002 E407                   MOV         #7,R4
+    00000004 2FD6                   MOV.L       R13,@-R15
+    00000006 EE00                   MOV         #0,R14
+    00000008 4F22                   STS.L       PR,@-R15
+    0000000A 7FC8                   ADD         #-56,R15
+    0000000C              L470:                             
+        mzmain.c     2    #include "headfile.h"
+
+
+
+
+
+
+
+
+
+
+
+
+        mzmain.c     3    #include "mz.h"
+        mzmain.c     4    
+        mzmain.c     5    
+        mzmain.c     6    double sd_to_mz( double stake)
+        mzmain.c     7    {       
+        mzmain.c     8      
+        mzmain.c     9            double rss=0, res=0, t=0;   
+        mzmain.c    10            double T1, T2;
+        mzmain.c    11            double qs, zs;
+        mzmain.c    12            int l_sqxNum=7;
+        mzmain.c    13            int iter;
+        mzmain.c    14            //T1 = l_sqx[iter].r * fabs( tan( (atan(l_sqx[iter].i1)-atan(l_sqx[iter].i2))/2 ) );
+        mzmain.c    15            for(iter=0; iter<l_sqxNum; iter++)
+        mzmain.c    16            {       
+        mzmain.c    17             
+        mzmain.c    18                    if( stake>0)
+        mzmain.c    19                    {
+        mzmain.c    20                     t=1;
+        mzmain.c    21                    }
+        mzmain.c    22            }
+        mzmain.c    23             return mz(stake, l_sqx[iter].si,l_sqx[iter].hi,l_sqx[iter].r,l_sqx[iter].i1,l_sqx[iter].i2);
+        mzmain.c    24    }
+    0000000C E04C                   MOV         #76,R0
+    0000000E E200                   MOV         #0,R2
+    00000010 03FE                   MOV.L       @(R0,R15),R3
+    00000012 E04C                   MOV         #76,R0
+    00000014 2F36                   MOV.L       R3,@-R15
+    00000016 03FE                   MOV.L       @(R0,R15),R3
+    00000018 2F36                   MOV.L       R3,@-R15
+    0000001A 2F26                   MOV.L       R2,@-R15
+    0000001C D31A                   MOV.L       L473+2,R3  ; __gtd
+    0000001E 430B                   JSR         @R3
+    00000020 2F26                   MOV.L       R2,@-R15
+    00000022 8800                   CMP/EQ      #0,R0
+    00000024 7E01                   ADD         #1,R14
+    00000026 3E43                   CMP/GE      R4,R14
+    00000028 8BF0                   BF          L470
+    0000002A 6DE3                   MOV         R14,R13
+    0000002C D217                   MOV.L       L473+6,R2  ; _l_sqx
+    0000002E E074                   MOV         #116,R0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Feb-2015 21:30:33  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000030 63E3                   MOV         R14,R3
+    00000032 4D08                   SHLL2       R13
+    00000034 3D3C                   ADD         R3,R13
+    00000036 4D08                   SHLL2       R13
+    00000038 4D00                   SHLL        R13
+    0000003A 3D2C                   ADD         R2,R13
+    0000003C 53D9                   MOV.L       @(36,R13),R3
+    0000003E 2F36                   MOV.L       R3,@-R15
+    00000040 53D8                   MOV.L       @(32,R13),R3
+    00000042 2F36                   MOV.L       R3,@-R15
+    00000044 51D7                   MOV.L       @(28,R13),R1
+    00000046 2F16                   MOV.L       R1,@-R15
+    00000048 51D6                   MOV.L       @(24,R13),R1
+    0000004A 2F16                   MOV.L       R1,@-R15
+    0000004C 53D5                   MOV.L       @(20,R13),R3
+    0000004E 2F36                   MOV.L       R3,@-R15
+    00000050 53D4                   MOV.L       @(16,R13),R3
+    00000052 2F36                   MOV.L       R3,@-R15
+    00000054 51D3                   MOV.L       @(12,R13),R1
+    00000056 2F16                   MOV.L       R1,@-R15
+    00000058 51D2                   MOV.L       @(8,R13),R1
+    0000005A 2F16                   MOV.L       R1,@-R15
+    0000005C 53D1                   MOV.L       @(4,R13),R3
+    0000005E 2F36                   MOV.L       R3,@-R15
+    00000060 63D2                   MOV.L       @R13,R3
+    00000062 2F36                   MOV.L       R3,@-R15
+    00000064 01FE                   MOV.L       @(R0,R15),R1
+    00000066 E074                   MOV         #116,R0
+    00000068 2F16                   MOV.L       R1,@-R15
+    0000006A 01FE                   MOV.L       @(R0,R15),R1
+    0000006C 2F16                   MOV.L       R1,@-R15
+    0000006E 63F3                   MOV         R15,R3
+    00000070 7374                   ADD         #116,R3
+    00000072 6332                   MOV.L       @R3,R3
+    00000074 2F36                   MOV.L       R3,@-R15
+    00000076 D306                   MOV.L       L473+10,R3 ; _mz
+    00000078 430B                   JSR         @R3
+    0000007A 0009                   NOP
+    0000007C 7F6C                   ADD         #108,R15
+    0000007E 4F26                   LDS.L       @R15+,PR
+    00000080 6DF6                   MOV.L       @R15+,R13
+    00000082 000B                   RTS
+    00000084 6EF6                   MOV.L       @R15+,R14
+    00000086              L473:                             
+    00000086 0000                   .DATA.W     0
+    00000088 <00000000>             .DATA.L     __gtd
+    0000008C <00000000>             .DATA.L     _l_sqx
+    00000090 <00000000>             .DATA.L     _mz
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 02-Feb-2015 21:30:33  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        15
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       24
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000094 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000094 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            3
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           1
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:             6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk8308.tmp 
+

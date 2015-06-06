@@ -1,0 +1,1210 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-6½»µã·¨×ªÏßÔªÍÆÁ´±í\2015-06-4½»µã·¨×ªÏßÔªÍÆÁ´±í\Intersection_File.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Intersecti     1    #include "headfile.h"
+
+
+
+
+
+
+P   00000000              _CharToFonts1:                   ; function: CharToFonts1
+                                                           ; frame size=12
+    00000000 2FE6                   MOV.L       R14,@-R15
+    00000002 2FD6                   MOV.L       R13,@-R15
+    00000004 4F22                   STS.L       PR,@-R15
+    00000006 6D43                   MOV         R4,R13
+    00000008 D347                   MOV.L       L670+10,R3 ; _strlen
+    0000000A 430B                   JSR         @R3
+    0000000C 6E53                   MOV         R5,R14
+    0000000E 6503                   MOV         R0,R5
+    00000010 E600                   MOV         #0,R6
+    00000012 4515                   CMP/PL      R5
+    00000014 8F09                   BF/S        L615
+    00000016 6463                   MOV         R6,R4
+    00000018              L616:                             
+    00000018 6343                   MOV         R4,R3
+    0000001A 4300                   SHLL        R3
+    0000001C 33EC                   ADD         R14,R3
+    0000001E 6043                   MOV         R4,R0
+    00000020 02DC                   MOV.B       @(R0,R13),R2
+    00000022 7401                   ADD         #1,R4
+    00000024 2321                   MOV.W       R2,@R3
+    00000026 3453                   CMP/GE      R5,R4
+    00000028 8BF6                   BF          L616
+    0000002A              L615:                             
+    0000002A 6043                   MOV         R4,R0
+    0000002C 4000                   SHLL        R0
+    0000002E 0E65                   MOV.W       R6,@(R0,R14)
+    00000030 4F26                   LDS.L       @R15+,PR
+    00000032 60E3                   MOV         R14,R0
+    00000034 6DF6                   MOV.L       @R15+,R13
+    00000036 000B                   RTS
+    00000038 6EF6                   MOV.L       @R15+,R14
+    0000003A              _FontToChars1:                   ; function: FontToChars1
+                                                           ; frame size=0
+    0000003A A001                   BRA         L618
+    0000003C E000                   MOV         #0,R0
+    0000003E              L619:                             
+    0000003E 7001                   ADD         #1,R0
+    00000040              L618:                             
+    00000040 6203                   MOV         R0,R2
+    00000042 325C                   ADD         R5,R2
+    00000044 6303                   MOV         R0,R3
+    00000046 4300                   SHLL        R3
+    00000048 334C                   ADD         R4,R3
+    0000004A E101                   MOV         #1,R1
+    0000004C 313C                   ADD         R3,R1
+    0000004E 6310                   MOV.B       @R1,R3
+    00000050 2230                   MOV.B       R3,@R2
+    00000052 2338                   TST         R3,R3
+    00000054 8BF3                   BF          L619
+    00000056 000B                   RTS
+    00000058 6053                   MOV         R5,R0
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000005A              _CreateDirectorys1:              ; function: CreateDirectorys1
+                                                           ; frame size=44
+    0000005A 4F22                   STS.L       PR,@-R15
+    0000005C D433                   MOV.L       L670+14,R4 ; L527
+    0000005E 7FD8                   ADD         #-40,R15
+    00000060 BFCE                   BSR         _CharToFonts1
+    00000062 65F3                   MOV         R15,R5
+    00000064 D232                   MOV.L       L670+18,R2 ; _Bfile_CreateDirectory
+    00000066 420B                   JSR         @R2
+    00000068 6403                   MOV         R0,R4
+    0000006A 7F28                   ADD         #40,R15
+    0000006C 4F26                   LDS.L       @R15+,PR
+    0000006E 000B                   RTS
+    00000070 0009                   NOP
+    00000072              _SelectJDFFiles:                 ; function: SelectJDFFiles
+                                                           ; frame size=336
+                                                           ; used runtime library name:
+                                                           ; __slow_strcpy, __slow_strcmp1
+    00000072 2FE6                   MOV.L       R14,@-R15
+    00000074 2FD6                   MOV.L       R13,@-R15
+    00000076 2FC6                   MOV.L       R12,@-R15
+    00000078 2FB6                   MOV.L       R11,@-R15
+    0000007A 2FA6                   MOV.L       R10,@-R15
+    0000007C 2F96                   MOV.L       R9,@-R15
+    0000007E EA00                   MOV         #0,R10
+    00000080 D32C                   MOV.L       L670+22,R3 ; _szSrdDir1
+    00000082 2F86                   MOV.L       R8,@-R15
+    00000084 4F22                   STS.L       PR,@-R15
+    00000086 4F12                   STS.L       MACL,@-R15
+    00000088 9049                   MOV.W       L670,R0    ; H'FEDC
+    0000008A 3F0C                   ADD         R0,R15
+    0000008C 1F44                   MOV.L       R4,@(16,R15)
+    0000008E 1FA3                   MOV.L       R10,@(12,R15)
+    00000090 2F36                   MOV.L       R3,@-R15
+    00000092 D229                   MOV.L       L670+26,R2 ; L545
+    00000094 9444                   MOV.W       L670+2,R4  ; H'00F8
+    00000096 2F26                   MOV.L       R2,@-R15
+    00000098 D128                   MOV.L       L670+30,R1 ; _sprintf
+    0000009A 410B                   JSR         @R1
+    0000009C 34FC                   ADD         R15,R4
+    0000009E 7F08                   ADD         #8,R15
+    000000A0 953F                   MOV.W       L670+4,R5  ; H'008C
+    000000A2 35FC                   ADD         R15,R5
+    000000A4 943E                   MOV.W       L670+6,R4  ; H'00F0
+    000000A6 BFAB                   BSR         _CharToFonts1
+    000000A8 34FC                   ADD         R15,R4
+    000000AA 6DF3                   MOV         R15,R13
+    000000AC 9439                   MOV.W       L670+4,R4  ; H'008C
+    000000AE 67F3                   MOV         R15,R7
+    000000B0 D223                   MOV.L       L670+34,R2 ; _Bfile_FindFirst
+    000000B2 65F3                   MOV         R15,R5
+    000000B4 7D28                   ADD         #40,R13
+    000000B6 7714                   ADD         #20,R7
+    000000B8 66D3                   MOV         R13,R6
+    000000BA 7508                   ADD         #8,R5
+    000000BC 420B                   JSR         @R2
+    000000BE 34FC                   ADD         R15,R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000000C0 2008                   TST         R0,R0
+    000000C2 8901                   BT          L671
+    000000C4 A10F                   BRA         L621
+    000000C6 0009                   NOP
+    000000C8              L671:                             
+    000000C8 DB1E                   MOV.L       L670+38,R11; _Bfile_FindNext
+    000000CA 6CA3                   MOV         R10,R12
+    000000CC E801                   MOV         #1,R8
+    000000CE 2F80                   MOV.B       R8,@R15
+    000000D0 53F3                   MOV.L       @(12,R15),R3
+    000000D2 7301                   ADD         #1,R3
+    000000D4 A003                   BRA         L622
+    000000D6 1F33                   MOV.L       R3,@(12,R15)
+    000000D8              L623:                             
+    000000D8 53F3                   MOV.L       @(12,R15),R3
+    000000DA 7301                   ADD         #1,R3
+    000000DC 1F33                   MOV.L       R3,@(12,R15)
+    000000DE              L622:                             
+    000000DE 66F3                   MOV         R15,R6
+    000000E0 7614                   ADD         #20,R6
+    000000E2 65D3                   MOV         R13,R5
+    000000E4 4B0B                   JSR         @R11
+    000000E6 54F2                   MOV.L       @(8,R15),R4
+    000000E8 2008                   TST         R0,R0
+    000000EA 89F5                   BT          L623
+    000000EC D316                   MOV.L       L670+42,R3 ; _Bfile_FindClose
+    000000EE 430B                   JSR         @R3
+    000000F0 54F2                   MOV.L       @(8,R15),R4
+    000000F2 E30D                   MOV         #13,R3
+    000000F4 52F3                   MOV.L       @(12,R15),R2
+    000000F6 0237                   MUL.L       R3,R2
+    000000F8 D114                   MOV.L       L670+46,R1 ; _malloc
+    000000FA 410B                   JSR         @R1
+    000000FC 041A                   STS         MACL,R4
+    000000FE 6903                   MOV         R0,R9
+    00000100 6EA3                   MOV         R10,R14
+    00000102              L625:                             
+    00000102 62F0                   MOV.B       @R15,R2
+    00000104 2228                   TST         R2,R2
+    00000106 8923                   BT          L626
+    00000108 940B                   MOV.W       L670+4,R4  ; H'008C
+    0000010A 67F3                   MOV         R15,R7
+    0000010C D30C                   MOV.L       L670+34,R3 ; _Bfile_FindFirst
+    0000010E 66D3                   MOV         R13,R6
+    00000110 7714                   ADD         #20,R7
+    00000112 65F3                   MOV         R15,R5
+    00000114 7508                   ADD         #8,R5
+    00000116 430B                   JSR         @R3
+    00000118 34FC                   ADD         R15,R4
+    0000011A A01E                   BRA         L669
+    0000011C 0009                   NOP
+    0000011E              L670:                             
+    0000011E FEDC                   .DATA.W     H'FEDC
+    00000120 00F8                   .DATA.W     H'00F8
+    00000122 008C                   .DATA.W     H'008C
+    00000124 00F0                   .DATA.W     H'00F0
+    00000126 0000                   .DATA.W     0
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    4
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000128 <00000000>             .DATA.L     _strlen
+    0000012C <00000000>             .DATA.L     L527
+    00000130 <00000000>             .DATA.L     _Bfile_CreateDirectory
+    00000134 <00000000>             .DATA.L     _szSrdDir1
+    00000138 <00000000>             .DATA.L     L545
+    0000013C <00000000>             .DATA.L     _sprintf
+    00000140 <00000000>             .DATA.L     _Bfile_FindFirst
+    00000144 <00000000>             .DATA.L     _Bfile_FindNext
+    00000148 <00000000>             .DATA.L     _Bfile_FindClose
+    0000014C <00000000>             .DATA.L     _malloc
+    00000150              L626:                             
+    00000150 66F3                   MOV         R15,R6
+    00000152 7614                   ADD         #20,R6
+    00000154 65D3                   MOV         R13,R5
+    00000156 4B0B                   JSR         @R11
+    00000158 54F2                   MOV.L       @(8,R15),R4
+    0000015A              L669:                             
+    0000015A 6403                   MOV         R0,R4
+    0000015C 2448                   TST         R4,R4
+    0000015E 8B18                   BF          L629
+    00000160 956D                   MOV.W       L672,R5    ; H'00F0
+    00000162 35FC                   ADD         R15,R5
+    00000164 BF69                   BSR         _FontToChars1
+    00000166 64D3                   MOV         R13,R4
+    00000168 D335                   MOV.L       L672+2,R3  ; _strncpy
+    0000016A 6503                   MOV         R0,R5
+    0000016C E40D                   MOV         #13,R4
+    0000016E 0C47                   MUL.L       R4,R12
+    00000170 041A                   STS         MACL,R4
+    00000172 349C                   ADD         R9,R4
+    00000174 430B                   JSR         @R3
+    00000176 E60D                   MOV         #13,R6
+    00000178 D532                   MOV.L       L672+6,R5  ; H'00000004+_setup_data
+    0000017A E40D                   MOV         #13,R4
+    0000017C D332                   MOV.L       L672+10,R3 ; __slow_strcmp1
+    0000017E 0C47                   MUL.L       R4,R12
+    00000180 041A                   STS         MACL,R4
+    00000182 430B                   JSR         @R3
+    00000184 349C                   ADD         R9,R4
+    00000186 2008                   TST         R0,R0
+    00000188 8B00                   BF          L630
+    0000018A 6EC3                   MOV         R12,R14
+    0000018C              L630:                             
+    0000018C 7C01                   ADD         #1,R12
+    0000018E AFB8                   BRA         L625
+    00000190 2FA0                   MOV.B       R10,@R15
+    00000192              L629:                             
+
+    00000192 D32E                   MOV.L       L672+14,R3 ; _Bfile_FindClose
+    00000194 430B                   JSR         @R3
+    00000196 54F2                   MOV.L       @(8,R15),R4
+    00000198 52F3                   MOV.L       @(12,R15),R2
+    0000019A 6B83                   MOV         R8,R11
+    0000019C 6CA3                   MOV         R10,R12
+    0000019E ED04                   MOV         #4,R13
+    000001A0 72FF                   ADD         #-1,R2
+    000001A2 6423                   MOV         R2,R4
+    000001A4 2F42                   MOV.L       R4,@R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    5
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000001A6              L632:                             
+
+    000001A6 2BB8                   TST         R11,R11
+    000001A8 896A                   BT          L633
+
+    000001AA D329                   MOV.L       L672+18,R3 ; _Bdisp_AllClr_VRAM
+    000001AC 430B                   JSR         @R3
+    000001AE 0009                   NOP
+    000001B0 D628                   MOV.L       L672+22,R6 ; L553
+    000001B2 E508                   MOV         #8,R5
+    000001B4 D228                   MOV.L       L672+26,R2 ; _DispStr
+    000001B6 420B                   JSR         @R2
+    000001B8 E414                   MOV         #20,R4
+    000001BA 63D3                   MOV         R13,R3
+    000001BC 33C8                   SUB         R12,R3
+    000001BE E203                   MOV         #3,R2
+    000001C0 3327                   CMP/GT      R2,R3
+    000001C2 8B01                   BF          L634
+    000001C4 6DC3                   MOV         R12,R13
+    000001C6 7D03                   ADD         #3,R13
+    000001C8              L634:                             
+    000001C8 3CE7                   CMP/GT      R14,R12
+    000001CA 8B02                   BF          L635
+    000001CC 6CE3                   MOV         R14,R12
+    000001CE 6DE3                   MOV         R14,R13
+    000001D0 7D03                   ADD         #3,R13
+    000001D2              L635:                             
+    000001D2 3ED7                   CMP/GT      R13,R14
+    000001D4 8B02                   BF          L636
+    000001D6 6DE3                   MOV         R14,R13
+    000001D8 6CE3                   MOV         R14,R12
+    000001DA 7CFD                   ADD         #-3,R12
+    000001DC              L636:                             
+    000001DC 62F2                   MOV.L       @R15,R2
+    000001DE 3D27                   CMP/GT      R2,R13
+    000001E0 8B00                   BF          L637
+    000001E2 6DF2                   MOV.L       @R15,R13
+    000001E4              L637:                             
+    000001E4 4C11                   CMP/PZ      R12
+    000001E6 8900                   BT          L638
+    000001E8 6CA3                   MOV         R10,R12
+    000001EA              L638:                             
+    000001EA 6BC3                   MOV         R12,R11
+    000001EC 3BD7                   CMP/GT      R13,R11
+    000001EE 8914                   BT          L639
+    000001F0              L640:                             
+    000001F0 D21A                   MOV.L       L672+30,R2 ; L557
+    000001F2 3EB0                   CMP/EQ      R11,R14
+    000001F4 E30D                   MOV         #13,R3
+    000001F6 0629                   MOVT        R6
+    000001F8 0B37                   MUL.L       R3,R11
+    000001FA 65B3                   MOV         R11,R5
+    000001FC 031A                   STS         MACL,R3
+    000001FE 339C                   ADD         R9,R3
+    00000200 2F36                   MOV.L       R3,@-R15
+    00000202 35C8                   SUB         R12,R5
+    00000204 2F26                   MOV.L       R2,@-R15
+    00000206 4508                   SHLL2       R5
+    00000208 D315                   MOV.L       L672+34,R3 ; _PrintfXY
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    6
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    0000020A 4500                   SHLL        R5
+    0000020C 7516                   ADD         #22,R5
+    0000020E 430B                   JSR         @R3
+    00000210 E414                   MOV         #20,R4
+    00000212 7B01                   ADD         #1,R11
+    00000214 3BD7                   CMP/GT      R13,R11
+    00000216 8FEB                   BF/S        L640
+    00000218 7F08                   ADD         #8,R15
+    0000021A              L639:                             
+    0000021A 4C15                   CMP/PL      R12
+    0000021C 8F03                   BF/S        L641
+    0000021E E700                   MOV         #0,R7
+    00000220 D610                   MOV.L       L672+38,R6 ; L558
+    00000222 A001                   BRA         L642
+    00000224 0009                   NOP
+    00000226              L641:                             
+    00000226 D610                   MOV.L       L672+42,R6 ; L559
+    00000228              L642:                             
+    00000228 D210                   MOV.L       L672+46,R2 ; _PrintXY
+    0000022A E516                   MOV         #22,R5
+    0000022C 420B                   JSR         @R2
+    0000022E E464                   MOV         #100,R4
+    00000230 63F2                   MOV.L       @R15,R3
+    00000232 3D33                   CMP/GE      R3,R13
+    00000234 8D1E                   BT/S        L643
+    00000236 E700                   MOV         #0,R7
+    00000238 D60D                   MOV.L       L672+50,R6 ; L560
+    0000023A A01C                   BRA         L644
+    0000023C 0009                   NOP
+    0000023E              L672:                             
+    0000023E 00F0                   .DATA.W     H'00F0
+    00000240 <00000000>             .DATA.L     _strncpy
+    00000244 <00000004>             .DATA.L     H'00000004+_setup_data
+    00000248 <00000000>             .DATA.L     __slow_strcmp1
+    0000024C <00000000>             .DATA.L     _Bfile_FindClose
+    00000250 <00000000>             .DATA.L     _Bdisp_AllClr_VRAM
+    00000254 <00000000>             .DATA.L     L553
+    00000258 <00000000>             .DATA.L     _DispStr
+    0000025C <00000000>             .DATA.L     L557
+    00000260 <00000000>             .DATA.L     _PrintfXY
+    00000264 <00000000>             .DATA.L     L558
+    00000268 <00000000>             .DATA.L     L559
+    0000026C <00000000>             .DATA.L     _PrintXY
+    00000270 <00000000>             .DATA.L     L560
+    00000274              L643:                             
+    00000274 D641                   MOV.L       L673+12,R6 ; L559
+    00000276              L644:                             
+    00000276 E52E                   MOV         #46,R5
+    00000278 D241                   MOV.L       L673+16,R2 ; _PrintXY
+    0000027A 420B                   JSR         @R2
+    0000027C E464                   MOV         #100,R4
+    0000027E EB00                   MOV         #0,R11
+    00000280              L633:                             
+    00000280 D340                   MOV.L       L673+20,R3 ; _GetKey
+    00000282 64F3                   MOV         R15,R4
+    00000284 430B                   JSR         @R3
+    00000286 7404                   ADD         #4,R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    7
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000288 9272                   MOV.W       L673,R2    ; H'7542
+    0000028A 53F1                   MOV.L       @(4,R15),R3
+    0000028C 3320                   CMP/EQ      R2,R3
+    0000028E 8B04                   BF          L645
+    00000290 7EFF                   ADD         #-1,R14
+    00000292 4E11                   CMP/PZ      R14
+    00000294 8D01                   BT/S        L646
+    00000296 6B83                   MOV         R8,R11
+    00000298 6EF2                   MOV.L       @R15,R14
+    0000029A              L646:                             
+    0000029A              L645:                             
+    0000029A 936A                   MOV.W       L673+2,R3  ; H'7547
+    0000029C 52F1                   MOV.L       @(4,R15),R2
+    0000029E 3230                   CMP/EQ      R3,R2
+    000002A0 8B05                   BF          L647
+    000002A2 7E01                   ADD         #1,R14
+    000002A4 62F2                   MOV.L       @R15,R2
+    000002A6 3E27                   CMP/GT      R2,R14
+    000002A8 8F01                   BF/S        L648
+    000002AA 6B83                   MOV         R8,R11
+    000002AC 6EA3                   MOV         R10,R14
+    000002AE              L648:                             
+    000002AE              L647:                             
+    000002AE 9361                   MOV.W       L673+4,R3  ; H'7534
+    000002B0 52F1                   MOV.L       @(4,R15),R2
+    000002B2 3230                   CMP/EQ      R3,R2
+    000002B4 8B0C                   BF          L649
+    000002B6 E20D                   MOV         #13,R2
+    000002B8 0E27                   MUL.L       R2,R14
+    000002BA 021A                   STS         MACL,R2
+    000002BC 329C                   ADD         R9,R2
+    000002BE 6123                   MOV         R2,R1
+    000002C0 D231                   MOV.L       L673+24,R2 ; __slow_strcpy
+    000002C2 420B                   JSR         @R2
+    000002C4 50F4                   MOV.L       @(16,R15),R0
+    000002C6 D231                   MOV.L       L673+28,R2 ; _free
+    000002C8 420B                   JSR         @R2
+    000002CA 6493                   MOV         R9,R4
+    000002CC A00C                   BRA         L650
+    000002CE E001                   MOV         #1,R0
+    000002D0              L649:                             
+    000002D0 9351                   MOV.W       L673+6,R3  ; H'7532
+    000002D2 52F1                   MOV.L       @(4,R15),R2
+    000002D4 3230                   CMP/EQ      R3,R2
+    000002D6 8901                   BT          L674
+    000002D8 AF65                   BRA         L632
+    000002DA 0009                   NOP
+    000002DC              L674:                             
+    000002DC D22B                   MOV.L       L673+28,R2 ; _free
+    000002DE 420B                   JSR         @R2
+    000002E0 6493                   MOV         R9,R4
+    000002E2 A001                   BRA         L650
+    000002E4 E000                   MOV         #0,R0
+    000002E6              L621:                             
+    000002E6 E0FF                   MOV         #-1,R0
+    000002E8              L650:                             
+    000002E8 9146                   MOV.W       L673+8,R1  ; H'0124
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    8
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000002EA 3F1C                   ADD         R1,R15
+    000002EC 4F16                   LDS.L       @R15+,MACL
+    000002EE 4F26                   LDS.L       @R15+,PR
+    000002F0 68F6                   MOV.L       @R15+,R8
+    000002F2 69F6                   MOV.L       @R15+,R9
+    000002F4 6AF6                   MOV.L       @R15+,R10
+    000002F6 6BF6                   MOV.L       @R15+,R11
+    000002F8 6CF6                   MOV.L       @R15+,R12
+    000002FA 6DF6                   MOV.L       @R15+,R13
+    000002FC 000B                   RTS
+    000002FE 6EF6                   MOV.L       @R15+,R14
+    00000300              _TestJDFFile:                    ; function: TestJDFFile
+                                                           ; frame size=104
+    00000300 4F22                   STS.L       PR,@-R15
+    00000302 7FA4                   ADD         #-92,R15
+    00000304 D322                   MOV.L       L673+32,R3 ; L571
+    00000306 2F46                   MOV.L       R4,@-R15
+    00000308 2F36                   MOV.L       R3,@-R15
+    0000030A 64F3                   MOV         R15,R4
+    0000030C D221                   MOV.L       L673+36,R2 ; _sprintf
+    0000030E 420B                   JSR         @R2
+    00000310 7408                   ADD         #8,R4
+    00000312 7F08                   ADD         #8,R15
+    00000314 65F3                   MOV         R15,R5
+    00000316 7520                   ADD         #32,R5
+    00000318 BE72                   BSR         _CharToFonts1
+    0000031A 64F3                   MOV         R15,R4
+    0000031C D21E                   MOV.L       L673+40,R2 ; _Bfile_OpenFile
+    0000031E E501                   MOV         #1,R5
+    00000320 64F3                   MOV         R15,R4
+    00000322 420B                   JSR         @R2
+    00000324 7420                   ADD         #32,R4
+    00000326 6403                   MOV         R0,R4
+
+    00000328 4411                   CMP/PZ      R4
+    0000032A 8903                   BT          L653
+    0000032C 7F5C                   ADD         #92,R15
+    0000032E 4F26                   LDS.L       @R15+,PR
+    00000330 000B                   RTS
+    00000332 E000                   MOV         #0,R0
+    00000334              L653:                             
+    00000334 D319                   MOV.L       L673+44,R3 ; _Bfile_CloseFile
+    00000336 430B                   JSR         @R3
+    00000338 0009                   NOP
+    0000033A E001                   MOV         #1,R0
+    0000033C              L654:                             
+    0000033C 7F5C                   ADD         #92,R15
+    0000033E 4F26                   LDS.L       @R15+,PR
+    00000340 000B                   RTS
+    00000342 0009                   NOP
+    00000344              _DelJDFFile:                     ; function: DelJDFFile
+                                                           ; frame size=104
+    00000344 4F22                   STS.L       PR,@-R15
+    00000346 7FA4                   ADD         #-92,R15
+    00000348 D311                   MOV.L       L673+32,R3 ; L571
+    0000034A 2F46                   MOV.L       R4,@-R15
+    0000034C 2F36                   MOV.L       R3,@-R15
+    0000034E 64F3                   MOV         R15,R4
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    9
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000350 D210                   MOV.L       L673+36,R2 ; _sprintf
+    00000352 420B                   JSR         @R2
+    00000354 7408                   ADD         #8,R4
+    00000356 65F3                   MOV         R15,R5
+    00000358 7528                   ADD         #40,R5
+    0000035A 64F3                   MOV         R15,R4
+    0000035C BE50                   BSR         _CharToFonts1
+    0000035E 7408                   ADD         #8,R4
+    00000360 D20F                   MOV.L       L673+48,R2 ; _Bfile_DeleteFile
+    00000362 64F3                   MOV         R15,R4
+    00000364 420B                   JSR         @R2
+    00000366 7428                   ADD         #40,R4
+    00000368 7F64                   ADD         #100,R15
+    0000036A 4F26                   LDS.L       @R15+,PR
+    0000036C 000B                   RTS
+    0000036E E000                   MOV         #0,R0
+    00000370              L673:                             
+    00000370 7542                   .DATA.W     H'7542
+    00000372 7547                   .DATA.W     H'7547
+    00000374 7534                   .DATA.W     H'7534
+    00000376 7532                   .DATA.W     H'7532
+    00000378 0124                   .DATA.W     H'0124
+    0000037A 0000                   .DATA.W     0
+    0000037C <00000000>             .DATA.L     L559
+    00000380 <00000000>             .DATA.L     _PrintXY
+    00000384 <00000000>             .DATA.L     _GetKey
+    00000388 <00000000>             .DATA.L     __slow_strcpy
+    0000038C <00000000>             .DATA.L     _free
+    00000390 <00000000>             .DATA.L     L571
+    00000394 <00000000>             .DATA.L     _sprintf
+    00000398 <00000000>             .DATA.L     _Bfile_OpenFile
+    0000039C <00000000>             .DATA.L     _Bfile_CloseFile
+    000003A0 <00000000>             .DATA.L     _Bfile_DeleteFile
+
+    000003A4              _SaveJDFFile:                    ; function: SaveJDFFile
+                                                           ; frame size=116
+    000003A4 2FE6                   MOV.L       R14,@-R15
+    000003A6 2FD6                   MOV.L       R13,@-R15
+    000003A8 4F22                   STS.L       PR,@-R15
+    000003AA 4F12                   STS.L       MACL,@-R15
+    000003AC D36B                   MOV.L       L675+2,R3  ; L571
+    000003AE 7FA4                   ADD         #-92,R15
+    000003B0 D26B                   MOV.L       L675+6,R2  ; _sprintf
+    000003B2 2F46                   MOV.L       R4,@-R15
+    000003B4 2F36                   MOV.L       R3,@-R15
+    000003B6 64F3                   MOV         R15,R4
+    000003B8 420B                   JSR         @R2
+    000003BA 7408                   ADD         #8,R4
+    000003BC 6EF3                   MOV         R15,R14
+    000003BE 7E28                   ADD         #40,R14
+    000003C0 65E3                   MOV         R14,R5
+    000003C2 64F3                   MOV         R15,R4
+    000003C4 BE1C                   BSR         _CharToFonts1
+    000003C6 7408                   ADD         #8,R4
+    000003C8 D266                   MOV.L       L675+10,R2 ; _Bfile_DeleteFile
+    000003CA 420B                   JSR         @R2
+    000003CC 64E3                   MOV         R14,R4
+    000003CE E34C                   MOV         #76,R3
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   10
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000003D0 DD65                   MOV.L       L675+14,R13; _jdfroute
+    000003D2 52D1                   MOV.L       @(4,R13),R2
+    000003D4 0237                   MUL.L       R3,R2
+    000003D6 051A                   STS         MACL,R5
+    000003D8 D264                   MOV.L       L675+18,R2 ; _Bfile_CreateFile
+    000003DA 7508                   ADD         #8,R5
+    000003DC 420B                   JSR         @R2
+    000003DE 64E3                   MOV         R14,R4
+      Intersecti     2    #include "MyFont.h"
+
+
+      Intersecti     3    #include "runmain.h"
+      Intersecti     4    
+      Intersecti     5    
+      Intersecti     6    
+      Intersecti     7    FONTCHARACTER * CharToFonts1(const char *cFileName,FONTCHARACTER *fFileName);
+      Intersecti     8    char * FontToChars1(const FONTCHARACTER *fFileName,char *cFileName);
+      Intersecti     9    
+      Intersecti    10    //////////////////////////////////////////////////////////////
+      Intersecti    11    //                                        Char <=> Font
+      Intersecti    12    ///////////////////////////////////////////////////////////////
+      Intersecti    13    FONTCHARACTER * CharToFonts1(const char *cFileName,FONTCHARACTER *fFileName)
+      Intersecti    14    {
+      Intersecti    15            int i,len = strlen(cFileName);
+      Intersecti    16            for(i=0; i<len ;++i)
+      Intersecti    17                    fFileName[i] = cFileName[i];
+      Intersecti    18            fFileName[i]=0;
+      Intersecti    19            return fFileName;
+      Intersecti    20    }
+      Intersecti    21    char * FontToChars1(const FONTCHARACTER *fFileName,char *cFileName)
+      Intersecti    22    {
+      Intersecti    23            int i = 0;
+      Intersecti    24            while((cFileName[i]=fFileName[i])!=0)++i;
+      Intersecti    25            return cFileName;
+      Intersecti    26    }
+      Intersecti    27    
+      Intersecti    28    ///////////////////////////////////////////////////////////////
+      Intersecti    29    //                                              File Directory
+      Intersecti    30    ///////////////////////////////////////////////////////////////
+      Intersecti    31    int CreateDirectorys1()
+      Intersecti    32    {
+      Intersecti    33            FONTCHARACTER f_path_name[20];
+      Intersecti    34            Bfile_CreateDirectory(CharToFonts1("\\\\crd0\\JDF",f_path_name));
+      Intersecti    35    }
+      Intersecti    36    
+      Intersecti    37    char szSrdDir1[]="\\\\crd0\\JDF";
+      Intersecti    38    //char szSrdDir1[]="\\\\fls0\\JDF";
+      Intersecti    39    
+      Intersecti    40    ///////////////////////////////////////////////////////////////
+      Intersecti    41    //                                                      File List
+      Intersecti    42    ///////////////////////////////////////////////////////////////
+      Intersecti    43    int SelectJDFFiles (char * file_name)
+      Intersecti    44    // -1 no file , 1 complate ,0 cancel
+      Intersecti    45    {
+      Intersecti    46            int key;
+      Intersecti    47            char str[50]; //×Ö·ûÊý×é³¤¶ÈÏÂ±ê´Ó0¿ªÊ¼£¬¹²50¸öÔªËØ
+      Intersecti    48            FONTCHARACTER find_path[50];   //»ñµÃÂ·¾¶
+      Intersecti    49            FONTCHARACTER find_name[50];   //»ñµÃÃû×Ö
+      Intersecti    50            int find_h;
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   11
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Intersecti    51            int size = 0;
+      Intersecti    52            int top = 0;
+      Intersecti    53            int buttom = 0;
+      Intersecti    54            int index,r,y;
+      Intersecti    55            char *files;
+      Intersecti    56            FILE_INFO file_info;
+      Intersecti    57    //      CharToFont("\\\\fls0\\JDF\\*.jdf",find_path);
+      Intersecti    58            sprintf(str,"%s\\*.jdf",szSrdDir1);
+      Intersecti    59            CharToFonts1(str,find_path);
+      Intersecti    60            if(Bfile_FindFirst (find_path,&find_h,find_name,&file_info)==0)  //º¯ÊýËÑË÷Ä¿Â¼ÖÐÎÄ¼þµÄÃû³Æ·ûºÏÖ¸¶
+                         +¨µÄÎÄ¼þÃû
+ÍÊÇÎª
+                         +Õæ£¬¼´true£»µ±ÖµÎª0Ê±Îª¼Ù£¬¼´false£»
+      Intersecti    64                    size ++;  //Ê¹ÓÃsizeÖ®ºóÔÙ¼ÓÒ»£¨ÏÈ¼ÆËãÔÙ²Ù×÷£©
+      Intersecti    65                    while(Bfile_FindNext(find_h,find_name,&file_info)==0) //Bfile_FindNext º¯ÊýÊ¹ÓÃËÑË÷´¦Àí¶¨Î
+                         +»Æ¥ÅäÒ»¸ö¸ø¶¨Ãû³ÆµÄÎÄ¼þÃû³Æ¡£
+      Intersecti    66                    size++;
+      Intersecti    67                    Bfile_FindClose(find_h);  //Bfile_FindClose ¹Ø±ÕËÑË÷Ö¸¶¨´¦Àíº¯Êý
+
+      Intersecti    73                                    ret=Bfile_FindFirst (find_path,&find_h,find_name,&file_info);
+      Intersecti    74                            else 
+      Intersecti    75                                    ret=Bfile_FindNext(find_h,find_name,&file_info);
+      Intersecti    76                            if(ret!=0)  //if 
+      Intersecti    77                                    break;
+      Intersecti    78                            strncpy((files+13*i),FontToChars1(find_name,str),13);
+      Intersecti    79                            if(strcmp((files+13*i),setup_data.jdfroute_name)==0) //ÎÄ¼þÑ¡ÖÐºó£¬ÏÖÔÚ¼ÇÒäÎ»ÖÃ
+      Intersecti    80                            index=i; 
+      Intersecti    81                            i++;
+      Intersecti    82                            bFindFirst=FALSE;  //ÁîÖµÎª¼Ù ¼´=0
+      Intersecti    83                    }
+      Intersecti    84                    Bfile_FindClose(find_h);  //Bfile_FindClose ¹Ø±ÕËÑË÷Ö¸¶¨´¦Àíº¯Êý
+} ;
+      Intersecti   238    static FONTCHARACTER IniSRDFile[] = { '\\','\\','c','r','d','0','\\','j','d','f','.','i','n','i' ,'\0'} ;
+      Intersecti   239    
+      Intersecti   240    
+      Intersecti   241    void SaveIniJDFFile()
+      Intersecti   242    {
+      Intersecti   243            int ptr = -1;
+      Intersecti   244            int ln;
+      Intersecti   245            Bfile_DeleteFile(IniSRDFile);
+      Intersecti   246            ln=strlen(setup_data.jdfroute_name);
+      Intersecti   247            if(ln==0)
+      Intersecti   248                    return;
+      Intersecti   249            if (Bfile_CreateFile(IniSRDFile, ln) < 0) //Error("´´½¨ÎÄ¼þÊ§°Ü") ;
+      Intersecti   250                    return;
+      Intersecti   251            //      else Error("´´½¨ÎÄ¼þOK") ;
+      Intersecti   252            ptr = Bfile_OpenFile(IniSRDFile, _OPENMODE_WRITE) ;  // Bfile_OpenFile : ´ò¿ªÒ»¸öÏÖÓÐµÄÎÄ¼þ¡£
+      Intersecti   253            if (ptr >= 0) {
+      Intersecti   254                    Bfile_WriteFile(ptr, setup_data.jdfroute_name, ln) ;
+      Intersecti   255                    Bfile_CloseFile(ptr) ;
+      Intersecti   256            }
+      Intersecti   257    }
+      Intersecti   258    
+      Intersecti   259    int LoadLastDataJDFFile()
+      Intersecti   260    {
+      Intersecti   261            char strFileName[50]; 
+      Intersecti   262            int reg_ptr = -1;
+      Intersecti   263            int ln;
+      Intersecti   264            if(setup_data.jdfroute_name[0]==0)
+      Intersecti   265            {
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   12
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Intersecti   266                    reg_ptr = Bfile_OpenFile(IniSRDFile, _OPENMODE_READ) ;
+      Intersecti   267                    if (reg_ptr >= 0) {
+      Intersecti   268                            ln=Bfile_GetFileSize(reg_ptr);
+      Intersecti   269                            if(ln>0)
+      Intersecti   270                            {   
+      Intersecti   271                                    if(ln>=sizeof(setup_data.jdfroute_name)-1)
+      Intersecti   272                                            ln=sizeof(setup_data.jdfroute_name)-1;
+      Intersecti   273                                    Bfile_ReadFile(reg_ptr, setup_data.jdfroute_name,ln,0) ;
+      Intersecti   274                                    setup_data.jdfroute_name[ln]=0;
+      Intersecti   275                            }
+      Intersecti   276                            Bfile_CloseFile(reg_ptr) ;
+      Intersecti   277                            //PopUpWin(1);
+      Intersecti   278                    //locate(7,4);Print(setup_data.JDFroute_name);
+      Intersecti   279                    //GetKey(&key);
+      Intersecti   280                            //sprintf(strFileName,"\\\\crd0\\SRD\\%s",setup_data.JDFroute_name);
+      Intersecti   281                            LoadJDFFile(setup_data.jdfroute_name);
+      Intersecti   282                            return 1;
+      Intersecti   283                    }               
+      Intersecti   284            }
+      Intersecti   285            return 0;
+      Intersecti   286    }
+    000003E0 D363                   MOV.L       L675+22,R3 ; _Bfile_OpenFile
+    000003E2 E502                   MOV         #2,R5
+    000003E4 430B                   JSR         @R3
+    000003E6 64E3                   MOV         R14,R4
+    000003E8 D262                   MOV.L       L675+26,R2 ; _Bfile_SeekFile
+    000003EA 6E03                   MOV         R0,R14
+    000003EC E500                   MOV         #0,R5
+    000003EE 420B                   JSR         @R2
+    000003F0 6403                   MOV         R0,R4
+    000003F2 E608                   MOV         #8,R6
+    000003F4 D360                   MOV.L       L675+30,R3 ; _Bfile_WriteFile
+    000003F6 65D3                   MOV         R13,R5
+    000003F8 430B                   JSR         @R3
+    000003FA 64E3                   MOV         R14,R4
+    000003FC D25D                   MOV.L       L675+26,R2 ; _Bfile_SeekFile
+    000003FE E508                   MOV         #8,R5
+    00000400 420B                   JSR         @R2
+    00000402 64E3                   MOV         R14,R4
+    00000404 52D1                   MOV.L       @(4,R13),R2
+    00000406 E34C                   MOV         #76,R3
+    00000408 65D2                   MOV.L       @R13,R5
+    0000040A 0237                   MUL.L       R3,R2
+    0000040C D15A                   MOV.L       L675+30,R1 ; _Bfile_WriteFile
+    0000040E 061A                   STS         MACL,R6
+    00000410 410B                   JSR         @R1
+    00000412 64E3                   MOV         R14,R4
+    00000414 D359                   MOV.L       L675+34,R3 ; _Bfile_CloseFile
+    00000416 430B                   JSR         @R3
+    00000418 64E3                   MOV         R14,R4
+    0000041A E000                   MOV         #0,R0
+    0000041C 7F64                   ADD         #100,R15
+    0000041E 4F16                   LDS.L       @R15+,MACL
+    00000420 4F26                   LDS.L       @R15+,PR
+    00000422 6DF6                   MOV.L       @R15+,R13
+    00000424 000B                   RTS
+    00000426 6EF6                   MOV.L       @R15+,R14
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   13
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000428              _LoadJDFFile:                    ; function: LoadJDFFile
+                                                           ; frame size=116
+    00000428 2FE6                   MOV.L       R14,@-R15
+    0000042A 2FD6                   MOV.L       R13,@-R15
+    0000042C 4F22                   STS.L       PR,@-R15
+    0000042E 4F12                   STS.L       MACL,@-R15
+    00000430 D34A                   MOV.L       L675+2,R3  ; L571
+    00000432 7FA4                   ADD         #-92,R15
+    00000434 D24A                   MOV.L       L675+6,R2  ; _sprintf
+    00000436 2F46                   MOV.L       R4,@-R15
+    00000438 2F36                   MOV.L       R3,@-R15
+    0000043A 64F3                   MOV         R15,R4
+    0000043C 420B                   JSR         @R2
+    0000043E 7408                   ADD         #8,R4
+    00000440 7F08                   ADD         #8,R15
+    00000442 65F3                   MOV         R15,R5
+    00000444 7520                   ADD         #32,R5
+    00000446 BDDB                   BSR         _CharToFonts1
+    00000448 64F3                   MOV         R15,R4
+    0000044A E501                   MOV         #1,R5
+    0000044C D248                   MOV.L       L675+22,R2 ; _Bfile_OpenFile
+    0000044E 64F3                   MOV         R15,R4
+    00000450 420B                   JSR         @R2
+    00000452 7420                   ADD         #32,R4
+    00000454 6E03                   MOV         R0,R14
+    00000456 4E11                   CMP/PZ      R14
+    00000458 8B19                   BF          L658
+    0000045A E700                   MOV         #0,R7
+    0000045C D542                   MOV.L       L675+14,R5 ; _jdfroute
+    0000045E E608                   MOV         #8,R6
+    00000460 D247                   MOV.L       L675+38,R2 ; _Bfile_ReadFile
+    00000462 420B                   JSR         @R2
+    00000464 64E3                   MOV         R14,R4
+    00000466 E54C                   MOV         #76,R5
+    00000468 D346                   MOV.L       L675+42,R3 ; _calloc
+    0000046A DD3F                   MOV.L       L675+14,R13; _jdfroute
+    0000046C 430B                   JSR         @R3
+    0000046E 54D1                   MOV.L       @(4,R13),R4
+    00000470 2D02                   MOV.L       R0,@R13
+    00000472 E708                   MOV         #8,R7
+    00000474 D142                   MOV.L       L675+38,R1 ; _Bfile_ReadFile
+    00000476 E34C                   MOV         #76,R3
+    00000478 52D1                   MOV.L       @(4,R13),R2
+    0000047A 6503                   MOV         R0,R5
+    0000047C 0237                   MUL.L       R3,R2
+    0000047E 061A                   STS         MACL,R6
+    00000480 410B                   JSR         @R1
+    00000482 64E3                   MOV         R14,R4
+    00000484 D33D                   MOV.L       L675+34,R3 ; _Bfile_CloseFile
+    00000486 430B                   JSR         @R3
+    00000488 64E3                   MOV         R14,R4
+    0000048A A001                   BRA         L659
+    0000048C E001                   MOV         #1,R0
+    0000048E              L658:                             
+    0000048E E000                   MOV         #0,R0
+    00000490              L659:                             
+    00000490 7F5C                   ADD         #92,R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   14
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000492 4F16                   LDS.L       @R15+,MACL
+    00000494 4F26                   LDS.L       @R15+,PR
+    00000496 6DF6                   MOV.L       @R15+,R13
+    00000498 000B                   RTS
+    0000049A 6EF6                   MOV.L       @R15+,R14
+    0000049C              _SaveIniJDFFile:                 ; function: SaveIniJDFFile
+                                                           ; frame size=12
+    0000049C 2FE6                   MOV.L       R14,@-R15
+    0000049E 2FD6                   MOV.L       R13,@-R15
+    000004A0 4F22                   STS.L       PR,@-R15
+    000004A2 DD39                   MOV.L       L675+46,R13; __$IniSRDFile
+    000004A4 D32F                   MOV.L       L675+10,R3 ; _Bfile_DeleteFile
+    000004A6 430B                   JSR         @R3
+    000004A8 64D3                   MOV         R13,R4
+    000004AA D438                   MOV.L       L675+50,R4 ; H'00000004+_setup_data
+    000004AC D238                   MOV.L       L675+54,R2 ; _strlen
+    000004AE 420B                   JSR         @R2
+    000004B0 0009                   NOP
+    000004B2 6E03                   MOV         R0,R14
+    000004B4 2EE8                   TST         R14,R14
+    000004B6 8917                   BT          L661
+    000004B8 D22C                   MOV.L       L675+18,R2 ; _Bfile_CreateFile
+    000004BA 65E3                   MOV         R14,R5
+    000004BC 420B                   JSR         @R2
+    000004BE 64D3                   MOV         R13,R4
+    000004C0 4011                   CMP/PZ      R0
+    000004C2 8B11                   BF          L661
+    000004C4 D22A                   MOV.L       L675+22,R2 ; _Bfile_OpenFile
+    000004C6 E502                   MOV         #2,R5
+    000004C8 420B                   JSR         @R2
+    000004CA 64D3                   MOV         R13,R4
+    000004CC 6D03                   MOV         R0,R13
+    000004CE 4D11                   CMP/PZ      R13
+    000004D0 8B0A                   BF          L661
+    000004D2 66E3                   MOV         R14,R6
+    000004D4 D52D                   MOV.L       L675+50,R5 ; H'00000004+_setup_data
+    000004D6 D228                   MOV.L       L675+30,R2 ; _Bfile_WriteFile
+    000004D8 420B                   JSR         @R2
+    000004DA 64D3                   MOV         R13,R4
+    000004DC 4F26                   LDS.L       @R15+,PR
+    000004DE 64D3                   MOV         R13,R4
+    000004E0 D326                   MOV.L       L675+34,R3 ; _Bfile_CloseFile
+    000004E2 6DF6                   MOV.L       @R15+,R13
+    000004E4 432B                   JMP         @R3
+    000004E6 6EF6                   MOV.L       @R15+,R14
+    000004E8              L661:                             
+    000004E8 4F26                   LDS.L       @R15+,PR
+    000004EA 6DF6                   MOV.L       @R15+,R13
+    000004EC 000B                   RTS
+    000004EE 6EF6                   MOV.L       @R15+,R14
+    000004F0              _LoadLastDataJDFFile:            ; function: LoadLastDataJDFFile
+                                                           ; frame size=68
+    000004F0 2FE6                   MOV.L       R14,@-R15
+    000004F2 2FD6                   MOV.L       R13,@-R15
+    000004F4 2FC6                   MOV.L       R12,@-R15
+    000004F6 4F22                   STS.L       PR,@-R15
+    000004F8 DC26                   MOV.L       L675+58,R12; _setup_data
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   15
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    000004FA 7FCC                   ADD         #-52,R15
+    000004FC 84C4                   MOV.B       @(4,R12),R0
+    000004FE 2008                   TST         R0,R0
+    00000500 8B24                   BF          L664
+    00000502 D421                   MOV.L       L675+46,R4 ; __$IniSRDFile
+    00000504 D21A                   MOV.L       L675+22,R2 ; _Bfile_OpenFile
+    00000506 420B                   JSR         @R2
+    00000508 E501                   MOV         #1,R5
+    0000050A 6D03                   MOV         R0,R13
+    0000050C 4D11                   CMP/PZ      R13
+    0000050E 8B1D                   BF          L664
+    00000510 D221                   MOV.L       L675+62,R2 ; _Bfile_GetFileSize
+    00000512 420B                   JSR         @R2
+    00000514 64D3                   MOV         R13,R4
+    00000516 6E03                   MOV         R0,R14
+    00000518 4E15                   CMP/PL      R14
+    0000051A 8B0F                   BF          L666
+    0000051C E40C                   MOV         #12,R4
+    0000051E 3E42                   CMP/HS      R4,R14
+    00000520 8F01                   BF/S        L667
+    00000522 E700                   MOV         #0,R7
+    00000524 6E43                   MOV         R4,R14
+    00000526              L667:                             
+    00000526 66E3                   MOV         R14,R6
+    00000528 D315                   MOV.L       L675+38,R3 ; _Bfile_ReadFile
+    0000052A 65C3                   MOV         R12,R5
+    0000052C 7504                   ADD         #4,R5
+    0000052E 430B                   JSR         @R3
+    00000530 64D3                   MOV         R13,R4
+    00000532 62C3                   MOV         R12,R2
+    00000534 7204                   ADD         #4,R2
+    00000536 3E2C                   ADD         R2,R14
+    00000538 E300                   MOV         #0,R3
+    0000053A 2E30                   MOV.B       R3,@R14
+    0000053C              L666:                             
+    0000053C D20F                   MOV.L       L675+34,R2 ; _Bfile_CloseFile
+    0000053E 420B                   JSR         @R2
+    00000540 64D3                   MOV         R13,R4
+    00000542 64C3                   MOV         R12,R4
+    00000544 BF70                   BSR         _LoadJDFFile
+    00000546 7404                   ADD         #4,R4
+    00000548 A001                   BRA         L668
+    0000054A E001                   MOV         #1,R0
+    0000054C              L664:                             
+    0000054C E000                   MOV         #0,R0
+    0000054E              L668:                             
+    0000054E 7F34                   ADD         #52,R15
+    00000550 4F26                   LDS.L       @R15+,PR
+    00000552 6CF6                   MOV.L       @R15+,R12
+    00000554 6DF6                   MOV.L       @R15+,R13
+    00000556 000B                   RTS
+    00000558 6EF6                   MOV.L       @R15+,R14
+    0000055A              L675:                             
+    0000055A 0000                   .DATA.W     0
+    0000055C <00000000>             .DATA.L     L571
+    00000560 <00000000>             .DATA.L     _sprintf
+    00000564 <00000000>             .DATA.L     _Bfile_DeleteFile
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   16
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000568 <00000000>             .DATA.L     _jdfroute
+    0000056C <00000000>             .DATA.L     _Bfile_CreateFile
+    00000570 <00000000>             .DATA.L     _Bfile_OpenFile
+    00000574 <00000000>             .DATA.L     _Bfile_SeekFile
+    00000578 <00000000>             .DATA.L     _Bfile_WriteFile
+    0000057C <00000000>             .DATA.L     _Bfile_CloseFile
+    00000580 <00000000>             .DATA.L     _Bfile_ReadFile
+    00000584 <00000000>             .DATA.L     _calloc
+    00000588 <00000000>             .DATA.L     __$IniSRDFile
+    0000058C <00000004>             .DATA.L     H'00000004+_setup_data
+    00000590 <00000000>             .DATA.L     _strlen
+    00000594 <00000000>             .DATA.L     _setup_data
+    00000598 <00000000>             .DATA.L     _Bfile_GetFileSize
+C   00000000              L527:
+    00000000 5C5C637264             .SDATA      "\\crd0\JDF"
+             305C4A4446   
+    0000000A 00                     .DATA.B     H'00
+    0000000B 00000001               .RES.B      1
+    0000000C              L545:
+    0000000C 25735C2A2E             .SDATA      "%s\*.jdf"
+             6A6466       
+    00000014 00                     .DATA.B     H'00
+    00000015 00000001               .RES.B      1
+    00000016 00000002               .RES.W      1
+    00000018              L553:
+    00000018 BDBBB5E3B2             .DATA.B     H'BD,H'BB,H'B5,H'E3,H'B2,H'CE,H'CA,H'FD,H'CE,H'C4,H'BC,H'FE
+             CECAFDCEC4   
+             BCFE         
+    00000024 3A20                   .SDATA      ": "
+    00000026 00                     .DATA.B     H'00
+    00000027 00000001               .RES.B      1
+    00000028              L557:
+    00000028 2531332E31             .SDATA      "%13.13s"
+             3373         
+    0000002F 00                     .DATA.B     H'00
+    00000030              L558:
+    00000030 E69200                 .DATA.B     H'E6,H'92,H'00
+    00000033 00000001               .RES.B      1
+    00000034              L559:
+    00000034 20                     .SDATA      " "
+    00000035 00                     .DATA.B     H'00
+    00000036 00000002               .RES.W      1
+    00000038              L560:
+    00000038 E69300                 .DATA.B     H'E6,H'93,H'00
+    0000003B 00000001               .RES.B      1
+    0000003C              L571:
+    0000003C 5C5C637264             .SDATA      "\\crd0\JDF\%s"
+             305C4A4446   
+             5C2573       
+    00000049 00                     .DATA.B     H'00
+D   00000000              _szSrdDir1:                      ; static: szSrdDir1
+    00000000 5C5C637264             .SDATA      "\\crd0\JDF"
+             305C4A4446   
+    0000000A 00                     .DATA.B     H'00
+    0000000B 00000001               .RES.B      1
+    0000000C              __$IniSRDFile:                   ; static: IniSRDFile
+    0000000C 005C005C00             .DATA.W     H'005C,H'005C,H'0063,H'0072,H'0064,H'0030,H'005C,H'006A,H'0064,H'0066,H'002E,H'0069,
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE   17
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+             6300720064 +                       H'006E,H'0069,H'0000
+             0030005C00   
+             6A00640066   
+             002E006900   
+             6E00690000   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:09  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        17
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:      286
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               0000059C Byte(s)
+CONSTANT SECTION (C):                               0000004A Byte(s)
+DATA     SECTION (D):                               0000002A Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000610 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:           27
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:          11
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            92
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk583E.tmp 
+

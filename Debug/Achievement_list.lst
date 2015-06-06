@@ -1,0 +1,281 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:00  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: C:\Users\Administrator\Desktop\2015-06-6交点法转线元推链表\2015-06-4交点法转线元推链表\Achievement_list.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Achievemen     1    #include <stdio.h>
+P   00000000              _InitList:                       ; function: InitList
+                                                           ; frame size=0
+    00000000 E500                   MOV         #0,R5
+    00000002 E040                   MOV         #64,R0
+    00000004 2452                   MOV.L       R5,@R4
+    00000006 000B                   RTS
+    00000008 0456                   MOV.L       R5,@(R0,R4)
+    0000000A              _PushList:                       ; function: PushList
+                                                           ; frame size=8
+                                                           ; used runtime library name:
+                                                           ; __quick_odd_mvn
+    0000000A 4F22                   STS.L       PR,@-R15
+    0000000C D324                   MOV.L       L515+2,R3  ; _malloc
+    0000000E 7FFC                   ADD         #-4,R15
+    00000010 2F42                   MOV.L       R4,@R15
+    00000012 430B                   JSR         @R3
+    00000014 E444                   MOV         #68,R4
+    00000016 6503                   MOV         R0,R5
+    00000018 64F2                   MOV.L       @R15,R4
+    0000001A E300                   MOV         #0,R3
+    0000001C E040                   MOV         #64,R0
+    0000001E 6153                   MOV         R5,R1
+    00000020 0536                   MOV.L       R3,@(R0,R5)
+    00000022 62F3                   MOV         R15,R2
+    00000024 D31F                   MOV.L       L515+6,R3  ; __quick_odd_mvn
+    00000026 7104                   ADD         #4,R1
+    00000028 7208                   ADD         #8,R2
+    0000002A 430B                   JSR         @R3
+    0000002C E03C                   MOV         #60,R0
+    0000002E A001                   BRA         L510
+    00000030 0009                   NOP
+    00000032              L511:                             
+    00000032 044E                   MOV.L       @(R0,R4),R4
+    00000034              L510:                             
+    00000034 E040                   MOV         #64,R0
+    00000036 034E                   MOV.L       @(R0,R4),R3
+    00000038 2338                   TST         R3,R3
+    0000003A 8BFA                   BF          L511
+    0000003C 0456                   MOV.L       R5,@(R0,R4)
+    0000003E 63F2                   MOV.L       @R15,R3
+    00000040 6232                   MOV.L       @R3,R2
+    00000042 7201                   ADD         #1,R2
+    00000044 2322                   MOV.L       R2,@R3
+    00000046 7F04                   ADD         #4,R15
+    00000048 4F26                   LDS.L       @R15+,PR
+    0000004A 000B                   RTS
+    0000004C 0009                   NOP
+    0000004E              _GetList:                        ; function: GetList
+                                                           ; frame size=4
+                                                           ; used runtime library name:
+                                                           ; __quick_odd_mvn
+    0000004E 4511                   CMP/PZ      R5
+    00000050 4F22                   STS.L       PR,@-R15
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:00  PAGE    2
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+    00000052 8F05                   BF/S        L512
+    00000054 E600                   MOV         #0,R6
+    00000056              L513:                             
+    00000056 E040                   MOV         #64,R0
+    00000058 7601                   ADD         #1,R6
+    0000005A 3657                   CMP/GT      R5,R6
+    0000005C 8FFB                   BF/S        L513
+    0000005E 044E                   MOV.L       @(R0,R4),R4
+    00000060              L512:                             
+    00000060 51F1                   MOV.L       @(4,R15),R1
+    00000062 6243                   MOV         R4,R2
+    00000064 D30F                   MOV.L       L515+6,R3  ; __quick_odd_mvn
+    00000066 7204                   ADD         #4,R2
+    00000068 430B                   JSR         @R3
+    0000006A E03C                   MOV         #60,R0
+    0000006C 4F26                   LDS.L       @R15+,PR
+    0000006E 000B                   RTS
+    00000070 0009                   NOP
+    00000072              _push_backList:                  ; function: push_backList
+                                                           ; frame size=128
+                                                           ; used runtime library name:
+                                                           ; __quick_odd_mvn
+    00000072 E63C                   MOV         #60,R6
+    00000074 D30C                   MOV.L       L515+10,R3 ; _memset
+    00000076 E500                   MOV         #0,R5
+    00000078 4F22                   STS.L       PR,@-R15
+    0000007A 7FC0                   ADD         #-64,R15
+    0000007C 2F42                   MOV.L       R4,@R15
+    0000007E 64F3                   MOV         R15,R4
+    00000080 430B                   JSR         @R3
+    00000082 7404                   ADD         #4,R4
+    00000084 D307                   MOV.L       L515+6,R3  ; __quick_odd_mvn
+    00000086 62F3                   MOV         R15,R2
+    00000088 7204                   ADD         #4,R2
+    0000008A E03C                   MOV         #60,R0
+    0000008C 3F08                   SUB         R0,R15
+    0000008E 430B                   JSR         @R3
+    00000090 61F3                   MOV         R15,R1
+    00000092 BFBA                   BSR         _PushList
+    00000094 54FF                   MOV.L       @(60,R15),R4
+    00000096 7F7C                   ADD         #124,R15
+    00000098 4F26                   LDS.L       @R15+,PR
+    0000009A 000B                   RTS
+    0000009C 0009                   NOP
+    0000009E              L515:                             
+    0000009E 0000                   .DATA.W     0
+    000000A0 <00000000>             .DATA.L     _malloc
+    000000A4 <00000000>             .DATA.L     __quick_odd_mvn
+    000000A8 <00000000>             .DATA.L     _memset
+      Achievemen     2    #include "headfile.h"
+
+
+
+
+
+
+
+
+
+
+
+
+      Achievemen     3    
+      Achievemen     4    
+      Achievemen     5    void InitList(List* qList) 
+      Achievemen     6    {
+      Achievemen     7            qList->length = 0;
+      Achievemen     8            qList->next   = NULL;
+      Achievemen     9    }
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:00  PAGE    3
+
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+      Achievemen    10    
+      Achievemen    11    void PushList(List* qList,s_pqx s)
+      Achievemen    12    {
+      Achievemen    13            List * newNode = (List *)malloc(sizeof(List));
+      Achievemen    14            List * temp = qList;
+      Achievemen    15            newNode->next = NULL;
+      Achievemen    16            newNode->node = s;
+      Achievemen    17    
+      Achievemen    18            while(temp->next!=NULL)
+      Achievemen    19                    temp = temp->next;     //找到表尾
+      Achievemen    20            temp->next = newNode;       //将表尾跟新的节点连接
+      Achievemen    21            qList->length++;
+      Achievemen    22    }
+      Achievemen    23    
+      Achievemen    24    s_pqx GetList(List* qList,int index0)
+      Achievemen    25     {
+      Achievemen    26             int i;
+      Achievemen    27             for(i=0;i<=index0;i++)
+      Achievemen    28                     qList = qList->next;
+      Achievemen    29             return qList->node;
+      Achievemen    30     }
+      Achievemen    31    
+      Achievemen    32    void push_backList(List* qList)
+      Achievemen    33    {
+      Achievemen    34            s_pqx s;
+      Achievemen    35            memset(&s,0,sizeof(s_pqx));
+      Achievemen    36            PushList(qList,s);
+      Achievemen    37    }
+      Achievemen    38    
+      Achievemen    39    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 06-Jun-2015 22:51:00  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:        11
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:       39
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               000000AC Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 000000AC Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            3
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           4
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:            12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\Users\ADMINI~1\AppData\Local\Temp\hmk34D6.tmp 
+
